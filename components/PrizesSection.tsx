@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { Award } from "lucide-react";
 
@@ -12,7 +12,13 @@ const prizes = [
     description: "One grand prize winner will receive the Davidoff Air de Famille Ambassador Humidor Ziricote that combines modern interior design with traditional humidor design. Crafted from rare Ziricote and mahogany sapele wood, this elegant humidor preserves 70 to 80 cigars in optimal condition thanks to its Davidoff Slim regulator that keeps relative humidity between 70 and 72%. A removable tray with two handles and a divider allows for easy sorting.",
     details: "Handmade in France, the humidor's refined design and its glossy finish make it a stylish masterpiece for the connoisseur's collection.",
     dimensions: "5.15 x 9.44 x 5.62 inches | 38.5 x 24 x 14.3 cm",
-    image: "/images/giveaway/prize-1.jpg",
+    imagePaths: [
+      "/images/giveaway/prize-1.tif",
+      "/images/giveaway/prize-1.jpg",
+      "/images/giveaway/prize-1.png",
+      "/images/giveaway/humidor.tif",
+      "/images/giveaway/humidor.jpg",
+    ],
   },
   {
     rank: "2nd Prize",
@@ -20,7 +26,12 @@ const prizes = [
     description: "Our second prize combines practicality with style for aficionados on the move. The Davidoff Travel Humidor Business with its smart tray keeps up to eight cigars of any format secure and perfectly humidified on every journey. Sleek, functional, lightweight and luxurious, it is the ideal companion for business or leisure travel.",
     details: "Two pockets on the inside offer space for a lighter and a cutter, and a hidden pocket for business cards add to the convenience aspect of the stylish piece. Made in Italy – bound for the world.",
     dimensions: "12.4 x 11.42\" | 31.5 x 29 cm",
-    image: "/images/giveaway/prize-2.jpg",
+    imagePaths: [
+      "/images/giveaway/prize-2.tif",
+      "/images/giveaway/prize-2.jpg",
+      "/images/giveaway/travel-humidor.tif",
+      "/images/giveaway/travel-humidor.jpg",
+    ],
   },
   {
     rank: "3rd Prize",
@@ -28,7 +39,12 @@ const prizes = [
     description: "One winner will enjoy the timeless simplicity of the Davidoff Porcelain Ashtray. The recently launched elegant and functional accessory turns every cigar ritual into a statement of style and refinement.",
     details: "Handmade in France, the rectangular ashtray features two angled cigar notches, delicate, hand-applied golden lines, and a golden Davidoff logo – for a sophisticated enjoyment.",
     dimensions: "7.84 x 6.29 x 1.29\" | 20 x 16 x 3.3 cm",
-    image: "/images/giveaway/prize-3.jpg",
+    imagePaths: [
+      "/images/giveaway/prize-3.tif",
+      "/images/giveaway/prize-3.jpg",
+      "/images/giveaway/ashtray.tif",
+      "/images/giveaway/ashtray.jpg",
+    ],
   },
   {
     rank: "4th Prize",
@@ -36,7 +52,12 @@ const prizes = [
     description: "The fourth prize pays tribute to one of history's greatest statesmen. The Davidoff Winston Churchill Spirit Glass Set offers you the perfect place to rest your cigar in style. With two notches, this hefty cigar liquor glass will be the spotlight of every room.",
     details: "The set of two glasses is the perfect gift for every cigar aficionado and Winston Churchill fan. His silhouette is elegantly sandblasted at the bottom of the glass that was handmade in Europe by an expert company with 120 years of history of glass blowing.",
     dimensions: "3.14 x 3.14 x 3.54\" | 8 x 8 x 9 cm",
-    image: "/images/giveaway/prize-4.jpg",
+    imagePaths: [
+      "/images/giveaway/prize-4.tif",
+      "/images/giveaway/prize-4.jpg",
+      "/images/giveaway/glass-set.tif",
+      "/images/giveaway/glass-set.jpg",
+    ],
   },
   {
     rank: "5th Prize",
@@ -44,30 +65,69 @@ const prizes = [
     description: "Our fifth prize is a discreet yet refined travel companion crafted from finest cowhide and lamb chamois leather. The recently launched Davidoff Cigar Case Iconic is designed to protect your two most cherished cigars.",
     details: "Whatever the size or format, they are safely and stylishly carried in a superbly crafted leather companion that reflects your personal elegance. Crafted by the most skilled leather artisans in Spain, blending time-honoured tradition with contemporary sophistication.",
     dimensions: "Adjustable in length to accommodate two cigars of any format",
-    image: "/images/giveaway/prize-5.jpg",
+    imagePaths: [
+      "/images/giveaway/prize-5.tif",
+      "/images/giveaway/prize-5.jpg",
+      "/images/giveaway/cigar-case.tif",
+      "/images/giveaway/cigar-case.jpg",
+    ],
   },
 ];
 
-function PrizeImage({ src, alt, rank }: { src: string; alt: string; rank: string }) {
+function PrizeImage({ imagePaths, alt, rank }: { imagePaths: string[]; alt: string; rank: string }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageError, setImageError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
+  const currentImage = imagePaths[currentImageIndex] || '';
+  const isTifFile = currentImage.toLowerCase().endsWith('.tif') || currentImage.toLowerCase().endsWith('.tiff');
+
+  useEffect(() => {
+    // Reset when image changes
+    setImageLoaded(false);
+    setImageError(false);
+  }, [currentImageIndex]);
+
+  const handleImageError = () => {
+    if (currentImageIndex < imagePaths.length - 1) {
+      // Try next image in the list
+      setCurrentImageIndex(currentImageIndex + 1);
+      setImageLoaded(false);
+    } else {
+      // All images failed
+      setImageError(true);
+    }
+  };
+
   return (
     <div className="relative w-full h-full bg-gradient-to-br from-stone-100 to-stone-200">
-      {!imageError ? (
+      {!imageError && currentImage ? (
         <>
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            className={`object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-            sizes="(max-width: 768px) 100vw, 40vw"
-            onLoad={() => setImageLoaded(true)}
-            onError={() => setImageError(true)}
-            unoptimized
-          />
+          {isTifFile ? (
+            // Use regular img tag for .tif files since Next.js Image doesn't support TIFF
+            <img
+              src={currentImage}
+              alt={alt}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+              onLoad={() => setImageLoaded(true)}
+              onError={handleImageError}
+              style={{ imageRendering: 'auto' }}
+            />
+          ) : (
+            // Use Next.js Image for JPG/PNG
+            <Image
+              src={currentImage}
+              alt={alt}
+              fill
+              className={`object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+              sizes="(max-width: 768px) 100vw, 40vw"
+              onLoad={() => setImageLoaded(true)}
+              onError={handleImageError}
+              unoptimized
+            />
+          )}
           {!imageLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center bg-stone-100">
+            <div className="absolute inset-0 flex items-center justify-center bg-stone-100 z-10">
               <div className="text-center p-8">
                 <div className="text-4xl font-serif font-light text-davidoff-gold mb-2">
                   {rank.split(' ')[0]}
@@ -140,7 +200,11 @@ export default function PrizesSection() {
                 <div className="grid md:grid-cols-5 gap-0">
                   {/* Image Column */}
                   <div className="md:col-span-2 relative aspect-square md:aspect-auto md:h-full min-h-[300px]">
-                    <PrizeImage src={prize.image} alt={prize.title} rank={prize.rank} />
+                    <PrizeImage 
+                      imagePaths={prize.imagePaths}
+                      alt={prize.title} 
+                      rank={prize.rank} 
+                    />
                   </div>
 
                   {/* Content Column */}
