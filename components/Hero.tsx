@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ChevronDown, Gift } from "lucide-react";
 
 export default function Hero() {
@@ -12,56 +13,99 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-[80vh] min-h-[600px] max-h-[900px] w-full overflow-hidden bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+    <section className="relative h-[90vh] min-h-[700px] max-h-[1000px] w-full overflow-hidden bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal">
+      {/* Elegant Background Overlay */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.03)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40" />
+      </div>
+
+      {/* Subtle Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50m-40 0a40 40 0 1 1 80 0a40 40 0 1 1 -80 0' fill='none' stroke='%23d4af37' stroke-width='0.5'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px',
         }} />
+      </div>
+
+      {/* Hero Image - if available */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="relative w-full h-full">
+          {/* Fallback gradient if no image */}
+          <div className="absolute inset-0 bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal" />
+        </div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+        {/* Logo - if available */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="mb-8"
+        >
+          {/* Uncomment when logo is added to /public/images/logos/davidoff-logo.png */}
+          {/* <Image
+            src="/images/logos/davidoff-logo.png"
+            alt="Davidoff"
+            width={200}
+            height={60}
+            className="h-12 w-auto opacity-90"
+            priority
+          /> */}
+          <div className="text-davidoff-gold font-serif text-3xl tracking-wider font-light">
+            DAVIDOFF
+          </div>
+        </motion.div>
+
         {/* Main Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-serif font-light text-white text-center mb-4 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-tight"
+          className="font-serif font-light text-white text-center mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] tracking-tight"
         >
-          Davidoff Accessories
-          <br />
-          Sweepstakes
+          <span className="block text-white">Accessories</span>
+          <span className="block text-davidoff-gold font-normal mt-2">Sweepstakes</span>
         </motion.h1>
+
+        {/* Elegant Divider */}
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="w-24 h-px bg-gradient-to-r from-transparent via-davidoff-gold to-transparent mb-8"
+        />
 
         {/* Subheading */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-serif font-light text-stone-200 text-xl sm:text-2xl md:text-3xl text-center mb-6 max-w-3xl"
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="font-serif font-light text-stone-300 text-lg sm:text-xl md:text-2xl text-center mb-4 max-w-3xl leading-relaxed"
         >
-          To celebrate craftsmanship and time beautifully filled, Davidoff has partnered with Cigar Aficionado to present an exclusive sweepstakes.
+          To celebrate craftsmanship and time beautifully filled
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="font-serif font-light text-stone-300 text-lg sm:text-xl text-center mb-8 max-w-2xl"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="font-serif font-light text-stone-400 text-base sm:text-lg text-center mb-10 max-w-2xl leading-relaxed"
         >
-          You now have the chance to win one of five refined Davidoff accessories, each designed to elevate your every cigar moment.
+          Five refined accessories, each designed to elevate your every cigar moment
         </motion.p>
 
         {/* Mobile CTA Button */}
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
           onClick={scrollToSweepstakes}
-          className="md:hidden bg-gold hover:bg-gold/90 text-stone-900 px-6 py-3 rounded-lg font-bold text-base shadow-2xl hover:shadow-gold/50 transition-all duration-300 hover:scale-105 active:scale-95 inline-flex items-center gap-2 mb-4"
+          className="md:hidden bg-davidoff-gold hover:bg-davidoff-gold-dark text-davidoff-black px-8 py-3 rounded-sm font-semibold text-sm tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 inline-flex items-center gap-2 mb-4 uppercase"
         >
-          <Gift className="w-5 h-5" />
+          <Gift className="w-4 h-4" />
           Enter Now
         </motion.button>
 
@@ -69,8 +113,8 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="absolute bottom-8"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="absolute bottom-12"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
@@ -80,7 +124,7 @@ export default function Hero() {
               ease: "easeInOut"
             }}
           >
-            <ChevronDown className="w-10 h-10 text-stone-200" strokeWidth={1.5} />
+            <ChevronDown className="w-8 h-8 text-davidoff-gold/60" strokeWidth={1.5} />
           </motion.div>
         </motion.div>
       </div>

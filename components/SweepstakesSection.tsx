@@ -142,7 +142,7 @@ export default function SweepstakesSection() {
   };
 
   return (
-    <section id="sweepstakes" ref={ref} className="bg-gradient-to-br from-stone-50 via-white to-stone-50/20 py-16 sm:py-20 lg:py-24">
+    <section id="sweepstakes" ref={ref} className="bg-gradient-to-br from-white via-cream to-ivory py-20 sm:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -150,24 +150,26 @@ export default function SweepstakesSection() {
           transition={{ duration: 0.8 }}
         >
           {/* Section Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <motion.div
-              initial={{ scale: 0 }}
-              animate={isInView ? { scale: 1 } : { scale: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-block mb-4"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-block mb-6"
             >
-              <Gift className="w-16 h-16 text-davidoff-black mx-auto" strokeWidth={1.5} />
+              <div className="w-20 h-px bg-gradient-to-r from-transparent via-davidoff-gold to-transparent mx-auto mb-4" />
+              <Gift className="w-12 h-12 text-davidoff-gold mx-auto mb-4" strokeWidth={1.5} />
+              <div className="w-20 h-px bg-gradient-to-r from-transparent via-davidoff-gold to-transparent mx-auto" />
             </motion.div>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-stone-900 mb-4 tracking-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-davidoff-black mb-4 tracking-tight">
               Enter to Win
             </h2>
-            <p className="text-lg sm:text-xl text-stone-600 max-w-2xl mx-auto mb-3">
-              Your chance to win the Davidoff Sweepstakes
+            <p className="text-lg sm:text-xl text-stone-700 max-w-2xl mx-auto mb-6 font-light">
+              Your chance to win one of five refined Davidoff accessories
             </p>
-            <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-gold-light border-2 border-gold rounded-full">
-              <Sparkles className="w-5 h-5 text-gold" />
-              <span className="text-sm font-medium text-stone-900">NO PURCHASE NECESSARY</span>
+            <div className="mt-6 inline-flex items-center gap-2 px-5 py-2 bg-davidoff-gold-light border border-davidoff-gold/30 rounded-sm">
+              <Sparkles className="w-4 h-4 text-davidoff-gold" />
+              <span className="text-xs font-light tracking-wider uppercase text-davidoff-black">NO PURCHASE NECESSARY</span>
             </div>
           </div>
 
@@ -182,44 +184,44 @@ export default function SweepstakesSection() {
               className="space-y-6"
             >
               {/* Prize Summary Card */}
-              <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-stone-200">
-                <h3 className="font-serif text-2xl font-semibold text-stone-900 mb-4 flex items-center gap-2">
-                  <Gift className="w-6 h-6 text-davidoff-black" />
+              <div className="bg-white rounded-sm shadow-sm p-8 border border-stone-200">
+                <h3 className="font-serif text-2xl font-light text-davidoff-black mb-6 flex items-center gap-3">
+                  <Gift className="w-5 h-5 text-davidoff-gold" />
                   Five Exceptional Prizes
                 </h3>
-                <p className="text-stone-700 mb-4">
+                <p className="text-stone-700 mb-6 font-light leading-relaxed">
                   Take this opportunity to enter to win one of five exceptional prizes showcasing the artistry and expertise for which Davidoff is renowned.
                 </p>
-                <ul className="space-y-2 text-stone-600 text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold font-bold mt-0.5">1st:</span>
-                    <span>Davidoff Air de Famille Ambassador Humidor Ziricote</span>
+                <ul className="space-y-3 text-stone-600 text-sm mb-6">
+                  <li className="flex items-start gap-3">
+                    <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">1ST</span>
+                    <span className="font-light">Davidoff Air de Famille Ambassador Humidor Ziricote</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold font-bold mt-0.5">2nd:</span>
-                    <span>Davidoff Travel Humidor Business</span>
+                  <li className="flex items-start gap-3">
+                    <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">2ND</span>
+                    <span className="font-light">Davidoff Travel Humidor Business</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold font-bold mt-0.5">3rd:</span>
-                    <span>Davidoff Ashtray</span>
+                  <li className="flex items-start gap-3">
+                    <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">3RD</span>
+                    <span className="font-light">Davidoff Ashtray</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold font-bold mt-0.5">4th:</span>
-                    <span>Davidoff Winston Churchill Spirit Glass Set</span>
+                  <li className="flex items-start gap-3">
+                    <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">4TH</span>
+                    <span className="font-light">Davidoff Winston Churchill Spirit Glass Set</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold font-bold mt-0.5">5th:</span>
-                    <span>Davidoff Cigar Case Iconic XL-2</span>
+                  <li className="flex items-start gap-3">
+                    <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">5TH</span>
+                    <span className="font-light">Davidoff Cigar Case Iconic XL-2</span>
                   </li>
                 </ul>
-                <div className="mt-6 pt-6 border-t border-stone-200">
+                <div className="pt-6 border-t border-stone-200">
                   <Link
                     href="#prizes"
                     onClick={(e) => {
                       e.preventDefault();
                       document.getElementById('prizes')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="text-davidoff-black hover:underline font-medium text-sm"
+                    className="text-davidoff-black hover:text-davidoff-gold transition-colors font-light text-sm tracking-wide uppercase underline underline-offset-4"
                   >
                     View full prize details →
                   </Link>
@@ -260,8 +262,8 @@ export default function SweepstakesSection() {
               )}
 
               {/* Entry Form */}
-              <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-stone-200">
-                <h3 className="font-serif text-3xl font-light text-stone-900 mb-6 text-center">
+              <div className="bg-white rounded-sm shadow-sm p-8 sm:p-10 border border-stone-200">
+                <h3 className="font-serif text-3xl font-light text-davidoff-black mb-8 text-center tracking-tight">
                   Complete Your Entry
                 </h3>
 
@@ -269,8 +271,8 @@ export default function SweepstakesSection() {
                   {/* Name Row */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-stone-700 mb-2">
-                        First Name <span className="text-davidoff-black">*</span>
+                      <label htmlFor="firstName" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                        First Name <span className="text-davidoff-gold">*</span>
                       </label>
                       <input
                         type="text"
@@ -279,13 +281,13 @@ export default function SweepstakesSection() {
                         value={formData.firstName}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-stone-300 rounded-lg focus:border-davidoff-black focus:ring-4 focus:ring-davidoff-black/10 transition-all outline-none"
+                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="John"
                       />
                     </div>
                     <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-stone-700 mb-2">
-                        Last Name <span className="text-davidoff-black">*</span>
+                      <label htmlFor="lastName" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                        Last Name <span className="text-davidoff-gold">*</span>
                       </label>
                       <input
                         type="text"
@@ -294,7 +296,7 @@ export default function SweepstakesSection() {
                         value={formData.lastName}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-stone-300 rounded-lg focus:border-davidoff-black focus:ring-4 focus:ring-davidoff-black/10 transition-all outline-none"
+                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="Doe"
                       />
                     </div>
@@ -302,8 +304,8 @@ export default function SweepstakesSection() {
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-stone-700 mb-2">
-                      Email Address <span className="text-davidoff-black">*</span>
+                    <label htmlFor="email" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                      Email Address <span className="text-davidoff-gold">*</span>
                     </label>
                     <input
                       type="email"
@@ -312,7 +314,7 @@ export default function SweepstakesSection() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border-2 border-stone-300 rounded-lg focus:border-davidoff-black focus:ring-4 focus:ring-davidoff-black/10 transition-all outline-none"
+                      className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -320,8 +322,8 @@ export default function SweepstakesSection() {
                   {/* Phone & DOB Row */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-stone-700 mb-2">
-                        Phone Number <span className="text-davidoff-black">*</span>
+                      <label htmlFor="phone" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                        Phone Number <span className="text-davidoff-gold">*</span>
                       </label>
                       <input
                         type="tel"
@@ -330,13 +332,13 @@ export default function SweepstakesSection() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-stone-300 rounded-lg focus:border-davidoff-black focus:ring-4 focus:ring-davidoff-black/10 transition-all outline-none"
+                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="(555) 123-4567"
                       />
                     </div>
                     <div>
-                      <label htmlFor="dateOfBirth" className="block text-sm font-medium text-stone-700 mb-2">
-                        Date of Birth <span className="text-davidoff-black">*</span>
+                      <label htmlFor="dateOfBirth" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                        Date of Birth <span className="text-davidoff-gold">*</span>
                       </label>
                       <input
                         type="date"
@@ -345,17 +347,17 @@ export default function SweepstakesSection() {
                         value={formData.dateOfBirth}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-stone-300 rounded-lg focus:border-davidoff-black focus:ring-4 focus:ring-davidoff-black/10 transition-all outline-none"
+                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         max={new Date(new Date().setFullYear(new Date().getFullYear() - 21)).toISOString().split('T')[0]}
                       />
-                      <p className="text-xs text-stone-500 mt-1">Must be 21+ to enter</p>
+                      <p className="text-xs text-stone-500 mt-1 font-light">Must be 21+ to enter</p>
                     </div>
                   </div>
 
                   {/* Address */}
                   <div>
-                    <label htmlFor="address" className="block text-sm font-medium text-stone-700 mb-2">
-                      Street Address <span className="text-davidoff-black">*</span>
+                    <label htmlFor="address" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                      Street Address <span className="text-davidoff-gold">*</span>
                     </label>
                     <input
                       type="text"
@@ -364,7 +366,7 @@ export default function SweepstakesSection() {
                       value={formData.address}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border-2 border-stone-300 rounded-lg focus:border-davidoff-black focus:ring-4 focus:ring-davidoff-black/10 transition-all outline-none"
+                      className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                       placeholder="123 Main Street"
                     />
                   </div>
@@ -372,8 +374,8 @@ export default function SweepstakesSection() {
                   {/* City, State, Zip Row */}
                   <div className="grid sm:grid-cols-3 gap-4">
                     <div className="sm:col-span-1">
-                      <label htmlFor="city" className="block text-sm font-medium text-stone-700 mb-2">
-                        City <span className="text-davidoff-black">*</span>
+                      <label htmlFor="city" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                        City <span className="text-davidoff-gold">*</span>
                       </label>
                       <input
                         type="text"
@@ -382,13 +384,13 @@ export default function SweepstakesSection() {
                         value={formData.city}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-stone-300 rounded-lg focus:border-davidoff-black focus:ring-4 focus:ring-davidoff-black/10 transition-all outline-none"
+                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="San Francisco"
                       />
                     </div>
                     <div>
-                      <label htmlFor="state" className="block text-sm font-medium text-stone-700 mb-2">
-                        State <span className="text-davidoff-black">*</span>
+                      <label htmlFor="state" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                        State <span className="text-davidoff-gold">*</span>
                       </label>
                       <select
                         id="state"
@@ -396,7 +398,7 @@ export default function SweepstakesSection() {
                         value={formData.state}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-stone-300 rounded-lg focus:border-davidoff-black focus:ring-4 focus:ring-davidoff-black/10 transition-all outline-none bg-white"
+                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                       >
                         {US_STATES.map(state => (
                           <option key={state.code} value={state.code}>
@@ -406,8 +408,8 @@ export default function SweepstakesSection() {
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="zipCode" className="block text-sm font-medium text-stone-700 mb-2">
-                        Zip Code <span className="text-davidoff-black">*</span>
+                      <label htmlFor="zipCode" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                        Zip Code <span className="text-davidoff-gold">*</span>
                       </label>
                       <input
                         type="text"
@@ -417,7 +419,7 @@ export default function SweepstakesSection() {
                         onChange={handleInputChange}
                         required
                         pattern="[0-9]{5}"
-                        className="w-full px-4 py-3 border-2 border-stone-300 rounded-lg focus:border-davidoff-black focus:ring-4 focus:ring-davidoff-black/10 transition-all outline-none"
+                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="94102"
                       />
                     </div>
@@ -432,14 +434,14 @@ export default function SweepstakesSection() {
                         checked={formData.agreeToRules}
                         onChange={handleInputChange}
                         required
-                        className="w-5 h-5 text-davidoff-black border-2 border-stone-300 rounded focus:ring-2 focus:ring-davidoff-black/50 mt-0.5 cursor-pointer"
+                        className="w-5 h-5 text-davidoff-gold border border-stone-300 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
                       />
-                      <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors">
+                      <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors font-light">
                         I agree to the{' '}
-                        <Link href="/official-rules" className="text-davidoff-black hover:text-stone-900 font-medium underline" target="_blank">
+                        <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold font-light underline underline-offset-2" target="_blank">
                           Official Rules
                         </Link>{' '}
-                        and confirm I am 21+ years of age. <span className="text-davidoff-black">*</span>
+                        and confirm I am 21+ years of age. <span className="text-davidoff-gold">*</span>
                       </span>
                     </label>
 
@@ -449,10 +451,10 @@ export default function SweepstakesSection() {
                         name="agreeToEmails"
                         checked={formData.agreeToEmails}
                         onChange={handleInputChange}
-                        className="w-5 h-5 text-davidoff-black border-2 border-stone-300 rounded focus:ring-2 focus:ring-davidoff-black/50 mt-0.5 cursor-pointer"
+                        className="w-5 h-5 text-davidoff-gold border border-stone-300 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
                       />
-                      <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors">
-                        I agree to receive newsletters and marketing emails from Davidoff (optional)
+                      <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors font-light">
+                        I agree to receive newsletters and marketing emails from Davidoff <span className="text-stone-400 text-xs">(optional)</span>
                       </span>
                     </label>
                   </div>
@@ -462,7 +464,7 @@ export default function SweepstakesSection() {
                     <button
                       type="submit"
                       disabled={status === 'submitting'}
-                      className="w-full bg-gradient-to-r from-davidoff-black to-stone-700 text-white py-4 px-6 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                      className="w-full bg-davidoff-black text-white py-4 px-6 rounded-sm font-light text-sm tracking-wider uppercase shadow-md hover:shadow-lg hover:bg-charcoal active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                     >
                       {status === 'submitting' ? (
                         <>
@@ -482,10 +484,10 @@ export default function SweepstakesSection() {
                   </div>
 
                   {/* Legal Text */}
-                  <p className="text-xs text-stone-500 text-center leading-relaxed pt-2">
+                  <p className="text-xs text-stone-500 text-center leading-relaxed pt-4 border-t border-stone-200 font-light">
                     NO PURCHASE NECESSARY. Open to legal US residents, 21+. Void where prohibited.
                     See{' '}
-                    <Link href="/official-rules" className="text-davidoff-black hover:underline" target="_blank">
+                    <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold transition-colors underline underline-offset-2" target="_blank">
                       Official Rules
                     </Link>{' '}
                     for complete details.

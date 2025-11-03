@@ -1,28 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --davidoff-black: #1a1a1a;
-  --warm-stone: #fafaf9;
+  --background: #fafaf9;
+  --foreground: #1a1a1a;
+  --davidoff-black: #000000;
+  --davidoff-black-soft: #1a1a1a;
+  --davidoff-gold: #d4af37;
+  --davidoff-gold-light: #f4e4bc;
+  --davidoff-gold-dark: #b8941f;
+  --cream: #faf8f3;
+  --ivory: #fefcf8;
+  --charcoal: #2d2d2d;
   --stone-100: #f5f5f4;
+  --stone-200: #e7e5e4;
+  --stone-300: #d6d3d1;
+  --stone-400: #a8a29e;
+  --stone-700: #44403c;
   --stone-900: #1c1917;
-  --gold: #d4af37;
-  --gold-light: #f4e4bc;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-davidoff-black: var(--davidoff-black);
+  --color-davidoff-black-soft: var(--davidoff-black-soft);
+  --color-davidoff-gold: var(--davidoff-gold);
+  --color-davidoff-gold-light: var(--davidoff-gold-light);
+  --color-davidoff-gold-dark: var(--davidoff-gold-dark);
+  --color-cream: var(--cream);
+  --color-ivory: var(--ivory);
+  --color-charcoal: var(--charcoal);
   --color-stone-50: #fafaf9;
   --color-stone-100: #f5f5f4;
+  --color-stone-200: #e7e5e4;
   --color-stone-300: #d6d3d1;
   --color-stone-400: #a8a29e;
   --color-stone-700: #44403c;
   --color-stone-900: #1c1917;
-  --color-gold: #d4af37;
-  --color-gold-light: #f4e4bc;
   --font-sans: var(--font-inter);
   --font-serif: var(--font-cormorant);
   
@@ -47,8 +61,18 @@
     }
   }
   
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
   --animate-fadeInUp: fadeInUp 0.8s ease-out;
   --animate-fadeIn: fadeIn 0.6s ease-out;
+  --animate-shimmer: shimmer 2s infinite linear;
 }
 
 html {
@@ -59,5 +83,30 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Elegant scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--davidoff-gold);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--davidoff-gold-dark);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--davidoff-gold-light);
+  color: var(--davidoff-black);
+}
