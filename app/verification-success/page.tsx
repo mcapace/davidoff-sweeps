@@ -1,10 +1,11 @@
 "use client";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { CheckCircle } from "lucide-react";
 import Link from "next/link";
 
-export default function VerificationSuccess() {
+function VerificationSuccessContent() {
   const searchParams = useSearchParams();
   const email = searchParams.get('email');
 
@@ -53,3 +54,14 @@ export default function VerificationSuccess() {
   );
 }
 
+export default function VerificationSuccess() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-stone-50 via-white to-stone-50/20 flex items-center justify-center">
+        <div className="text-stone-600">Loading...</div>
+      </div>
+    }>
+      <VerificationSuccessContent />
+    </Suspense>
+  );
+}
