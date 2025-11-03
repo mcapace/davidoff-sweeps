@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,18 +51,22 @@ export default function Navbar() {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="flex items-center hover:opacity-80 transition-opacity"
             >
-              {/* Uncomment when logo is added to /public/images/logos/davidoff-logo.png */}
-              {/* <Image
-                src={isScrolled ? "/images/logos/davidoff-logo-black.png" : "/images/logos/davidoff-logo-white.png"}
-                alt="Davidoff"
-                width={140}
-                height={40}
-                className="h-8 w-auto"
-                priority
-              /> */}
-              <span className={`font-serif text-xl font-light tracking-wider ${isScrolled ? 'text-davidoff-black' : 'text-davidoff-gold'}`}>
-                DAVIDOFF
-              </span>
+              {!logoError ? (
+                <Image
+                  src={isScrolled ? "/images/logos/davidoff-logo-black.png" : "/images/logos/davidoff-logo-white.png"}
+                  alt="Davidoff"
+                  width={140}
+                  height={40}
+                  className="h-8 w-auto"
+                  priority
+                  onError={() => setLogoError(true)}
+                  unoptimized
+                />
+              ) : (
+                <span className={`font-serif text-xl font-light tracking-wider ${isScrolled ? 'text-davidoff-black' : 'text-davidoff-gold'}`}>
+                  DAVIDOFF
+                </span>
+              )}
             </button>
 
             {/* Desktop Navigation */}

@@ -1,12 +1,13 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 
 export default function Footer() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [logoError, setLogoError] = useState(false);
 
   return (
     <footer ref={ref} className="bg-davidoff-black text-white">
@@ -20,17 +21,21 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center gap-6">
             {/* Davidoff Logo */}
-            {/* Uncomment when logo is added to /public/images/logos/davidoff-logo-white.png */}
-            {/* <Image
-              src="/images/logos/davidoff-logo-white.png"
-              alt="Davidoff"
-              width={180}
-              height={60}
-              className="h-12 w-auto opacity-90"
-            /> */}
-            <div className="text-davidoff-gold font-serif text-3xl font-light tracking-wider">
-              DAVIDOFF
-            </div>
+            {!logoError ? (
+              <Image
+                src="/images/logos/davidoff-logo-white.png"
+                alt="Davidoff"
+                width={180}
+                height={60}
+                className="h-12 w-auto opacity-90"
+                onError={() => setLogoError(true)}
+                unoptimized
+              />
+            ) : (
+              <div className="text-davidoff-gold font-serif text-3xl font-light tracking-wider">
+                DAVIDOFF
+              </div>
+            )}
           </div>
         </div>
       </motion.div>

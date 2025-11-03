@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { Award } from "lucide-react";
 
@@ -48,6 +48,53 @@ const prizes = [
   },
 ];
 
+function PrizeImage({ src, alt, rank }: { src: string; alt: string; rank: string }) {
+  const [imageError, setImageError] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full h-full bg-gradient-to-br from-stone-100 to-stone-200">
+      {!imageError ? (
+        <>
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            className={`object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            sizes="(max-width: 768px) 100vw, 40vw"
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageError(true)}
+            unoptimized
+          />
+          {!imageLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-stone-100">
+              <div className="text-center p-8">
+                <div className="text-4xl font-serif font-light text-davidoff-gold mb-2">
+                  {rank.split(' ')[0]}
+                </div>
+                <div className="text-sm text-stone-600 font-light tracking-wider uppercase">
+                  {rank.split(' ')[1]}
+                </div>
+              </div>
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center p-8">
+            <div className="text-4xl font-serif font-light text-davidoff-gold mb-2">
+              {rank.split(' ')[0]}
+            </div>
+            <div className="text-sm text-stone-600 font-light tracking-wider uppercase">
+              {rank.split(' ')[1]}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function PrizesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -92,25 +139,8 @@ export default function PrizesSection() {
               >
                 <div className="grid md:grid-cols-5 gap-0">
                   {/* Image Column */}
-                  <div className="md:col-span-2 relative aspect-square md:aspect-auto md:h-full bg-stone-100">
-                    {/* Uncomment when prize images are added */}
-                    {/* <Image
-                      src={prize.image}
-                      alt={prize.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 40vw"
-                    /> */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <div className="text-4xl font-serif font-light text-davidoff-gold mb-2">
-                          {prize.rank.split(' ')[0]}
-                        </div>
-                        <div className="text-sm text-stone-600 font-light tracking-wider uppercase">
-                          {prize.rank.split(' ')[1]}
-                        </div>
-                      </div>
-                    </div>
+                  <div className="md:col-span-2 relative aspect-square md:aspect-auto md:h-full min-h-[300px]">
+                    <PrizeImage src={prize.image} alt={prize.title} rank={prize.rank} />
                   </div>
 
                   {/* Content Column */}

@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronDown, Gift } from "lucide-react";
+import { useState } from "react";
 
 export default function Hero() {
+  const [logoError, setLogoError] = useState(false);
   const scrollToSweepstakes = () => {
     const sweepsSection = document.getElementById('sweepstakes');
     if (sweepsSection) {
@@ -29,10 +31,23 @@ export default function Hero() {
       </div>
 
       {/* Hero Image - if available */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-20">
         <div className="relative w-full h-full">
-          {/* Fallback gradient if no image */}
-          <div className="absolute inset-0 bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal" />
+          {/* Try to load hero image, fallback to gradient */}
+          {!logoError && (
+            <Image
+              src="/images/hero/hero-image.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="100vw"
+              onError={() => setLogoError(true)}
+              unoptimized
+            />
+          )}
+          {logoError && (
+            <div className="absolute inset-0 bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal" />
+          )}
         </div>
       </div>
 
@@ -45,18 +60,22 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="mb-8"
         >
-          {/* Uncomment when logo is added to /public/images/logos/davidoff-logo.png */}
-          {/* <Image
-            src="/images/logos/davidoff-logo.png"
-            alt="Davidoff"
-            width={200}
-            height={60}
-            className="h-12 w-auto opacity-90"
-            priority
-          /> */}
-          <div className="text-davidoff-gold font-serif text-3xl tracking-wider font-light">
-            DAVIDOFF
-          </div>
+          {!logoError ? (
+            <Image
+              src="/images/logos/davidoff-logo-white.png"
+              alt="Davidoff"
+              width={200}
+              height={60}
+              className="h-12 w-auto opacity-90"
+              priority
+              onError={() => setLogoError(true)}
+              unoptimized
+            />
+          ) : (
+            <div className="text-davidoff-gold font-serif text-3xl tracking-wider font-light">
+              DAVIDOFF
+            </div>
+          )}
         </motion.div>
 
         {/* Main Heading */}
