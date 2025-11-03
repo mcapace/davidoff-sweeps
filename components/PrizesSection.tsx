@@ -12,12 +12,15 @@ const prizes = [
     description: "One grand prize winner will receive the Davidoff Air de Famille Ambassador Humidor Ziricote that combines modern interior design with traditional humidor design. Crafted from rare Ziricote and mahogany sapele wood, this elegant humidor preserves 70 to 80 cigars in optimal condition thanks to its Davidoff Slim regulator that keeps relative humidity between 70 and 72%. A removable tray with two handles and a divider allows for easy sorting.",
     details: "Handmade in France, the humidor's refined design and its glossy finish make it a stylish masterpiece for the connoisseur's collection.",
     dimensions: "5.15 x 9.44 x 5.62 inches | 38.5 x 24 x 14.3 cm",
+    // Try multiple possible image paths
     imagePaths: [
       "/images/giveaway/prize-1.tif",
       "/images/giveaway/prize-1.jpg",
       "/images/giveaway/prize-1.png",
       "/images/giveaway/humidor.tif",
       "/images/giveaway/humidor.jpg",
+      "/images/giveaway/ambassador-humidor.tif",
+      "/images/giveaway/ambassador-humidor.jpg",
     ],
   },
   {
@@ -31,6 +34,7 @@ const prizes = [
       "/images/giveaway/prize-2.jpg",
       "/images/giveaway/travel-humidor.tif",
       "/images/giveaway/travel-humidor.jpg",
+      "/images/giveaway/travel-humidor-business.tif",
     ],
   },
   {
@@ -44,6 +48,7 @@ const prizes = [
       "/images/giveaway/prize-3.jpg",
       "/images/giveaway/ashtray.tif",
       "/images/giveaway/ashtray.jpg",
+      "/images/giveaway/davidoff-ashtray.tif",
     ],
   },
   {
@@ -57,6 +62,8 @@ const prizes = [
       "/images/giveaway/prize-4.jpg",
       "/images/giveaway/glass-set.tif",
       "/images/giveaway/glass-set.jpg",
+      "/images/giveaway/churchill-glass.tif",
+      "/images/giveaway/winston-churchill-glass.tif",
     ],
   },
   {
@@ -70,6 +77,8 @@ const prizes = [
       "/images/giveaway/prize-5.jpg",
       "/images/giveaway/cigar-case.tif",
       "/images/giveaway/cigar-case.jpg",
+      "/images/giveaway/iconic-xl-2.tif",
+      "/images/giveaway/cigar-case-iconic.tif",
     ],
   },
 ];
@@ -91,12 +100,16 @@ function PrizeImage({ imagePaths, alt, rank }: { imagePaths: string[]; alt: stri
   const handleImageError = () => {
     if (currentImageIndex < imagePaths.length - 1) {
       // Try next image in the list
-      setCurrentImageIndex(currentImageIndex + 1);
+      setCurrentImageIndex(prev => prev + 1);
       setImageLoaded(false);
     } else {
       // All images failed
       setImageError(true);
     }
+  };
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
   };
 
   return (
@@ -109,9 +122,8 @@ function PrizeImage({ imagePaths, alt, rank }: { imagePaths: string[]; alt: stri
               src={currentImage}
               alt={alt}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-              onLoad={() => setImageLoaded(true)}
+              onLoad={handleImageLoad}
               onError={handleImageError}
-              style={{ imageRendering: 'auto' }}
             />
           ) : (
             // Use Next.js Image for JPG/PNG
@@ -121,12 +133,12 @@ function PrizeImage({ imagePaths, alt, rank }: { imagePaths: string[]; alt: stri
               fill
               className={`object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               sizes="(max-width: 768px) 100vw, 40vw"
-              onLoad={() => setImageLoaded(true)}
+              onLoad={handleImageLoad}
               onError={handleImageError}
               unoptimized
             />
           )}
-          {!imageLoaded && (
+          {!imageLoaded && !imageError && (
             <div className="absolute inset-0 flex items-center justify-center bg-stone-100 z-10">
               <div className="text-center p-8">
                 <div className="text-4xl font-serif font-light text-davidoff-gold mb-2">
@@ -148,6 +160,7 @@ function PrizeImage({ imagePaths, alt, rank }: { imagePaths: string[]; alt: stri
             <div className="text-sm text-stone-600 font-light tracking-wider uppercase">
               {rank.split(' ')[1]}
             </div>
+            <p className="text-xs text-stone-500 mt-4">Add image to /public/images/giveaway/</p>
           </div>
         </div>
       )}
@@ -226,7 +239,7 @@ export default function PrizesSection() {
                     <div className="pt-6 border-t border-stone-200">
                       <p className="text-xs text-stone-500 font-light tracking-wide">
                         <span className="text-stone-700">Dimensions:</span> {prize.dimensions}
-                      </p>
+                    </p>
                     </div>
                   </div>
                 </div>
