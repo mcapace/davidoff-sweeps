@@ -15,7 +15,7 @@ export default function VerificationSuccess() {
           <div className="text-center mb-8">
             <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
             <h1 className="font-serif text-4xl sm:text-5xl font-light text-stone-900 mb-4">
-              You're Entered!
+              You&apos;re Entered!
             </h1>
             <p className="text-lg text-stone-600">
               Your email has been verified successfully.
@@ -32,7 +32,7 @@ export default function VerificationSuccess() {
 
           <div className="bg-stone-50 rounded-xl p-6 mb-6">
             <p className="text-stone-700 mb-4">
-              <strong>What's Next?</strong>
+              <strong>What&apos;s Next?</strong>
             </p>
             <p className="text-stone-600 text-sm">
               The winner will be randomly selected and notified by email. Check your inbox for confirmation details.

@@ -36,8 +36,8 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Get origin for URLs
-    const origin = request.headers.get('origin') || request.nextUrl.origin;
+    // Get origin for URLs (if needed for future email templates)
+    // const origin = request.headers.get('origin') || request.nextUrl.origin;
 
     // Send sweepstakes confirmation email
     const { error } = await resend.emails.send({

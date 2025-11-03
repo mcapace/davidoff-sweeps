@@ -11,14 +11,14 @@ export default function OfficialRules() {
             <section>
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">1. Eligibility</h2>
               <p className="text-stone-700 leading-relaxed">
-                The Davidoff Accessories Sweepstakes (the "Sweepstakes") is open to legal residents of the 50 United States and the District of Columbia who are 21 years of age or older at the time of entry. Employees, officers, and directors of Davidoff, Cigar Aficionado, their respective parent companies, subsidiaries, affiliates, advertising and promotion agencies, and the immediate family members (spouse, parents, siblings, and children) and/or those living in the same household of each are not eligible to enter or win.
+                The Davidoff Accessories Sweepstakes (the &quot;Sweepstakes&quot;) is open to legal residents of the 50 United States and the District of Columbia who are 21 years of age or older at the time of entry. Employees, officers, and directors of Davidoff, Cigar Aficionado, their respective parent companies, subsidiaries, affiliates, advertising and promotion agencies, and the immediate family members (spouse, parents, siblings, and children) and/or those living in the same household of each are not eligible to enter or win.
               </p>
             </section>
 
             <section>
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">2. Sweepstakes Period</h2>
               <p className="text-stone-700 leading-relaxed">
-                The Sweepstakes begins on [START DATE] at 12:00:00 AM Eastern Time ("ET") and ends on [END DATE] at 11:59:59 PM ET (the "Sweepstakes Period"). Entries must be received during the Sweepstakes Period to be eligible.
+                The Sweepstakes begins on [START DATE] at 12:00:00 AM Eastern Time (&quot;ET&quot;) and ends on [END DATE] at 11:59:59 PM ET (the &quot;Sweepstakes Period&quot;). Entries must be received during the Sweepstakes Period to be eligible.
               </p>
             </section>
 
@@ -33,7 +33,7 @@ export default function OfficialRules() {
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">4. Prizes and Approximate Retail Values ("ARV")</h2>
+              <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">4. Prizes and Approximate Retail Values (&quot;ARV&quot;)</h2>
               <div className="space-y-4">
                 <div className="bg-stone-50 p-4 rounded-lg">
                   <p className="font-semibold text-stone-900 mb-2">1st Prize – One (1) Winner</p>
@@ -89,21 +89,21 @@ export default function OfficialRules() {
             <section>
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">7. Limitation of Liability</h2>
               <p className="text-stone-700 leading-relaxed">
-                By participating, entrants agree to release and hold harmless Sponsor, Cigar Aficionado, and their respective parent companies, subsidiaries, affiliates, and advertising and promotion agencies, and each of their respective officers, directors, employees, and agents (collectively, "Released Parties") from any and all liability, for loss, harm, damage, injury, cost, or expense whatsoever, including without limitation, property damage, personal injury, and/or death, which may occur in connection with participation in the Sweepstakes or possession, acceptance, and/or use or misuse of any prize or participation in any Sweepstakes-related activity.
+                By participating, entrants agree to release and hold harmless Sponsor, Cigar Aficionado, and their respective parent companies, subsidiaries, affiliates, and advertising and promotion agencies, and each of their respective officers, directors, employees, and agents (collectively, &quot;Released Parties&quot;) from any and all liability, for loss, harm, damage, injury, cost, or expense whatsoever, including without limitation, property damage, personal injury, and/or death, which may occur in connection with participation in the Sweepstakes or possession, acceptance, and/or use or misuse of any prize or participation in any Sweepstakes-related activity.
               </p>
             </section>
 
             <section>
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">8. Publicity</h2>
               <p className="text-stone-700 leading-relaxed">
-                Except where prohibited by law, acceptance of a prize constitutes permission for Sponsor to use winner's name, likeness, and entry for purposes of advertising and promotion without further compensation, unless prohibited by law.
+                Except where prohibited by law, acceptance of a prize constitutes permission for Sponsor to use winner&apos;s name, likeness, and entry for purposes of advertising and promotion without further compensation, unless prohibited by law.
               </p>
             </section>
 
             <section>
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">9. Privacy</h2>
               <p className="text-stone-700 leading-relaxed">
-                Information collected from entrants is subject to Sponsor's Privacy Policy. By entering, entrants agree to the collection and use of their personal information in accordance with the Privacy Policy.
+                Information collected from entrants is subject to Sponsor&apos;s Privacy Policy. By entering, entrants agree to the collection and use of their personal information in accordance with the Privacy Policy.
               </p>
             </section>
 
@@ -117,7 +117,7 @@ export default function OfficialRules() {
             <section>
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">11. Sponsor</h2>
               <p className="text-stone-700 leading-relaxed">
-                This Sweepstakes is sponsored by Davidoff, in partnership with Cigar Aficionado. Sponsor's decisions regarding the Sweepstakes are final and binding.
+                This Sweepstakes is sponsored by Davidoff, in partnership with Cigar Aficionado. Sponsor&apos;s decisions regarding the Sweepstakes are final and binding.
               </p>
             </section>
 
