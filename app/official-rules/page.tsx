@@ -62,7 +62,7 @@ export default function OfficialRules() {
                 </div>
               </div>
               <p className="text-stone-700 leading-relaxed mt-4">
-                Total ARV of all prizes: [To be determined]. Winners are responsible for all taxes on prizes. No substitution, transfer, or cash equivalent for prizes except at Sponsor's discretion due to prize unavailability, in which case a prize of equal or greater value will be awarded.
+                Total ARV of all prizes: [To be determined]. Winners are responsible for all taxes on prizes. No substitution, transfer, or cash equivalent for prizes except at Sponsor&apos;s discretion due to prize unavailability, in which case a prize of equal or greater value will be awarded.
               </p>
             </section>
 
@@ -82,7 +82,7 @@ export default function OfficialRules() {
                 By entering, entrants agree to be bound by these Official Rules and the decisions of Sponsor, which are final and binding. Sponsor reserves the right to disqualify any entrant who violates these Official Rules or tampers with the entry process. Sponsor is not responsible for lost, late, incomplete, illegible, or misdirected entries, or for any technical or human error that may occur in the processing of entries.
               </p>
               <p className="text-stone-700 leading-relaxed">
-                Sponsor reserves the right to cancel, suspend, or modify the Sweepstakes if fraud, technical failures, or any other factor beyond Sponsor's reasonable control impairs the integrity or proper functioning of the Sweepstakes, as determined by Sponsor in its sole discretion.
+                Sponsor reserves the right to cancel, suspend, or modify the Sweepstakes if fraud, technical failures, or any other factor beyond Sponsor&apos;s reasonable control impairs the integrity or proper functioning of the Sweepstakes, as determined by Sponsor in its sole discretion.
               </p>
             </section>
 
