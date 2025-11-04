@@ -4,23 +4,35 @@ import { motion } from "framer-motion";
 
 export default function SponsorshipBar() {
   return (
-    <motion.div
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, delay: 0.1 }}
-      className="fixed top-0 left-0 right-0 z-50 text-center py-2 px-4"
+    <div
       style={{ 
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
         backgroundColor: '#000000',
-        color: '#ffffff'
+        color: '#ffffff',
+        textAlign: 'center',
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem',
+        paddingLeft: '1rem',
+        paddingRight: '1rem'
       }}
     >
       <p 
-        className="text-xs font-light tracking-wider uppercase"
-        style={{ color: '#ffffff' }}
+        style={{ 
+          color: '#ffffff',
+          fontSize: '0.75rem',
+          fontWeight: 300,
+          letterSpacing: '0.05em',
+          textTransform: 'uppercase',
+          margin: 0
+        }}
       >
         Paid Sponsorship
       </p>
-    </motion.div>
+    </div>
   );
 }
 
