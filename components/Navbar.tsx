@@ -30,7 +30,6 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "Prizes", id: "prizes" },
-    { label: "Enter Sweepstakes", id: "sweepstakes" },
   ];
 
   return (
