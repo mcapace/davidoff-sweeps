@@ -8,6 +8,7 @@ import { useState, useRef, useEffect } from "react";
 
 export default function Hero() {
   const [logoError, setLogoError] = useState(false);
+  const [partnerLogoError, setPartnerLogoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Ensure video plays and loops
@@ -72,27 +73,49 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
-        {/* Logo - if available */}
+        {/* Partnership Logos */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="mb-8"
+          className="mb-8 flex items-center justify-center gap-4 sm:gap-6"
         >
+          {/* Davidoff Logo */}
           {!logoError ? (
             <Image
               src="/images/logos/davidoff-logo.png"
               alt="Davidoff"
-              width={360}
-              height={108}
-              className="h-24 sm:h-28 md:h-32 w-auto opacity-95"
+              width={280}
+              height={84}
+              className="h-20 sm:h-24 md:h-28 w-auto opacity-95"
               priority
               onError={() => setLogoError(true)}
               unoptimized
             />
           ) : (
-            <div className="text-davidoff-gold font-serif text-4xl sm:text-5xl tracking-wider font-light">
+            <div className="text-davidoff-gold font-serif text-3xl sm:text-4xl tracking-wider font-light">
               DAVIDOFF
+            </div>
+          )}
+
+          {/* Partnership "x" */}
+          <span className="text-davidoff-gold text-2xl sm:text-3xl font-light mx-2">×</span>
+
+          {/* Cigar Aficionado Logo */}
+          {!partnerLogoError ? (
+            <Image
+              src="/images/logos/cigar-aficionado-logo.png"
+              alt="Cigar Aficionado"
+              width={200}
+              height={60}
+              className="h-16 sm:h-20 md:h-24 w-auto opacity-95"
+              priority
+              onError={() => setPartnerLogoError(true)}
+              unoptimized
+            />
+          ) : (
+            <div className="text-white font-sans text-xl sm:text-2xl font-light">
+              Cigar Aficionado
             </div>
           )}
         </motion.div>
