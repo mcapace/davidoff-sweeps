@@ -29,6 +29,7 @@ const prizes = [
     details: "Two pockets on the inside offer space for a lighter and a cutter, and a hidden pocket for business cards add to the convenience aspect of the stylish piece. Made in Italy – bound for the world.",
     dimensions: "12.4 x 11.42\" | 31.5 x 29 cm",
     imagePaths: [
+      "/images/giveaway/Business_Closed.webp",
       "/images/giveaway/travel-humidor.jpg",
       "/images/giveaway/travel-humidor-business.jpg",
       "/images/giveaway/prize-2.jpg",
