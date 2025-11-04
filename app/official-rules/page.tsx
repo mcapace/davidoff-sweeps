@@ -15,12 +15,12 @@ export default function OfficialRules() {
               </p>
             </section>
 
-            <section>
-              <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">2. Sweepstakes Period</h2>
-              <p className="text-stone-700 leading-relaxed">
-                The Sweepstakes begins on [START DATE] at 12:00:00 AM Eastern Time (&quot;ET&quot;) and ends on [END DATE] at 11:59:59 PM ET (the &quot;Sweepstakes Period&quot;). Entries must be received during the Sweepstakes Period to be eligible.
-              </p>
-            </section>
+              <section>
+                <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">2. Sweepstakes Period</h2>
+                <p className="text-stone-700 leading-relaxed">
+                  The Sweepstakes begins on November 15, 2024 at 12:00:00 AM Eastern Time (&quot;ET&quot;) and ends on December 31, 2024 at 11:59:59 PM ET (the &quot;Sweepstakes Period&quot;). Entries must be received during the Sweepstakes Period to be eligible.
+                </p>
+              </section>
 
             <section>
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">3. How to Enter</h2>
@@ -66,11 +66,11 @@ export default function OfficialRules() {
               </p>
             </section>
 
-            <section>
-              <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">5. Winner Selection and Notification</h2>
-              <p className="text-stone-700 leading-relaxed">
-                Winners will be selected in a random drawing from all eligible entries received during the Sweepstakes Period. The drawing will be conducted on or about [DRAWING DATE] by Sponsor or its designee, whose decisions are final and binding on all matters relating to this Sweepstakes. Odds of winning depend on the number of eligible entries received.
-              </p>
+              <section>
+                <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">5. Winner Selection and Notification</h2>
+                <p className="text-stone-700 leading-relaxed">
+                  Winners will be selected in a random drawing from all eligible entries received during the Sweepstakes Period. The drawing will be conducted on or about January 15, 2025 by Sponsor or its designee, whose decisions are final and binding on all matters relating to this Sweepstakes. Odds of winning depend on the number of eligible entries received.
+                </p>
               <p className="text-stone-700 leading-relaxed mt-4">
                 Winners will be notified by email at the email address provided at entry within five (5) business days after the drawing. Winners must respond to the notification within seven (7) days of the date of notification or prize will be forfeited and an alternate winner may be selected. Winners may be required to complete, sign, and return an Affidavit of Eligibility, Liability/Publicity Release (where legal), and any other required documentation within ten (10) days of date of notification or prize will be forfeited.
               </p>
@@ -128,11 +128,6 @@ export default function OfficialRules() {
               </p>
             </section>
 
-            <div className="mt-8 pt-8 border-t border-stone-200">
-              <p className="text-sm text-stone-600">
-                <strong>Note:</strong> Please replace bracketed placeholders ([START DATE], [END DATE], [DRAWING DATE], [ADDRESS], etc.) with actual dates and information before publishing.
-              </p>
-            </div>
           </div>
         </div>
       </div>

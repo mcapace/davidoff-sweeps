@@ -25,6 +25,31 @@ const sweepstakesEntrySchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if sweepstakes is currently active
+    const now = new Date();
+    const startDate = new Date('2024-11-15T00:00:00-05:00'); // Nov 15, 2024 12:00 AM ET
+    const endDate = new Date('2024-12-31T23:59:59-05:00'); // Dec 31, 2024 11:59:59 PM ET
+    
+    if (now < startDate) {
+      return NextResponse.json(
+        { 
+          error: 'Sweepstakes not started',
+          message: 'The sweepstakes begins on November 15, 2024 at 12:00 AM ET. Please check back then to enter.'
+        },
+        { status: 400 }
+      );
+    }
+    
+    if (now > endDate) {
+      return NextResponse.json(
+        { 
+          error: 'Sweepstakes ended',
+          message: 'The sweepstakes ended on December 31, 2024 at 11:59:59 PM ET. Thank you for your interest.'
+        },
+        { status: 400 }
+      );
+    }
+
     // Parse and validate request body
     const body = await request.json();
     const validatedData = sweepstakesEntrySchema.parse(body);

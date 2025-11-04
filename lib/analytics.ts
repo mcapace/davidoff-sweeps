@@ -37,7 +37,7 @@ async function loadAnalyticsEvents(): Promise<AnalyticsEvent[]> {
   
   try {
     const { data, error } = await supabase
-      .from('analytics_events')
+      .from('davidoff_analytics_events')
       .select('*')
       .order('timestamp', { ascending: false });
     
@@ -75,7 +75,7 @@ export async function trackEvent(event: Omit<AnalyticsEvent, 'id' | 'timestamp'>
   
   try {
     const { error } = await supabase
-      .from('analytics_events')
+      .from('davidoff_analytics_events')
       .insert([{
         id: analyticsEvent.id,
         type: analyticsEvent.type,

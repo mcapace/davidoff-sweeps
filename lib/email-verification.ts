@@ -42,16 +42,7 @@ export async function verifyToken(token: string): Promise<EmailToken | null> {
 }
 
 /**
- * Store email in a simple in-memory store (for production, use a database)
- * This is a temporary solution for demo purposes
+ * Note: Email verification status is now stored in the database
+ * Use markEmailAsVerified from sweepstakes-entries.ts instead
  */
-const verifiedEmails = new Set<string>();
-
-export function markEmailAsVerified(email: string): void {
-  verifiedEmails.add(email.toLowerCase());
-}
-
-export function isEmailVerified(email: string): boolean {
-  return verifiedEmails.has(email.toLowerCase());
-}
 

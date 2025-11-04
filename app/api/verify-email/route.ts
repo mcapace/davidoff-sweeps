@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { resend, EMAIL_CONFIG } from '@/lib/resend';
-import { verifyToken, markEmailAsVerified } from '@/lib/email-verification';
+import { verifyToken } from '@/lib/email-verification';
+import { markEmailAsVerified } from '@/lib/sweepstakes-entries';
 import { getEntryByEmail } from '@/lib/sweepstakes-entries';
 
 export async function GET(request: NextRequest) {

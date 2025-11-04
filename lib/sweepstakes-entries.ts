@@ -16,6 +16,7 @@ export interface SweepstakesEntry {
   zipCode: string;
   agreeToRules: boolean;
   agreeToEmails: boolean;
+  emailVerified: boolean;
   entryDate: Date;
   ipAddress?: string;
 }
@@ -31,7 +32,7 @@ async function loadEntries(): Promise<SweepstakesEntry[]> {
   
   try {
     const { data, error } = await supabase
-      .from('sweepstakes_entries')
+      .from('davidoff_sweepstakes_entries')
       .select('*')
       .order('entry_date', { ascending: false });
     
@@ -58,6 +59,7 @@ async function loadEntries(): Promise<SweepstakesEntry[]> {
       zipCode: entry.zip_code,
       agreeToRules: entry.agree_to_rules,
       agreeToEmails: entry.agree_to_emails,
+      emailVerified: entry.email_verified || false,
       entryDate: new Date(entry.entry_date),
       ipAddress: entry.ip_address
     }));
@@ -84,7 +86,7 @@ export async function addEntry(entry: Omit<SweepstakesEntry, 'id' | 'entryDate'>
   
   try {
     const { error } = await supabase
-      .from('sweepstakes_entries')
+      .from('davidoff_sweepstakes_entries')
       .insert([{
         id: newEntry.id,
         first_name: newEntry.firstName,
@@ -98,6 +100,7 @@ export async function addEntry(entry: Omit<SweepstakesEntry, 'id' | 'entryDate'>
         zip_code: newEntry.zipCode,
         agree_to_rules: newEntry.agreeToRules,
         agree_to_emails: newEntry.agreeToEmails,
+        email_verified: false,
         entry_date: newEntry.entryDate.toISOString(),
         ip_address: newEntry.ipAddress
       }]);
@@ -152,6 +155,33 @@ export async function getEntryByEmail(email: string): Promise<SweepstakesEntry |
 export async function getAllEntries(): Promise<SweepstakesEntry[]> {
   const entries = await loadEntries();
   return [...entries];
+}
+
+/**
+ * Mark email as verified in the database
+ */
+export async function markEmailAsVerified(email: string): Promise<void> {
+  if (!supabase) {
+    console.warn('Supabase not configured - cannot mark email as verified');
+    return;
+  }
+  
+  try {
+    const { error } = await supabase
+      .from('davidoff_sweepstakes_entries')
+      .update({ email_verified: true })
+      .eq('email', email.toLowerCase());
+    
+    if (error) {
+      console.error('Error marking email as verified in Supabase:', error);
+      throw error;
+    }
+    
+    console.log('Email marked as verified:', email);
+  } catch (error) {
+    console.error('Error marking email as verified:', error);
+    throw error;
+  }
 }
 
 /**
