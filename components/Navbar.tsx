@@ -78,9 +78,9 @@ export default function Navbar() {
                 <Image
                   src="/images/logos/cigar-aficionado-logo.png"
                   alt="Cigar Aficionado"
-                  width={120}
-                  height={36}
-                  className="h-7 sm:h-9 w-auto"
+                  width={100}
+                  height={30}
+                  className="h-6 sm:h-8 w-auto"
                   priority
                   onError={() => setPartnerLogoError(true)}
                   unoptimized
