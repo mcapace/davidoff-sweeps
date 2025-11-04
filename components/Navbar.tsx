@@ -9,6 +9,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
+  const [partnerLogoError, setPartnerLogoError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,18 +47,19 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Logo */}
+            {/* Partnership Logos */}
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="flex items-center hover:opacity-80 transition-opacity"
+              className="flex items-center gap-3 hover:opacity-80 transition-opacity"
             >
+              {/* Davidoff Logo */}
               {!logoError ? (
                 <Image
                   src="/images/logos/davidoff-logo.png"
                   alt="Davidoff"
-                  width={240}
-                  height={72}
-                  className="h-14 sm:h-16 w-auto"
+                  width={200}
+                  height={60}
+                  className="h-12 sm:h-14 w-auto"
                   priority
                   onError={() => setLogoError(true)}
                   unoptimized
@@ -65,6 +67,27 @@ export default function Navbar() {
               ) : (
                 <span className={`font-serif text-xl font-light tracking-wider ${isScrolled ? 'text-davidoff-black' : 'text-davidoff-gold'}`}>
                   DAVIDOFF
+                </span>
+              )}
+              
+              {/* Partnership "x" */}
+              <span className={`text-lg sm:text-xl font-light ${isScrolled ? 'text-davidoff-black' : 'text-davidoff-gold'}`}>×</span>
+              
+              {/* Cigar Aficionado Logo */}
+              {!partnerLogoError ? (
+                <Image
+                  src="/images/logos/cigar-aficionado-logo.png"
+                  alt="Cigar Aficionado"
+                  width={140}
+                  height={42}
+                  className="h-10 sm:h-12 w-auto"
+                  priority
+                  onError={() => setPartnerLogoError(true)}
+                  unoptimized
+                />
+              ) : (
+                <span className="font-sans text-lg font-light">
+                  Cigar Aficionado
                 </span>
               )}
             </button>
