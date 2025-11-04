@@ -3,10 +3,22 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronDown, Gift } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Hero() {
   const [logoError, setLogoError] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Ensure video plays and loops
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch((error) => {
+        console.log("Video autoplay failed:", error);
+      });
+    }
+  }, []);
+
   const scrollToSweepstakes = () => {
     const sweepsSection = document.getElementById('sweepstakes');
     if (sweepsSection) {
@@ -16,38 +28,40 @@ export default function Hero() {
 
   return (
     <section className="relative h-[90vh] min-h-[700px] max-h-[1000px] w-full overflow-hidden bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal">
-      {/* Elegant Background Overlay */}
+      {/* Video Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.03)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40" />
-      </div>
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{
+            objectFit: 'cover',
+            opacity: 0.4, // Adjust opacity to blend with overlay
+          }}
+        >
+          <source src="/images/hero/hero-video.mov" type="video/quicktime" />
+          <source src="/images/hero/AdobeStock_320845376.mov" type="video/quicktime" />
+          {/* Fallback message if video doesn't load */}
+        </video>
+        
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+        
+        {/* Elegant Background Overlay */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.03)_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40" />
+        </div>
 
-      {/* Subtle Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50m-40 0a40 40 0 1 1 80 0a40 40 0 1 1 -80 0' fill='none' stroke='%23d4af37' stroke-width='0.5'/%3E%3C/svg%3E")`,
-          backgroundSize: '200px 200px',
-        }} />
-      </div>
-
-      {/* Hero Image - if available */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="relative w-full h-full">
-          {/* Try to load hero image, fallback to gradient */}
-          {!logoError && (
-            <Image
-              src="/images/hero/hero-image.jpg"
-              alt=""
-              fill
-              className="object-cover"
-              sizes="100vw"
-              onError={() => setLogoError(true)}
-              unoptimized
-            />
-          )}
-          {logoError && (
-            <div className="absolute inset-0 bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal" />
-          )}
+        {/* Subtle Pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50m-40 0a40 40 0 1 1 80 0a40 40 0 1 1 -80 0' fill='none' stroke='%23d4af37' stroke-width='0.5'/%3E%3C/svg%3E")`,
+            backgroundSize: '200px 200px',
+          }} />
         </div>
       </div>
 
