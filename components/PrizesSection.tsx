@@ -14,6 +14,7 @@ const prizes = [
     dimensions: "5.15 x 9.44 x 5.62 inches | 38.5 x 24 x 14.3 cm",
     // Try multiple possible image paths
     imagePaths: [
+      "/images/giveaway/davidoff-air-de-famille-series-ambassador-ziricote-humidor-02.webp",
       "/images/giveaway/humidor.jpg",
       "/images/giveaway/ambassador-humidor.jpg",
       "/images/giveaway/prize-1.jpg",
@@ -57,6 +58,7 @@ const prizes = [
     details: "The set of two glasses is the perfect gift for every cigar aficionado and Winston Churchill fan. His silhouette is elegantly sandblasted at the bottom of the glass that was handmade in Europe by an expert company with 120 years of history of glass blowing.",
     dimensions: "3.14 x 3.14 x 3.54\" | 8 x 8 x 9 cm",
     imagePaths: [
+      "/images/giveaway/3743_source_1758102372.png",
       "/images/giveaway/glass-set.jpg",
       "/images/giveaway/churchill-glass.jpg",
       "/images/giveaway/winston-churchill-glass.jpg",
