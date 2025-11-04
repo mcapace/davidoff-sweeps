@@ -82,6 +82,7 @@ export async function addEntry(entry: Omit<SweepstakesEntry, 'id' | 'entryDate' 
     ...entry,
     id: generateEntryId(),
     entryDate: new Date(),
+    emailVerified: false,
   };
   
   try {
