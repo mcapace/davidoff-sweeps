@@ -73,7 +73,7 @@ async function loadEntries(): Promise<SweepstakesEntry[]> {
 /**
  * Add a new sweepstakes entry
  */
-export async function addEntry(entry: Omit<SweepstakesEntry, 'id' | 'entryDate'>): Promise<SweepstakesEntry> {
+export async function addEntry(entry: Omit<SweepstakesEntry, 'id' | 'entryDate' | 'emailVerified'>): Promise<SweepstakesEntry> {
   if (!supabase) {
     throw new Error('Supabase not configured');
   }

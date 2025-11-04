@@ -120,6 +120,7 @@ function PrizeImage({ imagePaths, alt, rank }: { imagePaths: string[]; alt: stri
         <>
           {isTifFile ? (
             // Use regular img tag for .tif files since Next.js Image doesn't support TIFF
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={currentImage}
               alt={alt}
