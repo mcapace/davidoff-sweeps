@@ -42,6 +42,10 @@ export default function Hero() {
             opacity: 0.4, // Adjust opacity to blend with overlay
           }}
         >
+          {/* MP4 for better browser compatibility */}
+          <source src="/images/hero/hero-video.mp4" type="video/mp4" />
+          <source src="/images/hero/AdobeStock_320845376.mp4" type="video/mp4" />
+          {/* MOV for Safari/iOS fallback */}
           <source src="/images/hero/hero-video.mov" type="video/quicktime" />
           <source src="/images/hero/AdobeStock_320845376.mov" type="video/quicktime" />
           {/* Fallback message if video doesn't load */}
