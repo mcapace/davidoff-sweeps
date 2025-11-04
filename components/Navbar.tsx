@@ -41,7 +41,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
             ? "bg-white/98 backdrop-blur-md shadow-sm py-3 border-b border-stone-200"
-            : "bg-transparent py-6"
+            : "bg-white/95 backdrop-blur-sm py-4"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,9 +55,9 @@ export default function Navbar() {
                 <Image
                   src="/images/logos/davidoff-logo.png"
                   alt="Davidoff"
-                  width={180}
-                  height={54}
-                  className="h-10 sm:h-12 w-auto"
+                  width={240}
+                  height={72}
+                  className="h-14 sm:h-16 w-auto"
                   priority
                   onError={() => setLogoError(true)}
                   unoptimized
@@ -75,11 +75,7 @@ export default function Navbar() {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className={`transition-colors duration-200 font-sans font-light text-sm tracking-wider uppercase ${
-                    isScrolled 
-                      ? 'text-stone-900 hover:text-davidoff-black font-medium' 
-                      : 'text-white hover:text-davidoff-gold font-medium'
-                  }`}
+                  className="transition-colors duration-200 font-sans font-medium text-sm tracking-wider uppercase text-davidoff-black hover:text-davidoff-gold"
                 >
                   {link.label}
                 </button>
@@ -99,9 +95,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`md:hidden p-2 transition-colors ${
-                isScrolled ? 'text-stone-900 hover:text-davidoff-black' : 'text-white hover:text-davidoff-gold'
-              }`}
+              className="md:hidden p-2 transition-colors text-davidoff-black hover:text-davidoff-gold"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -125,15 +119,15 @@ export default function Navbar() {
             className="fixed top-[72px] left-0 right-0 z-30 bg-white/98 backdrop-blur-md shadow-lg md:hidden overflow-hidden border-b border-stone-200"
           >
             <div className="px-4 py-6 space-y-4">
-              {navLinks.map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="block w-full text-left px-4 py-3 text-stone-700 hover:bg-stone-50 hover:text-davidoff-black transition-colors rounded-sm font-sans font-light text-sm tracking-wider uppercase"
-                >
-                  {link.label}
-                </button>
-              ))}
+                  {navLinks.map((link) => (
+                    <button
+                      key={link.id}
+                      onClick={() => scrollToSection(link.id)}
+                      className="block w-full text-left px-4 py-3 text-davidoff-black hover:bg-stone-50 hover:text-davidoff-gold transition-colors rounded-sm font-sans font-medium text-sm tracking-wider uppercase"
+                    >
+                      {link.label}
+                    </button>
+                  ))}
               <button
                 onClick={() => scrollToSection("sweepstakes")}
                 className="w-full bg-davidoff-black text-white px-6 py-3 rounded-sm hover:bg-charcoal transition-all duration-300 font-sans font-light text-sm tracking-wider uppercase"
@@ -146,7 +140,7 @@ export default function Navbar() {
       </AnimatePresence>
 
       {/* Spacer */}
-      <div className={isScrolled ? "h-[72px]" : "h-[96px]"} />
+      <div className={isScrolled ? "h-[72px]" : "h-[88px]"} />
     </>
   );
 }
