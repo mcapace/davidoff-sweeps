@@ -32,7 +32,7 @@ export default function SponsorshipBar() {
           lineHeight: 1
         }}
       >
-        Paid Sponsorship
+        This is a paid sponsorship by Davidoff of Geneva
       </span>
     </div>
   );
