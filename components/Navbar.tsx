@@ -38,7 +38,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-8 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
             ? "bg-white/98 backdrop-blur-md shadow-sm py-3 border-b border-stone-200"
             : "bg-white/95 backdrop-blur-sm py-4"
@@ -116,7 +116,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-[72px] left-0 right-0 z-30 bg-white/98 backdrop-blur-md shadow-lg md:hidden overflow-hidden border-b border-stone-200"
+            className="fixed top-[104px] left-0 right-0 z-30 bg-white/98 backdrop-blur-md shadow-lg md:hidden overflow-hidden border-b border-stone-200"
           >
             <div className="px-4 py-6 space-y-4">
                   {navLinks.map((link) => (
@@ -139,8 +139,8 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Spacer */}
-      <div className={isScrolled ? "h-[72px]" : "h-[88px]"} />
+      {/* Spacer - accounts for sponsorship bar (32px) + navbar */}
+      <div className={isScrolled ? "h-[104px]" : "h-[120px]"} />
     </>
   );
 }
