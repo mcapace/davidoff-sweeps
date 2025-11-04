@@ -80,7 +80,7 @@ export default function Hero() {
         >
           {!logoError ? (
             <Image
-              src="/images/logos/davidoff-logo-white.png"
+              src="/images/logos/davidoff-logo.jpg"
               alt="Davidoff"
               width={200}
               height={60}

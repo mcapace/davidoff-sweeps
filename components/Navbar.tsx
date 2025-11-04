@@ -53,7 +53,7 @@ export default function Navbar() {
             >
               {!logoError ? (
                 <Image
-                  src={isScrolled ? "/images/logos/davidoff-logo-black.png" : "/images/logos/davidoff-logo-white.png"}
+                  src="/images/logos/davidoff-logo.jpg"
                   alt="Davidoff"
                   width={140}
                   height={40}

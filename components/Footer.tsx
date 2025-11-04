@@ -23,7 +23,7 @@ export default function Footer() {
             {/* Davidoff Logo */}
             {!logoError ? (
               <Image
-                src="/images/logos/davidoff-logo-white.png"
+                src="/images/logos/davidoff-logo.jpg"
                 alt="Davidoff"
                 width={180}
                 height={60}
