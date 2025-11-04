@@ -39,10 +39,10 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`fixed top-8 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/98 backdrop-blur-md shadow-sm py-3 border-b border-stone-200"
-            : "bg-white/95 backdrop-blur-sm py-4"
+            ? "top-8 bg-white/98 backdrop-blur-md shadow-sm py-3 border-b border-stone-200"
+            : "top-8 bg-white/95 backdrop-blur-sm py-4"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,9 +78,9 @@ export default function Navbar() {
                 <Image
                   src="/images/logos/cigar-aficionado-logo.png"
                   alt="Cigar Aficionado"
-                  width={120}
-                  height={36}
-                  className="h-8 sm:h-10 w-auto"
+                  width={200}
+                  height={60}
+                  className="h-12 sm:h-14 w-auto"
                   priority
                   onError={() => setPartnerLogoError(true)}
                   unoptimized
@@ -139,7 +139,9 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-[104px] left-0 right-0 z-30 bg-white/98 backdrop-blur-md shadow-lg md:hidden overflow-hidden border-b border-stone-200"
+            className={`fixed left-0 right-0 z-30 bg-white/98 backdrop-blur-md shadow-lg md:hidden overflow-hidden border-b border-stone-200 ${
+              isScrolled ? "top-[104px]" : "top-[120px]"
+            }`}
           >
             <div className="px-4 py-6 space-y-4">
                   {navLinks.map((link) => (
@@ -162,7 +164,7 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Spacer - accounts for sponsorship bar (32px) + navbar */}
+      {/* Spacer - accounts for sponsorship bar (~32px) + navbar */}
       <div className={isScrolled ? "h-[104px]" : "h-[120px]"} />
     </>
   );
