@@ -83,15 +83,15 @@ export default function Hero() {
             <Image
               src="/images/logos/davidoff-logo.png"
               alt="Davidoff"
-              width={280}
-              height={84}
-              className="h-16 sm:h-20 w-auto opacity-95"
+              width={360}
+              height={108}
+              className="h-24 sm:h-28 md:h-32 w-auto opacity-95"
               priority
               onError={() => setLogoError(true)}
               unoptimized
             />
           ) : (
-            <div className="text-davidoff-gold font-serif text-3xl tracking-wider font-light">
+            <div className="text-davidoff-gold font-serif text-4xl sm:text-5xl tracking-wider font-light">
               DAVIDOFF
             </div>
           )}
