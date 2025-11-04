@@ -25,8 +25,8 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Mark email as verified
-    markEmailAsVerified(payload.email);
+    // Mark email as verified in database
+    await markEmailAsVerified(payload.email);
 
     // Get sweepstakes entry
     const entry = await getEntryByEmail(payload.email);
