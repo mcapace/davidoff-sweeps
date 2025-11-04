@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ChevronDown, Gift } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { CigarIcon } from "./CigarIcon";
 import { useState, useRef, useEffect } from "react";
 
 export default function Hero() {
@@ -142,7 +143,7 @@ export default function Hero() {
           onClick={scrollToSweepstakes}
           className="md:hidden bg-davidoff-gold hover:bg-davidoff-gold-dark text-davidoff-black px-8 py-3 rounded-sm font-semibold text-sm tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 inline-flex items-center gap-2 mb-4 uppercase"
         >
-          <Gift className="w-4 h-4" />
+          <CigarIcon className="w-4 h-4" />
           Enter Now
         </motion.button>
 

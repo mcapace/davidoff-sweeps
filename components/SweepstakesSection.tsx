@@ -3,7 +3,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import Link from "next/link";
-import { Gift, CheckCircle, AlertCircle, Sparkles } from "lucide-react";
+import { CheckCircle, AlertCircle, Sparkles } from "lucide-react";
+import { CigarIcon } from "./CigarIcon";
 
 // US States list
 const US_STATES = [
@@ -158,7 +159,7 @@ export default function SweepstakesSection() {
               className="inline-block mb-6"
             >
               <div className="w-20 h-px bg-gradient-to-r from-transparent via-davidoff-gold to-transparent mx-auto mb-4" />
-              <Gift className="w-12 h-12 text-davidoff-gold mx-auto mb-4" strokeWidth={1.5} />
+              <CigarIcon className="w-12 h-12 text-davidoff-gold mx-auto mb-4" strokeWidth={1.5} />
               <div className="w-20 h-px bg-gradient-to-r from-transparent via-davidoff-gold to-transparent mx-auto" />
             </motion.div>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-davidoff-black mb-4 tracking-tight">
@@ -186,7 +187,7 @@ export default function SweepstakesSection() {
               {/* Prize Summary Card */}
               <div className="bg-white rounded-sm shadow-sm p-8 border border-stone-200">
                 <h3 className="font-serif text-2xl font-light text-davidoff-black mb-6 flex items-center gap-3">
-                  <Gift className="w-5 h-5 text-davidoff-gold" />
+                  <CigarIcon className="w-5 h-5 text-davidoff-gold" />
                   Five Exceptional Prizes
                 </h3>
                 <p className="text-stone-700 mb-6 font-light leading-relaxed">
@@ -476,8 +477,8 @@ export default function SweepstakesSection() {
                         </>
                       ) : (
                         <>
-                          <Gift className="w-5 h-5" />
-                          Enter to Win
+                              <CigarIcon className="w-5 h-5" />
+                              Enter to Win
                         </>
                       )}
                     </button>
