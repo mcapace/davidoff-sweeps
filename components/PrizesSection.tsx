@@ -14,13 +14,11 @@ const prizes = [
     dimensions: "5.15 x 9.44 x 5.62 inches | 38.5 x 24 x 14.3 cm",
     // Try multiple possible image paths
     imagePaths: [
-      "/images/giveaway/prize-1.tif",
-      "/images/giveaway/prize-1.jpg",
-      "/images/giveaway/prize-1.png",
-      "/images/giveaway/humidor.tif",
       "/images/giveaway/humidor.jpg",
-      "/images/giveaway/ambassador-humidor.tif",
       "/images/giveaway/ambassador-humidor.jpg",
+      "/images/giveaway/prize-1.jpg",
+      "/images/giveaway/prize-1.tif",
+      "/images/giveaway/prize-1.png",
     ],
   },
   {
@@ -30,11 +28,11 @@ const prizes = [
     details: "Two pockets on the inside offer space for a lighter and a cutter, and a hidden pocket for business cards add to the convenience aspect of the stylish piece. Made in Italy – bound for the world.",
     dimensions: "12.4 x 11.42\" | 31.5 x 29 cm",
     imagePaths: [
-      "/images/giveaway/prize-2.tif",
-      "/images/giveaway/prize-2.jpg",
-      "/images/giveaway/travel-humidor.tif",
       "/images/giveaway/travel-humidor.jpg",
-      "/images/giveaway/travel-humidor-business.tif",
+      "/images/giveaway/travel-humidor-business.jpg",
+      "/images/giveaway/prize-2.jpg",
+      "/images/giveaway/prize-2.tif",
+      "/images/giveaway/prize-2.png",
     ],
   },
   {
@@ -44,11 +42,12 @@ const prizes = [
     details: "Handmade in France, the rectangular ashtray features two angled cigar notches, delicate, hand-applied golden lines, and a golden Davidoff logo – for a sophisticated enjoyment.",
     dimensions: "7.84 x 6.29 x 1.29\" | 20 x 16 x 3.3 cm",
     imagePaths: [
-      "/images/giveaway/prize-3.tif",
-      "/images/giveaway/prize-3.jpg",
-      "/images/giveaway/ashtray.tif",
+      "/images/giveaway/51003562_davacc_ashprcl_clas_001-4.jpg",
+      "/images/giveaway/51003562_davacc_ashprcl_clas_002-4.jpg",
+      "/images/giveaway/davacc_ashprcl_clas_mood_002.jpg",
       "/images/giveaway/ashtray.jpg",
-      "/images/giveaway/davidoff-ashtray.tif",
+      "/images/giveaway/prize-3.jpg",
+      "/images/giveaway/davidoff-ashtray.jpg",
     ],
   },
   {
@@ -58,12 +57,12 @@ const prizes = [
     details: "The set of two glasses is the perfect gift for every cigar aficionado and Winston Churchill fan. His silhouette is elegantly sandblasted at the bottom of the glass that was handmade in Europe by an expert company with 120 years of history of glass blowing.",
     dimensions: "3.14 x 3.14 x 3.54\" | 8 x 8 x 9 cm",
     imagePaths: [
-      "/images/giveaway/prize-4.tif",
-      "/images/giveaway/prize-4.jpg",
-      "/images/giveaway/glass-set.tif",
       "/images/giveaway/glass-set.jpg",
-      "/images/giveaway/churchill-glass.tif",
-      "/images/giveaway/winston-churchill-glass.tif",
+      "/images/giveaway/churchill-glass.jpg",
+      "/images/giveaway/winston-churchill-glass.jpg",
+      "/images/giveaway/prize-4.jpg",
+      "/images/giveaway/prize-4.tif",
+      "/images/giveaway/prize-4.png",
     ],
   },
   {
@@ -73,12 +72,12 @@ const prizes = [
     details: "Whatever the size or format, they are safely and stylishly carried in a superbly crafted leather companion that reflects your personal elegance. Crafted by the most skilled leather artisans in Spain, blending time-honoured tradition with contemporary sophistication.",
     dimensions: "Adjustable in length to accommodate two cigars of any format",
     imagePaths: [
-      "/images/giveaway/prize-5.tif",
-      "/images/giveaway/prize-5.jpg",
-      "/images/giveaway/cigar-case.tif",
+      "/images/giveaway/51003711_davacc_cigcaslther_x2_ico_blue_001-1.jpg",
+      "/images/giveaway/51003711_davacc_cigcaslther_x2_ico_blue_002-1.jpg",
       "/images/giveaway/cigar-case.jpg",
-      "/images/giveaway/iconic-xl-2.tif",
-      "/images/giveaway/cigar-case-iconic.tif",
+      "/images/giveaway/iconic-xl-2.jpg",
+      "/images/giveaway/cigar-case-iconic.jpg",
+      "/images/giveaway/prize-5.jpg",
     ],
   },
 ];
@@ -239,7 +238,7 @@ export default function PrizesSection() {
                     <div className="pt-6 border-t border-stone-200">
                       <p className="text-xs text-stone-500 font-light tracking-wide">
                         <span className="text-stone-700">Dimensions:</span> {prize.dimensions}
-                    </p>
+                      </p>
                     </div>
                   </div>
                 </div>
