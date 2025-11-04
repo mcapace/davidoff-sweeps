@@ -108,7 +108,7 @@ export default function Hero() {
               alt="Cigar Aficionado"
               width={200}
               height={60}
-              className="h-16 sm:h-20 md:h-24 w-auto opacity-95"
+              className="h-16 sm:h-20 md:h-24 w-auto"
               priority
               onError={() => setPartnerLogoError(true)}
               unoptimized

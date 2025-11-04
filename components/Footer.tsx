@@ -50,7 +50,7 @@ export default function Footer() {
                   alt="Cigar Aficionado"
                   width={180}
                   height={54}
-                  className="h-12 sm:h-14 w-auto opacity-95"
+                  className="h-12 sm:h-14 w-auto"
                   onError={() => setPartnerLogoError(true)}
                   unoptimized
                 />
