@@ -23,11 +23,11 @@ export default function Footer() {
             {/* Davidoff Logo */}
             {!logoError ? (
               <Image
-                src="/images/logos/davidoff-logo.jpg"
+                src="/images/logos/davidoff-logo.png"
                 alt="Davidoff"
-                width={180}
-                height={60}
-                className="h-12 w-auto opacity-90"
+                width={240}
+                height={72}
+                className="h-16 w-auto opacity-95"
                 onError={() => setLogoError(true)}
                 unoptimized
               />

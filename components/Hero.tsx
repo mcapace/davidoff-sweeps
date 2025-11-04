@@ -80,11 +80,11 @@ export default function Hero() {
         >
           {!logoError ? (
             <Image
-              src="/images/logos/davidoff-logo.jpg"
+              src="/images/logos/davidoff-logo.png"
               alt="Davidoff"
-              width={200}
-              height={60}
-              className="h-12 w-auto opacity-90"
+              width={280}
+              height={84}
+              className="h-16 sm:h-20 w-auto opacity-95"
               priority
               onError={() => setLogoError(true)}
               unoptimized

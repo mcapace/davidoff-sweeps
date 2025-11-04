@@ -53,11 +53,11 @@ export default function Navbar() {
             >
               {!logoError ? (
                 <Image
-                  src="/images/logos/davidoff-logo.jpg"
+                  src="/images/logos/davidoff-logo.png"
                   alt="Davidoff"
-                  width={140}
-                  height={40}
-                  className="h-8 w-auto"
+                  width={180}
+                  height={54}
+                  className="h-10 sm:h-12 w-auto"
                   priority
                   onError={() => setLogoError(true)}
                   unoptimized
@@ -77,8 +77,8 @@ export default function Navbar() {
                   onClick={() => scrollToSection(link.id)}
                   className={`transition-colors duration-200 font-sans font-light text-sm tracking-wider uppercase ${
                     isScrolled 
-                      ? 'text-stone-700 hover:text-davidoff-black' 
-                      : 'text-stone-200 hover:text-davidoff-gold'
+                      ? 'text-stone-900 hover:text-davidoff-black font-medium' 
+                      : 'text-white hover:text-davidoff-gold font-medium'
                   }`}
                 >
                   {link.label}
@@ -100,7 +100,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`md:hidden p-2 transition-colors ${
-                isScrolled ? 'text-stone-700 hover:text-davidoff-black' : 'text-stone-200 hover:text-davidoff-gold'
+                isScrolled ? 'text-stone-900 hover:text-davidoff-black' : 'text-white hover:text-davidoff-gold'
               }`}
               aria-label="Toggle menu"
             >
