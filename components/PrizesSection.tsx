@@ -239,15 +239,15 @@ export default function PrizesSection() {
                     <h3 className="font-serif text-2xl sm:text-3xl font-light text-davidoff-black mb-4 leading-tight">
                       {prize.title}
                     </h3>
-                    <p className="text-stone-700 leading-relaxed mb-4 font-light">
+                    <p className="text-stone-900 leading-relaxed mb-4 font-light">
                       {prize.description}
                     </p>
-                    <p className="text-stone-600 italic leading-relaxed mb-6 font-light">
+                    <p className="text-stone-800 italic leading-relaxed mb-6 font-light">
                       {prize.details}
                     </p>
                     <div className="pt-6 border-t border-stone-200">
-                      <p className="text-xs text-stone-500 font-light tracking-wide">
-                        <span className="text-stone-700">Dimensions:</span> {prize.dimensions}
+                      <p className="text-xs text-stone-700 font-light tracking-wide">
+                        <span className="text-stone-900 font-medium">Dimensions:</span> {prize.dimensions}
                       </p>
                     </div>
                   </div>
