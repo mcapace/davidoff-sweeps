@@ -30,17 +30,18 @@ export default function Hero() {
   return (
     <section className="relative h-[90vh] min-h-[700px] max-h-[1000px] w-full overflow-hidden bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal">
       {/* Video Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover z-0"
           style={{
             objectFit: 'cover',
             opacity: 0.4,
+            zIndex: 0,
           }}
           onError={(e) => {
             console.error("Video error:", e);
@@ -48,6 +49,7 @@ export default function Hero() {
             console.error("Error code:", video.error?.code);
             console.error("Error message:", video.error?.message);
             console.error("Video src attempted:", video.src);
+            console.error("Video currentSrc:", video.currentSrc);
           }}
           onLoadStart={() => console.log("Video load started")}
           onLoadedData={() => console.log("Video data loaded")}
@@ -64,7 +66,7 @@ export default function Hero() {
         </video>
         
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 z-10" />
         
         {/* Elegant Background Overlay */}
         <div className="absolute inset-0">
