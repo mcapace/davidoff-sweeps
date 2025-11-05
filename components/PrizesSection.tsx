@@ -216,7 +216,7 @@ export default function PrizesSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
-                className="bg-white rounded-sm shadow-sm border border-stone-200 overflow-hidden hover:shadow-md transition-shadow duration-300"
+                className="bg-white rounded-sm shadow-sm border-2 border-stone-300 overflow-hidden hover:shadow-md transition-shadow duration-300"
               >
                 <div className="grid md:grid-cols-5 gap-0">
                   {/* Image Column */}
@@ -269,7 +269,7 @@ export default function PrizesSection() {
               href="http://gtly.ink/mCeASmc3-I"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-8 px-8 py-4 bg-davidoff-gold text-davidoff-black font-semibold text-lg tracking-wide uppercase border-2 border-davidoff-gold hover:bg-davidoff-gold/90 hover:border-davidoff-gold-dark transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 rounded-sm"
+              className="inline-block mt-8 px-8 py-4 bg-davidoff-gold text-davidoff-black font-semibold text-lg tracking-wide uppercase border-2 border-davidoff-gold-dark hover:bg-davidoff-gold/90 hover:border-davidoff-gold-dark transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 rounded-sm"
               aria-label="Shop Davidoff Accessories (opens in new window)"
             >
               Shop Davidoff Accessories

@@ -59,6 +59,7 @@ export default function Footer() {
               <a
                 href="/privacy-policy"
                 className="text-stone-300 hover:text-davidoff-gold text-xs font-light underline underline-offset-2 transition-colors"
+                aria-label="View Privacy Policy"
               >
                 Privacy Policy
               </a>
@@ -66,6 +67,7 @@ export default function Footer() {
               <a
                 href="/official-rules"
                 className="text-stone-300 hover:text-davidoff-gold text-xs font-light underline underline-offset-2 transition-colors"
+                aria-label="View Official Sweepstakes Rules"
               >
                 Official Rules
               </a>

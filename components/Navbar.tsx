@@ -50,6 +50,7 @@ export default function Navbar() {
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+              aria-label="Go to top of page - Davidoff and Cigar Aficionado"
             >
               {/* Davidoff Logo */}
               {!logoError ? (
@@ -104,7 +105,7 @@ export default function Navbar() {
               ))}
               <button
                 onClick={() => scrollToSection("sweepstakes")}
-                className="px-6 py-2.5 rounded-sm transition-all duration-300 font-sans font-light text-sm tracking-wider uppercase bg-davidoff-gold text-davidoff-black border-2 border-davidoff-gold hover:bg-davidoff-gold-dark hover:border-davidoff-gold-dark shadow-md hover:shadow-lg"
+                className="px-6 py-2.5 rounded-sm transition-all duration-300 font-sans font-light text-sm tracking-wider uppercase bg-davidoff-gold text-davidoff-black border-2 border-davidoff-gold-dark hover:bg-davidoff-gold-dark hover:border-davidoff-gold-dark shadow-md hover:shadow-lg"
               >
                 Enter Now
               </button>

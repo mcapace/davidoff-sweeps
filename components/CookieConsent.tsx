@@ -268,7 +268,7 @@ export default function CookieConsent() {
                   <p className="text-sm text-stone-700 leading-relaxed font-light">
                     We use cookies to improve your experience on our website. You can choose which types of cookies you&apos;re comfortable with. 
                     Essential cookies are required for the website to function properly and cannot be disabled.{" "}
-                    <Link href="/privacy-policy" className="text-davidoff-gold hover:text-davidoff-gold-dark underline underline-offset-2">
+                    <Link href="/privacy-policy" className="text-davidoff-gold hover:text-davidoff-gold-dark underline underline-offset-2" aria-label="Read our Privacy Policy for cookie and data usage information">
                       Read our Privacy Policy
                     </Link>
                   </p>
