@@ -223,8 +223,10 @@ export default function SweepstakesSection() {
                       document.getElementById('prizes')?.scrollIntoView({ behavior: 'smooth' });
                     }}
                     className="text-davidoff-black hover:text-davidoff-gold transition-colors font-light text-sm tracking-wide uppercase underline underline-offset-4"
+                    aria-label="View full prize details for all five sweepstakes prizes"
                   >
-                    View full prize details →
+                    View full prize details
+                    <span aria-hidden="true"> →</span>
                   </Link>
                 </div>
               </div>
@@ -282,7 +284,7 @@ export default function SweepstakesSection() {
                         value={formData.firstName}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="John"
                       />
                     </div>
@@ -297,7 +299,7 @@ export default function SweepstakesSection() {
                         value={formData.lastName}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="Doe"
                       />
                     </div>
@@ -333,7 +335,7 @@ export default function SweepstakesSection() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="(555) 123-4567"
                       />
                     </div>
@@ -348,7 +350,7 @@ export default function SweepstakesSection() {
                         value={formData.dateOfBirth}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         max={new Date(new Date().setFullYear(new Date().getFullYear() - 21)).toISOString().split('T')[0]}
                       />
                       <p className="text-xs text-stone-700 mt-1 font-light">Must be 21+ to enter</p>
@@ -385,7 +387,7 @@ export default function SweepstakesSection() {
                         value={formData.city}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="San Francisco"
                       />
                     </div>
@@ -399,7 +401,7 @@ export default function SweepstakesSection() {
                         value={formData.state}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                       >
                         {US_STATES.map(state => (
                           <option key={state.code} value={state.code}>
@@ -420,7 +422,7 @@ export default function SweepstakesSection() {
                         onChange={handleInputChange}
                         required
                         pattern="[0-9]{5}"
-                        className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="94102"
                       />
                     </div>
@@ -435,7 +437,7 @@ export default function SweepstakesSection() {
                         checked={formData.agreeToRules}
                         onChange={handleInputChange}
                         required
-                        className="w-5 h-5 text-davidoff-gold border border-stone-300 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
+                        className="w-5 h-5 text-davidoff-gold border-2 border-stone-400 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
                       />
                       <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors font-light">
                         I agree to the{' '}
@@ -452,7 +454,7 @@ export default function SweepstakesSection() {
                         name="agreeToEmails"
                         checked={formData.agreeToEmails}
                         onChange={handleInputChange}
-                        className="w-5 h-5 text-davidoff-gold border border-stone-300 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
+                        className="w-5 h-5 text-davidoff-gold border-2 border-stone-400 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
                       />
                       <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors font-light">
                         I agree to receive newsletters and marketing emails from Davidoff <span className="text-stone-700 text-xs">(optional)</span>
@@ -469,7 +471,8 @@ export default function SweepstakesSection() {
                     >
                       {status === 'submitting' ? (
                         <>
-                          <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" role="img" aria-label="Loading spinner">
+                            <title>Loading spinner</title>
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>

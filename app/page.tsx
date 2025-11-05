@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <SponsorshipBar />
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <IntroSection />
         <PrizesSection />

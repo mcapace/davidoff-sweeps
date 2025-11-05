@@ -15,7 +15,10 @@ export function CigarIcon({ className = "w-5 h-5", strokeWidth = 1.5 }: CigarIco
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
+      role="img"
+      aria-label="Cigar icon"
     >
+      <title>Cigar icon</title>
       {/* Cigar body - elongated rounded rectangle */}
       <rect x="3" y="9" width="16" height="6" rx="3" />
       {/* Cigar band - decorative wrapper */}
