@@ -42,9 +42,25 @@ export default function Hero() {
             objectFit: 'cover',
             opacity: 0.4,
           }}
+          onError={(e) => {
+            console.error("Video error:", e);
+            const video = e.target as HTMLVideoElement;
+            console.error("Error code:", video.error?.code);
+            console.error("Error message:", video.error?.message);
+            console.error("Video src attempted:", video.src);
+          }}
+          onLoadStart={() => console.log("Video load started")}
+          onLoadedData={() => console.log("Video data loaded")}
+          onCanPlay={() => {
+            console.log("Video can play");
+            const video = videoRef.current;
+            if (video) {
+              video.play().catch(err => console.error("Play error:", err));
+            }
+          }}
         >
           <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          <source src="/images/AdobeStock_320845376.mp4" type="video/mp4" />
         </video>
         
         {/* Dark overlay for text readability */}
