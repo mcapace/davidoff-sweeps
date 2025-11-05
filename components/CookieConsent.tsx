@@ -189,9 +189,9 @@ export default function CookieConsent() {
                   <div className="flex items-start gap-3 mb-3">
                     <Cookie className="w-6 h-6 text-davidoff-gold flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="font-serif text-lg font-semibold text-davidoff-black mb-2">
+                      <h4 className="font-serif text-lg font-semibold text-davidoff-black mb-2">
                         We Value Your Privacy
-                      </h3>
+                      </h4>
                       <p className="text-sm text-stone-700 leading-relaxed font-light">
                         We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. 
                         By clicking &quot;Accept All&quot;, you consent to our use of cookies. You can also choose to accept only 
@@ -206,13 +206,13 @@ export default function CookieConsent() {
                 <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
                   <button
                     onClick={openSettings}
-                    className="px-6 py-2.5 border border-stone-300 text-stone-700 hover:bg-stone-50 rounded-sm transition-colors text-sm font-light whitespace-nowrap"
+                    className="px-6 py-2.5 border-2 border-stone-500 text-stone-700 hover:bg-stone-50 rounded-sm transition-colors text-sm font-light whitespace-nowrap"
                   >
                     Customize
                   </button>
                   <button
                     onClick={handleAcceptEssential}
-                    className="px-6 py-2.5 border border-stone-300 text-stone-700 hover:bg-stone-50 rounded-sm transition-colors text-sm font-light whitespace-nowrap"
+                    className="px-6 py-2.5 border-2 border-stone-500 text-stone-700 hover:bg-stone-50 rounded-sm transition-colors text-sm font-light whitespace-nowrap"
                   >
                     Essential Only
                   </button>
@@ -252,9 +252,9 @@ export default function CookieConsent() {
             >
               <div className="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 <div className="sticky top-0 bg-white border-b border-stone-200 px-6 py-4 flex items-center justify-between">
-                  <h2 className="font-serif text-2xl font-semibold text-davidoff-black">
+                  <h3 className="font-serif text-2xl font-semibold text-davidoff-black">
                     Cookie Preferences
-                  </h2>
+                  </h3>
                   <button
                     onClick={closeSettings}
                     className="text-stone-700 hover:text-stone-900 transition-colors"
@@ -292,7 +292,7 @@ export default function CookieConsent() {
                             <div className="flex-1">
                               <div className="flex items-center gap-2 mb-2">
                                 <Icon className="w-5 h-5 text-davidoff-gold" />
-                                <h3 className="font-serif font-semibold text-davidoff-black">
+                                <h4 className="font-serif font-semibold text-davidoff-black">
                                   {categoryInfo.name}
                                   {categoryInfo.required && (
                                     <span className="ml-2 text-xs text-stone-700 font-normal">
@@ -324,7 +324,7 @@ export default function CookieConsent() {
                   <div className="pt-4 border-t border-stone-200 flex flex-col sm:flex-row gap-3 justify-end">
                     <button
                       onClick={closeSettings}
-                      className="px-6 py-2.5 border border-stone-300 text-stone-700 hover:bg-stone-50 rounded-sm transition-colors text-sm font-light"
+                      className="px-6 py-2.5 border-2 border-stone-500 text-stone-700 hover:bg-stone-50 rounded-sm transition-colors text-sm font-light"
                     >
                       Cancel
                     </button>
