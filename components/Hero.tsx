@@ -15,9 +15,14 @@ export default function Hero() {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      // Set up error handling
+      // Set up comprehensive event handlers
       const handleError = (e: Event) => {
-        console.error("Video error:", e, video.error);
+        console.error("Video error event:", e);
+        const videoEl = e.target as HTMLVideoElement;
+        if (videoEl.error) {
+          console.error("Video error code:", videoEl.error.code);
+          console.error("Video error message:", videoEl.error.message);
+        }
         setVideoError(true);
       };
 
@@ -25,23 +30,52 @@ export default function Hero() {
         console.log("Video loading started");
       };
 
+      const handleLoadedMetadata = () => {
+        console.log("Video metadata loaded, duration:", video.duration);
+      };
+
+      const handleLoadedData = () => {
+        console.log("Video data loaded");
+      };
+
+      const handleCanPlay = () => {
+        console.log("Video can play, attempting to play...");
+        video.play().catch((err) => {
+          console.error("Video play failed:", err);
+        });
+      };
+
+      const handleCanPlayThrough = () => {
+        console.log("Video can play through");
+      };
+
+      // Add all event listeners
       video.addEventListener('error', handleError);
       video.addEventListener('loadstart', handleLoadStart);
+      video.addEventListener('loadedmetadata', handleLoadedMetadata);
+      video.addEventListener('loadeddata', handleLoadedData);
+      video.addEventListener('canplay', handleCanPlay);
+      video.addEventListener('canplaythrough', handleCanPlayThrough);
 
-      // Try to load and play the video
-      video.load(); // Explicitly load the video
-      
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.log("Video autoplay failed:", error);
-          // Don't set error state for autoplay failures - video might still load
+      // Set video source and load
+      video.src = "/images/davacc_humtravl_buss_vdo_1920x1080px.mp4";
+      video.load();
+
+      // Try to play after a short delay
+      const playTimeout = setTimeout(() => {
+        video.play().catch((err) => {
+          console.log("Delayed play attempt failed:", err);
         });
-      }
+      }, 100);
 
       return () => {
+        clearTimeout(playTimeout);
         video.removeEventListener('error', handleError);
         video.removeEventListener('loadstart', handleLoadStart);
+        video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+        video.removeEventListener('loadeddata', handleLoadedData);
+        video.removeEventListener('canplay', handleCanPlay);
+        video.removeEventListener('canplaythrough', handleCanPlayThrough);
       };
     }
   }, []);
@@ -69,27 +103,18 @@ export default function Hero() {
             style={{
               objectFit: 'cover',
               opacity: 0.4,
+              zIndex: 0,
             }}
             onError={(e) => {
-              console.error("Video error:", e);
+              console.error("Video onError handler:", e);
               const video = videoRef.current;
               if (video && video.error) {
-                console.error("Video error code:", video.error.code, "Message:", video.error.message);
+                console.error("Video error code:", video.error.code);
+                console.error("Video error message:", video.error.message);
               }
               setVideoError(true);
             }}
-            onLoadedData={() => {
-              console.log("Video data loaded successfully");
-            }}
-            onCanPlay={() => {
-              console.log("Video can play");
-            }}
-            onLoadedMetadata={() => {
-              console.log("Video metadata loaded");
-            }}
-          >
-            <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
-          </video>
+          />
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal" />
         )}
