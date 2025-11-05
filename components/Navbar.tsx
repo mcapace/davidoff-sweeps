@@ -104,11 +104,7 @@ export default function Navbar() {
               ))}
               <button
                 onClick={() => scrollToSection("sweepstakes")}
-                className={`px-6 py-2.5 rounded-sm transition-all duration-300 font-sans font-light text-sm tracking-wider uppercase ${
-                  isScrolled
-                    ? 'bg-davidoff-black text-white hover:bg-charcoal'
-                    : 'bg-davidoff-gold text-davidoff-black hover:bg-davidoff-gold-dark'
-                } shadow-md hover:shadow-lg`}
+                className="px-6 py-2.5 rounded-sm transition-all duration-300 font-sans font-light text-sm tracking-wider uppercase bg-davidoff-gold text-davidoff-black hover:bg-davidoff-gold-dark shadow-md hover:shadow-lg"
               >
                 Enter Now
               </button>

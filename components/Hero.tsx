@@ -64,31 +64,31 @@ export default function Hero() {
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
             style={{
               objectFit: 'cover',
-              opacity: 0.4, // Adjust opacity to blend with overlay
+              opacity: 0.4,
             }}
             onError={(e) => {
-              console.error("Video element error:", e);
+              console.error("Video error:", e);
+              const video = videoRef.current;
+              if (video && video.error) {
+                console.error("Video error code:", video.error.code, "Message:", video.error.message);
+              }
               setVideoError(true);
             }}
             onLoadedData={() => {
-              console.log("Video data loaded");
+              console.log("Video data loaded successfully");
             }}
             onCanPlay={() => {
               console.log("Video can play");
-              const video = videoRef.current;
-              if (video) {
-                video.play().catch((err) => {
-                  console.log("Play failed:", err);
-                });
-              }
+            }}
+            onLoadedMetadata={() => {
+              console.log("Video metadata loaded");
             }}
           >
             <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal" />
@@ -183,7 +183,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
           onClick={scrollToSweepstakes}
-          className="md:hidden bg-davidoff-gold hover:bg-davidoff-gold-dark text-davidoff-black px-8 py-3 rounded-sm font-semibold text-sm tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 inline-flex items-center gap-2 mb-4 uppercase"
+          className="md:hidden bg-davidoff-gold hover:bg-davidoff-gold-dark text-davidoff-black px-8 py-3 rounded-sm font-light text-sm tracking-wider uppercase shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center gap-2 mb-4"
         >
           <CigarIcon className="w-4 h-4" />
           Enter Now

@@ -142,7 +142,8 @@ function PrizeImage({ imagePaths, alt, rank, objectFit = 'cover' }: { imagePaths
               sizes="(max-width: 768px) 100vw, 40vw"
               onLoad={handleImageLoad}
               onError={handleImageError}
-              unoptimized
+              loading={currentImageIndex === 0 ? "eager" : "lazy"}
+              quality={85}
             />
           )}
           {!imageLoaded && !imageError && (
