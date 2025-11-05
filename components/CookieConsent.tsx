@@ -47,6 +47,9 @@ export default function CookieConsent() {
   });
 
   useEffect(() => {
+    // Only run in browser environment
+    if (typeof window === 'undefined') return;
+    
     // Check if user has already consented
     const consent = localStorage.getItem(COOKIE_STORAGE_KEY);
     const savedPreferences = localStorage.getItem(COOKIE_PREFERENCES_KEY);
@@ -90,6 +93,8 @@ export default function CookieConsent() {
   };
 
   const savePreferences = (prefs: CookiePreferences) => {
+    if (typeof window === 'undefined') return;
+    
     localStorage.setItem(COOKIE_STORAGE_KEY, "true");
     localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(prefs));
     
@@ -136,6 +141,7 @@ export default function CookieConsent() {
   const closeSettings = () => {
     setShowSettings(false);
     // If preferences were never saved, show banner again
+    if (typeof window === 'undefined') return;
     const consent = localStorage.getItem(COOKIE_STORAGE_KEY);
     if (!consent) {
       setShowBanner(true);
@@ -144,20 +150,23 @@ export default function CookieConsent() {
 
   if (!showBanner && !showSettings) {
     // Show settings button if user has already consented
-    const consent = localStorage.getItem(COOKIE_STORAGE_KEY);
-    if (consent) {
-      return (
-        <div className="fixed bottom-4 right-4 z-50">
-          <button
-            onClick={() => setShowSettings(true)}
-            className="bg-davidoff-black text-white px-4 py-2 rounded-sm shadow-lg hover:bg-stone-800 transition-colors flex items-center gap-2 text-sm font-light"
-            aria-label="Cookie Settings"
-          >
-            <Settings className="w-4 h-4" />
-            Cookie Settings
-          </button>
-        </div>
-      );
+    // Only check in browser environment
+    if (typeof window !== 'undefined') {
+      const consent = localStorage.getItem(COOKIE_STORAGE_KEY);
+      if (consent) {
+        return (
+          <div className="fixed bottom-4 right-4 z-50">
+            <button
+              onClick={() => setShowSettings(true)}
+              className="bg-davidoff-black text-white px-4 py-2 rounded-sm shadow-lg hover:bg-stone-800 transition-colors flex items-center gap-2 text-sm font-light"
+              aria-label="Cookie Settings"
+            >
+              <Settings className="w-4 h-4" />
+              Cookie Settings
+            </button>
+          </div>
+        );
+      }
     }
     return null;
   }
