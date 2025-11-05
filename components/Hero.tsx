@@ -131,7 +131,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="font-serif font-light text-stone-200 text-lg sm:text-xl md:text-2xl text-center mb-4 max-w-3xl leading-relaxed"
+          className="font-serif font-light text-stone-100 text-lg sm:text-xl md:text-2xl text-center mb-4 max-w-3xl leading-relaxed"
         >
           To celebrate craftsmanship and time beautifully filled
         </motion.p>
@@ -140,7 +140,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="font-serif font-light text-stone-300 text-base sm:text-lg text-center mb-10 max-w-2xl leading-relaxed"
+          className="font-serif font-light text-stone-200 text-base sm:text-lg text-center mb-10 max-w-2xl leading-relaxed"
         >
           Five refined accessories, each designed to elevate your every cigar moment
         </motion.p>

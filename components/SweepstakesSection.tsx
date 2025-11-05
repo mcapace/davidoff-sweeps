@@ -193,7 +193,7 @@ export default function SweepstakesSection() {
                 <p className="text-stone-700 mb-6 font-light leading-relaxed">
                   Take this opportunity to enter to win one of five exceptional prizes showcasing the artistry and expertise for which Davidoff is renowned.
                 </p>
-                <ul className="space-y-3 text-stone-600 text-sm mb-6">
+                <ul className="space-y-3 text-stone-700 text-sm mb-6 font-light">
                   <li className="flex items-start gap-3">
                     <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">1ST</span>
                     <span className="font-light">Davidoff Air de Famille Ambassador Humidor Ziricote</span>
@@ -272,7 +272,7 @@ export default function SweepstakesSection() {
                   {/* Name Row */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="firstName" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                      <label htmlFor="firstName" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
                         First Name <span className="text-davidoff-gold">*</span>
                       </label>
                       <input
@@ -287,7 +287,7 @@ export default function SweepstakesSection() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="lastName" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                      <label htmlFor="lastName" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
                         Last Name <span className="text-davidoff-gold">*</span>
                       </label>
                       <input
@@ -305,7 +305,7 @@ export default function SweepstakesSection() {
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                    <label htmlFor="email" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
                       Email Address <span className="text-davidoff-gold">*</span>
                     </label>
                     <input
@@ -323,7 +323,7 @@ export default function SweepstakesSection() {
                   {/* Phone & DOB Row */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="phone" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                      <label htmlFor="phone" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
                         Phone Number <span className="text-davidoff-gold">*</span>
                       </label>
                       <input
@@ -338,7 +338,7 @@ export default function SweepstakesSection() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="dateOfBirth" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                      <label htmlFor="dateOfBirth" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
                         Date of Birth <span className="text-davidoff-gold">*</span>
                       </label>
                       <input
@@ -351,13 +351,13 @@ export default function SweepstakesSection() {
                         className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         max={new Date(new Date().setFullYear(new Date().getFullYear() - 21)).toISOString().split('T')[0]}
                       />
-                      <p className="text-xs text-stone-500 mt-1 font-light">Must be 21+ to enter</p>
+                      <p className="text-xs text-stone-600 mt-1 font-light">Must be 21+ to enter</p>
                     </div>
                   </div>
 
                   {/* Address */}
                   <div>
-                    <label htmlFor="address" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                    <label htmlFor="address" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
                       Street Address <span className="text-davidoff-gold">*</span>
                     </label>
                     <input
@@ -375,7 +375,7 @@ export default function SweepstakesSection() {
                   {/* City, State, Zip Row */}
                   <div className="grid sm:grid-cols-3 gap-4">
                     <div className="sm:col-span-1">
-                      <label htmlFor="city" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                      <label htmlFor="city" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
                         City <span className="text-davidoff-gold">*</span>
                       </label>
                       <input
@@ -390,7 +390,7 @@ export default function SweepstakesSection() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="state" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                      <label htmlFor="state" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
                         State <span className="text-davidoff-gold">*</span>
                       </label>
                       <select
@@ -409,7 +409,7 @@ export default function SweepstakesSection() {
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="zipCode" className="block text-xs font-light tracking-wider uppercase text-stone-600 mb-2">
+                      <label htmlFor="zipCode" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
                         Zip Code <span className="text-davidoff-gold">*</span>
                       </label>
                       <input
@@ -455,7 +455,7 @@ export default function SweepstakesSection() {
                         className="w-5 h-5 text-davidoff-gold border border-stone-300 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
                       />
                       <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors font-light">
-                        I agree to receive newsletters and marketing emails from Davidoff <span className="text-stone-500 text-xs">(optional)</span>
+                        I agree to receive newsletters and marketing emails from Davidoff <span className="text-stone-600 text-xs">(optional)</span>
                       </span>
                     </label>
                   </div>
@@ -485,7 +485,7 @@ export default function SweepstakesSection() {
                   </div>
 
                   {/* Legal Text */}
-                  <p className="text-xs text-stone-500 text-center leading-relaxed pt-4 border-t border-stone-200 font-light">
+                  <p className="text-xs text-stone-600 text-center leading-relaxed pt-4 border-t border-stone-200 font-light">
                     NO PURCHASE NECESSARY. Open to legal US residents, 21+. Void where prohibited.
                     See{' '}
                     <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold transition-colors underline underline-offset-2" target="_blank">
