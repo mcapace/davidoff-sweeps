@@ -87,7 +87,7 @@ const prizes = [
   },
 ];
 
-function PrizeImage({ imagePaths, alt, rank }: { imagePaths: string[]; alt: string; rank: string }) {
+function PrizeImage({ imagePaths, alt, rank, objectFit = 'cover' }: { imagePaths: string[]; alt: string; rank: string; objectFit?: 'cover' | 'contain' }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageError, setImageError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -116,8 +116,10 @@ function PrizeImage({ imagePaths, alt, rank }: { imagePaths: string[]; alt: stri
     setImageLoaded(true);
   };
 
+  const needsWhiteBackground = objectFit === 'contain';
+  
   return (
-    <div className="relative w-full h-full bg-gradient-to-br from-stone-100 to-stone-200">
+    <div className={`relative w-full h-full ${needsWhiteBackground ? 'bg-white' : 'bg-gradient-to-br from-stone-100 to-stone-200'}`}>
       {!imageError && currentImage ? (
         <>
           {isTifFile ? (
@@ -126,7 +128,7 @@ function PrizeImage({ imagePaths, alt, rank }: { imagePaths: string[]; alt: stri
             <img
               src={currentImage}
               alt={alt}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+              className={`absolute inset-0 w-full h-full object-${objectFit} transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               onLoad={handleImageLoad}
               onError={handleImageError}
             />
@@ -136,7 +138,7 @@ function PrizeImage({ imagePaths, alt, rank }: { imagePaths: string[]; alt: stri
               src={currentImage}
               alt={alt}
               fill
-              className={`object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+              className={`object-${objectFit} transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               sizes="(max-width: 768px) 100vw, 40vw"
               onLoad={handleImageLoad}
               onError={handleImageError}
@@ -221,7 +223,8 @@ export default function PrizesSection() {
                     <PrizeImage 
                       imagePaths={prize.imagePaths}
                       alt={prize.title} 
-                      rank={prize.rank} 
+                      rank={prize.rank}
+                      objectFit={prize.rank === "3rd Prize" || prize.rank === "5th Prize" ? "contain" : "cover"}
                     />
                   </div>
 
