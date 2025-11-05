@@ -1,3 +1,0 @@
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-public/images/AdobeStock_320845376.mp4 !filter !diff !merge -text
-public/images/davacc_humtravl_buss_vdo_1920x1080px.mp4 !filter !diff !merge -text
