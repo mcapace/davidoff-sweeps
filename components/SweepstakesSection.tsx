@@ -204,7 +204,7 @@ export default function SweepstakesSection() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">3RD</span>
-                    <span className="font-light">Davidoff Ashtray</span>
+                    <span className="font-light">Davidoff Porcelain Ashtray</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">4TH</span>
@@ -455,7 +455,7 @@ export default function SweepstakesSection() {
                         className="w-5 h-5 text-davidoff-gold border border-stone-300 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
                       />
                       <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors font-light">
-                        I agree to receive newsletters and marketing emails from Davidoff <span className="text-stone-400 text-xs">(optional)</span>
+                        I agree to receive newsletters and marketing emails from Davidoff <span className="text-stone-500 text-xs">(optional)</span>
                       </span>
                     </label>
                   </div>

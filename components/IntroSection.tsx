@@ -62,7 +62,7 @@ export default function IntroSection() {
             <p className="text-sm text-stone-600 font-light tracking-wide">
               For more information on Davidoff accessories and cigars, please visit{' '}
               <a 
-                href="https://www.davidoffgeneva.com" 
+                href="http://gtly.ink/mCeASmc3-I" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-davidoff-black hover:text-davidoff-gold transition-colors font-medium underline underline-offset-4"

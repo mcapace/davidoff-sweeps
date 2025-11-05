@@ -26,8 +26,8 @@ export default function SponsorshipBar() {
           color: '#FFFFFF',
           fontSize: '0.75rem',
           fontWeight: 300,
-          letterSpacing: '0.05em',
-          textTransform: 'uppercase',
+          letterSpacing: '0.02em',
+          textTransform: 'none',
           margin: 0,
           lineHeight: 1
         }}

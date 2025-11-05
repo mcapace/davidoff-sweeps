@@ -39,14 +39,14 @@ const prizes = [
   },
   {
     rank: "3rd Prize",
-    title: "Davidoff Ashtray",
+    title: "Davidoff Porcelain Ashtray",
     description: "One winner will enjoy the timeless simplicity of the Davidoff Porcelain Ashtray. The recently launched elegant and functional accessory turns every cigar ritual into a statement of style and refinement.",
     details: "Handmade in France, the rectangular ashtray features two angled cigar notches, delicate, hand-applied golden lines, and a golden Davidoff logo – for a sophisticated enjoyment.",
     dimensions: "7.84 x 6.29 x 1.29\" | 20 x 16 x 3.3 cm",
     imagePaths: [
+      "/images/davacc_ashprcl_clas_mood_002.jpg",
       "/images/giveaway/51003562_davacc_ashprcl_clas_001-4.jpg",
       "/images/giveaway/51003562_davacc_ashprcl_clas_002-4.jpg",
-      "/images/giveaway/davacc_ashprcl_clas_mood_002.jpg",
       "/images/giveaway/ashtray.jpg",
       "/images/giveaway/prize-3.jpg",
       "/images/giveaway/davidoff-ashtray.jpg",

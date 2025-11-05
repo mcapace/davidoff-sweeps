@@ -49,23 +49,23 @@ export default function Footer() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-2">
-            <p className="text-stone-400 text-xs font-light tracking-wide">
+            <p className="text-stone-300 text-xs font-light tracking-wide">
               © {new Date().getFullYear()} Davidoff. All rights reserved.
             </p>
-            <p className="text-stone-500 text-xs font-light">
+            <p className="text-stone-400 text-xs font-light">
               In partnership with Cigar Aficionado
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 mt-4 pt-4 border-t border-stone-800">
               <a
                 href="/privacy-policy"
-                className="text-stone-400 hover:text-davidoff-gold text-xs font-light underline underline-offset-2 transition-colors"
+                className="text-stone-300 hover:text-davidoff-gold text-xs font-light underline underline-offset-2 transition-colors"
               >
                 Privacy Policy
               </a>
-              <span className="text-stone-600">•</span>
+              <span className="text-stone-500">•</span>
               <a
                 href="/official-rules"
-                className="text-stone-400 hover:text-davidoff-gold text-xs font-light underline underline-offset-2 transition-colors"
+                className="text-stone-300 hover:text-davidoff-gold text-xs font-light underline underline-offset-2 transition-colors"
               >
                 Official Rules
               </a>
