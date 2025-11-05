@@ -195,23 +195,23 @@ export default function SweepstakesSection() {
                 </p>
                 <ul className="space-y-3 text-stone-800 text-sm mb-6 font-light">
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider">1ST</span>
+                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">1ST</span>
                     <span className="font-light text-stone-800">Davidoff Air de Famille Ambassador Humidor Ziricote</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider">2ND</span>
+                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">2ND</span>
                     <span className="font-light text-stone-800">Davidoff Travel Humidor Business</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider">3RD</span>
+                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">3RD</span>
                     <span className="font-light text-stone-800">Davidoff Porcelain Ashtray</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider">4TH</span>
+                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">4TH</span>
                     <span className="font-light text-stone-800">Davidoff Winston Churchill Spirit Glass Set</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider">5TH</span>
+                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">5TH</span>
                     <span className="font-light text-stone-800">Davidoff Cigar Case Iconic XL-2</span>
                   </li>
                 </ul>
@@ -317,7 +317,7 @@ export default function SweepstakesSection() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                      className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -369,7 +369,7 @@ export default function SweepstakesSection() {
                       value={formData.address}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                      className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                       placeholder="123 Main Street"
                     />
                   </div>
