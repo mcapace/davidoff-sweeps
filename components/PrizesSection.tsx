@@ -59,6 +59,7 @@ const prizes = [
     details: "The set of two glasses is the perfect gift for every cigar aficionado and Winston Churchill fan. His silhouette is elegantly sandblasted at the bottom of the glass that was handmade in Europe by an expert company with 120 years of history of glass blowing.",
     dimensions: "3.14 x 3.14 x 3.54\" | 8 x 8 x 9 cm",
     imagePaths: [
+      "/images/wscacc_sgls_mood_001.jpg",
       "/images/giveaway/3743_source_1758102372.png",
       "/images/giveaway/glass-set.jpg",
       "/images/giveaway/churchill-glass.jpg",
