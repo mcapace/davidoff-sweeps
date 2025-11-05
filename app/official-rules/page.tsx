@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function OfficialRules() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-50 via-white to-stone-50/20 py-16 px-4">
@@ -103,7 +105,12 @@ export default function OfficialRules() {
             <section>
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">9. Privacy</h2>
               <p className="text-stone-700 leading-relaxed">
-                Information collected from entrants is subject to Sponsor&apos;s Privacy Policy. By entering, entrants agree to the collection and use of their personal information in accordance with the Privacy Policy.
+                Information collected from entrants is subject to Sponsor&apos;s Privacy Policy. By entering, entrants agree to the collection and use of their personal information in accordance with the Privacy Policy. 
+                Please review our{" "}
+                <Link href="/privacy-policy" className="text-davidoff-gold hover:text-davidoff-gold-dark underline underline-offset-2">
+                  Privacy Policy
+                </Link>{" "}
+                for detailed information about how we collect, use, and protect your personal information.
               </p>
             </section>
 

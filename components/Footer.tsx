@@ -55,6 +55,21 @@ export default function Footer() {
             <p className="text-stone-500 text-xs font-light">
               In partnership with Cigar Aficionado
             </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-4 pt-4 border-t border-stone-800">
+              <a
+                href="/privacy-policy"
+                className="text-stone-400 hover:text-davidoff-gold text-xs font-light underline underline-offset-2 transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <span className="text-stone-600">•</span>
+              <a
+                href="/official-rules"
+                className="text-stone-400 hover:text-davidoff-gold text-xs font-light underline underline-offset-2 transition-colors"
+              >
+                Official Rules
+              </a>
+            </div>
           </div>
         </div>
       </motion.div>
