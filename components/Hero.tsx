@@ -8,84 +8,15 @@ import { useState, useRef, useEffect } from "react";
 
 export default function Hero() {
   const [logoError, setLogoError] = useState(false);
-  const [videoError, setVideoError] = useState(false);
-  const [videoState, setVideoState] = useState<string>("initializing");
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Ensure video plays and loops
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      // Set up comprehensive event handlers
-      const handleError = (e: Event) => {
-        console.error("Video error event:", e);
-        const videoEl = e.target as HTMLVideoElement;
-        if (videoEl.error) {
-          console.error("Video error code:", videoEl.error.code);
-          console.error("Video error message:", videoEl.error.message);
-        }
-        setVideoError(true);
-      };
-
-      const handleLoadStart = () => {
-        console.log("Video loading started");
-        setVideoState("loading");
-      };
-
-      const handleLoadedMetadata = () => {
-        console.log("Video metadata loaded, duration:", video.duration);
-        setVideoState("metadata loaded");
-      };
-
-      const handleLoadedData = () => {
-        console.log("Video data loaded");
-        setVideoState("data loaded");
-      };
-
-      const handleCanPlay = () => {
-        console.log("Video can play, attempting to play...");
-        setVideoState("can play");
-        video.play().then(() => {
-          console.log("Video playing successfully");
-          setVideoState("playing");
-        }).catch((err) => {
-          console.error("Video play failed:", err);
-          setVideoState(`play failed: ${err.message}`);
-        });
-      };
-
-      const handleCanPlayThrough = () => {
-        console.log("Video can play through");
-        setVideoState("can play through");
-      };
-
-      // Add all event listeners
-      video.addEventListener('error', handleError);
-      video.addEventListener('loadstart', handleLoadStart);
-      video.addEventListener('loadedmetadata', handleLoadedMetadata);
-      video.addEventListener('loadeddata', handleLoadedData);
-      video.addEventListener('canplay', handleCanPlay);
-      video.addEventListener('canplaythrough', handleCanPlayThrough);
-
-      // Load the video - source is set in the video element
-      video.load();
-
-      // Try to play after a short delay
-      const playTimeout = setTimeout(() => {
-        video.play().catch((err) => {
-          console.log("Delayed play attempt failed:", err);
-        });
-      }, 100);
-
-      return () => {
-        clearTimeout(playTimeout);
-        video.removeEventListener('error', handleError);
-        video.removeEventListener('loadstart', handleLoadStart);
-        video.removeEventListener('loadedmetadata', handleLoadedMetadata);
-        video.removeEventListener('loadeddata', handleLoadedData);
-        video.removeEventListener('canplay', handleCanPlay);
-        video.removeEventListener('canplaythrough', handleCanPlayThrough);
-      };
+      video.play().catch((error) => {
+        console.log("Video autoplay failed:", error);
+      });
     }
   }, []);
 
@@ -100,50 +31,20 @@ export default function Hero() {
     <section className="relative h-[90vh] min-h-[700px] max-h-[1000px] w-full overflow-hidden bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal">
       {/* Video Background */}
       <div className="absolute inset-0">
-        {/* Temporary debug indicator - remove after fixing */}
-        {process.env.NODE_ENV === 'development' && (
-          <div className="absolute top-4 left-4 z-50 bg-red-500 text-white px-2 py-1 text-xs rounded">
-            Video State: {videoState} | Error: {videoError ? 'Yes' : 'No'}
-          </div>
-        )}
-        {!videoError ? (
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{
-              objectFit: 'cover',
-              opacity: 0.4,
-              zIndex: 0,
-            }}
-            onError={(e) => {
-              console.error("Video onError handler:", e);
-              const video = videoRef.current;
-              if (video && video.error) {
-                console.error("Video error code:", video.error.code);
-                console.error("Video error message:", video.error.message);
-                console.error("Video networkState:", video.networkState);
-                console.error("Video readyState:", video.readyState);
-                console.error("Video src:", video.src);
-                console.error("Video currentSrc:", video.currentSrc);
-              }
-              setVideoError(true);
-              setVideoState("error");
-            }}
-            onLoadStart={() => {
-              console.log("Video loadStart event");
-              setVideoState("loadStart");
-            }}
-          >
-            <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
-          </video>
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal" />
-        )}
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{
+            objectFit: 'cover',
+            opacity: 0.4, // Adjust opacity to blend with overlay
+          }}
+        >
+          <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
+        </video>
         
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
