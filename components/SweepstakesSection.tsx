@@ -284,6 +284,7 @@ export default function SweepstakesSection() {
                         value={formData.firstName}
                         onChange={handleInputChange}
                         required
+                        autoComplete="given-name"
                         className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="John"
                       />
@@ -299,6 +300,7 @@ export default function SweepstakesSection() {
                         value={formData.lastName}
                         onChange={handleInputChange}
                         required
+                        autoComplete="family-name"
                         className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="Doe"
                       />
@@ -317,6 +319,7 @@ export default function SweepstakesSection() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
+                      autoComplete="email"
                       className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                       placeholder="john@example.com"
                     />
@@ -335,6 +338,7 @@ export default function SweepstakesSection() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
+                        autoComplete="tel"
                         className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="(555) 123-4567"
                       />
@@ -350,6 +354,7 @@ export default function SweepstakesSection() {
                         value={formData.dateOfBirth}
                         onChange={handleInputChange}
                         required
+                        autoComplete="bday"
                         className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         max={new Date(new Date().setFullYear(new Date().getFullYear() - 21)).toISOString().split('T')[0]}
                       />
@@ -369,6 +374,7 @@ export default function SweepstakesSection() {
                       value={formData.address}
                       onChange={handleInputChange}
                       required
+                      autoComplete="street-address"
                       className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                       placeholder="123 Main Street"
                     />
@@ -387,6 +393,7 @@ export default function SweepstakesSection() {
                         value={formData.city}
                         onChange={handleInputChange}
                         required
+                        autoComplete="address-level2"
                         className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="San Francisco"
                       />
@@ -401,6 +408,7 @@ export default function SweepstakesSection() {
                         value={formData.state}
                         onChange={handleInputChange}
                         required
+                        autoComplete="address-level1"
                         className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                       >
                         {US_STATES.map(state => (
@@ -422,6 +430,7 @@ export default function SweepstakesSection() {
                         onChange={handleInputChange}
                         required
                         pattern="[0-9]{5}"
+                        autoComplete="postal-code"
                         className="w-full px-4 py-3 border-2 border-stone-400 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="94102"
                       />
@@ -441,7 +450,7 @@ export default function SweepstakesSection() {
                       />
                       <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors font-light">
                         I agree to the{' '}
-                        <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold font-light underline underline-offset-2" target="_blank">
+                        <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold font-light underline underline-offset-2" target="_blank" rel="noopener noreferrer" aria-label="Official Rules (opens in new window)">
                           Official Rules
                         </Link>{' '}
                         and confirm I am 21+ years of age. <span className="text-davidoff-gold">*</span>
@@ -467,7 +476,7 @@ export default function SweepstakesSection() {
                     <button
                       type="submit"
                       disabled={status === 'submitting'}
-                      className="w-full bg-davidoff-black text-white py-4 px-6 rounded-sm font-light text-sm tracking-wider uppercase shadow-md hover:shadow-lg hover:bg-charcoal active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                      className="w-full bg-davidoff-black text-white py-4 px-6 rounded-sm font-light text-sm tracking-wider uppercase border-2 border-davidoff-black shadow-md hover:shadow-lg hover:bg-charcoal hover:border-charcoal active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                     >
                       {status === 'submitting' ? (
                         <>
@@ -491,7 +500,7 @@ export default function SweepstakesSection() {
                   <p className="text-xs text-stone-700 text-center leading-relaxed pt-4 border-t border-stone-200 font-light">
                     NO PURCHASE NECESSARY. Open to legal US residents, 21+. Void where prohibited.
                     See{' '}
-                    <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold transition-colors underline underline-offset-2" target="_blank">
+                    <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold transition-colors underline underline-offset-2" target="_blank" rel="noopener noreferrer" aria-label="Official Rules (opens in new window)">
                       Official Rules
                     </Link>{' '}
                     for complete details.

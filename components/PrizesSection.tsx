@@ -269,7 +269,8 @@ export default function PrizesSection() {
               href="http://gtly.ink/mCeASmc3-I"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-8 px-8 py-4 bg-davidoff-gold text-davidoff-black font-semibold text-lg tracking-wide uppercase hover:bg-davidoff-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 rounded-sm"
+              className="inline-block mt-8 px-8 py-4 bg-davidoff-gold text-davidoff-black font-semibold text-lg tracking-wide uppercase border-2 border-davidoff-gold hover:bg-davidoff-gold/90 hover:border-davidoff-gold-dark transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 rounded-sm"
+              aria-label="Shop Davidoff Accessories (opens in new window)"
             >
               Shop Davidoff Accessories
             </a>
