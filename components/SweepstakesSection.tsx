@@ -185,7 +185,7 @@ export default function SweepstakesSection() {
               className="space-y-6"
             >
               {/* Prize Summary Card */}
-              <div className="bg-white rounded-sm shadow-sm p-8 border-2 border-stone-500">
+              <div className="bg-white rounded-sm shadow-sm p-8 border-2 border-stone-600">
                 <h3 className="font-serif text-2xl font-light text-davidoff-black mb-6 flex items-center gap-3">
                   <CigarIcon className="w-5 h-5 text-davidoff-gold" />
                   Five Exceptional Prizes
@@ -265,7 +265,7 @@ export default function SweepstakesSection() {
               )}
 
               {/* Entry Form */}
-              <div className="bg-white rounded-sm shadow-sm p-8 sm:p-10 border-2 border-stone-300">
+              <div className="bg-white rounded-sm shadow-sm p-8 sm:p-10 border-2 border-stone-600">
                 <h3 className="font-serif text-3xl font-light text-davidoff-black mb-8 text-center tracking-tight">
                   Complete Your Entry
                 </h3>
@@ -285,7 +285,7 @@ export default function SweepstakesSection() {
                         onChange={handleInputChange}
                         required
                         autoComplete="given-name"
-                        className="w-full px-4 py-3 border-2 border-stone-500 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-600 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="John"
                       />
                     </div>
@@ -301,7 +301,7 @@ export default function SweepstakesSection() {
                         onChange={handleInputChange}
                         required
                         autoComplete="family-name"
-                        className="w-full px-4 py-3 border-2 border-stone-500 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-600 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="Doe"
                       />
                     </div>
@@ -339,7 +339,7 @@ export default function SweepstakesSection() {
                         onChange={handleInputChange}
                         required
                         autoComplete="tel"
-                        className="w-full px-4 py-3 border-2 border-stone-500 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-600 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="(555) 123-4567"
                       />
                     </div>
@@ -355,7 +355,7 @@ export default function SweepstakesSection() {
                         onChange={handleInputChange}
                         required
                         autoComplete="bday"
-                        className="w-full px-4 py-3 border-2 border-stone-500 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-600 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         max={new Date(new Date().setFullYear(new Date().getFullYear() - 21)).toISOString().split('T')[0]}
                       />
                       <p className="text-xs text-stone-700 mt-1 font-light">Must be 21+ to enter</p>
@@ -394,7 +394,7 @@ export default function SweepstakesSection() {
                         onChange={handleInputChange}
                         required
                         autoComplete="address-level2"
-                        className="w-full px-4 py-3 border-2 border-stone-500 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-600 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="San Francisco"
                       />
                     </div>
@@ -409,7 +409,7 @@ export default function SweepstakesSection() {
                         onChange={handleInputChange}
                         required
                         autoComplete="address-level1"
-                        className="w-full px-4 py-3 border-2 border-stone-500 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-600 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                       >
                         {US_STATES.map(state => (
                           <option key={state.code} value={state.code}>
@@ -431,7 +431,7 @@ export default function SweepstakesSection() {
                         required
                         pattern="[0-9]{5}"
                         autoComplete="postal-code"
-                        className="w-full px-4 py-3 border-2 border-stone-500 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                        className="w-full px-4 py-3 border-2 border-stone-600 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         placeholder="94102"
                       />
                     </div>
@@ -446,7 +446,7 @@ export default function SweepstakesSection() {
                         checked={formData.agreeToRules}
                         onChange={handleInputChange}
                         required
-                        className="w-5 h-5 text-davidoff-gold border-2 border-stone-500 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
+                        className="w-5 h-5 text-davidoff-gold border-2 border-stone-600 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
                       />
                       <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors font-light">
                         I agree to the{' '}
@@ -463,7 +463,7 @@ export default function SweepstakesSection() {
                         name="agreeToEmails"
                         checked={formData.agreeToEmails}
                         onChange={handleInputChange}
-                        className="w-5 h-5 text-davidoff-gold border-2 border-stone-500 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
+                        className="w-5 h-5 text-davidoff-gold border-2 border-stone-600 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
                       />
                       <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors font-light">
                         I agree to receive newsletters and marketing emails from Davidoff <span className="text-stone-700 text-xs">(optional)</span>
@@ -500,7 +500,7 @@ export default function SweepstakesSection() {
                   <p className="text-xs text-stone-700 text-center leading-relaxed pt-4 border-t border-stone-200 font-light">
                     NO PURCHASE NECESSARY. Open to legal US residents, 21+. Void where prohibited.
                     See{' '}
-                    <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold transition-colors underline underline-offset-2" target="_blank" rel="noopener noreferrer" aria-label="Official Rules (opens in new window)">
+                    <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold transition-colors underline underline-offset-2" target="_blank" rel="noopener noreferrer" aria-label="View Official Sweepstakes Rules (opens in new window)">
                       Official Rules
                     </Link>{' '}
                     for complete details.

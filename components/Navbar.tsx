@@ -98,7 +98,7 @@ export default function Navbar() {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="transition-colors duration-200 font-sans font-medium text-sm tracking-wider uppercase text-davidoff-black hover:text-davidoff-gold focus:outline-none focus:ring-2 focus:ring-davidoff-gold/50 focus:ring-offset-2 rounded-sm px-2 py-1 border-2 border-stone-500 hover:border-davidoff-gold focus:border-davidoff-gold"
+                  className="transition-colors duration-200 font-sans font-medium text-sm tracking-wider uppercase text-davidoff-black hover:text-davidoff-gold focus:outline-none focus:ring-2 focus:ring-davidoff-gold/50 focus:ring-offset-2 rounded-sm px-2 py-1 border-2 border-stone-600 hover:border-davidoff-gold focus:border-davidoff-gold"
                   aria-label={`Navigate to ${link.label} section`}
                 >
                   {link.label}
@@ -116,7 +116,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 transition-colors text-davidoff-black hover:text-davidoff-gold focus:outline-none focus:ring-2 focus:ring-davidoff-gold/50 focus:ring-offset-2 rounded-sm border-2 border-stone-500 hover:border-davidoff-gold focus:border-davidoff-gold"
+              className="md:hidden p-2 transition-colors text-davidoff-black hover:text-davidoff-gold focus:outline-none focus:ring-2 focus:ring-davidoff-gold/50 focus:ring-offset-2 rounded-sm border-2 border-stone-600 hover:border-davidoff-gold focus:border-davidoff-gold"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -146,7 +146,7 @@ export default function Navbar() {
                     <button
                       key={link.id}
                       onClick={() => scrollToSection(link.id)}
-                      className="block w-full text-left px-4 py-3 text-davidoff-black hover:bg-stone-50 hover:text-davidoff-gold transition-colors rounded-sm font-sans font-medium text-sm tracking-wider uppercase focus:outline-none focus:ring-2 focus:ring-davidoff-gold/50 focus:ring-offset-2 border-2 border-stone-500 hover:border-davidoff-gold focus:border-davidoff-gold"
+                      className="block w-full text-left px-4 py-3 text-davidoff-black hover:bg-stone-50 hover:text-davidoff-gold transition-colors rounded-sm font-sans font-medium text-sm tracking-wider uppercase focus:outline-none focus:ring-2 focus:ring-davidoff-gold/50 focus:ring-offset-2 border-2 border-stone-600 hover:border-davidoff-gold focus:border-davidoff-gold"
                       aria-label={`Navigate to ${link.label} section`}
                     >
                       {link.label}

@@ -196,7 +196,7 @@ export default function CookieConsent() {
                         We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. 
                         By clicking &quot;Accept All&quot;, you consent to our use of cookies. You can also choose to accept only 
                         essential cookies or customize your preferences.{" "}
-                        <Link href="/privacy-policy" className="text-davidoff-gold hover:text-davidoff-gold-dark underline underline-offset-2">
+                        <Link href="/privacy-policy" className="text-davidoff-gold hover:text-davidoff-gold-dark underline underline-offset-2" aria-label="Read our Privacy Policy for cookie and data usage information">
                           Learn more
                         </Link>
                       </p>
@@ -206,13 +206,13 @@ export default function CookieConsent() {
                 <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
                   <button
                     onClick={openSettings}
-                    className="px-6 py-2.5 border-2 border-stone-500 text-stone-700 hover:bg-stone-50 rounded-sm transition-colors text-sm font-light whitespace-nowrap"
+                    className="px-6 py-2.5 border-2 border-stone-600 text-stone-700 hover:bg-stone-50 rounded-sm transition-colors text-sm font-light whitespace-nowrap"
                   >
                     Customize
                   </button>
                   <button
                     onClick={handleAcceptEssential}
-                    className="px-6 py-2.5 border-2 border-stone-500 text-stone-700 hover:bg-stone-50 rounded-sm transition-colors text-sm font-light whitespace-nowrap"
+                    className="px-6 py-2.5 border-2 border-stone-600 text-stone-700 hover:bg-stone-50 rounded-sm transition-colors text-sm font-light whitespace-nowrap"
                   >
                     Essential Only
                   </button>
@@ -324,7 +324,7 @@ export default function CookieConsent() {
                   <div className="pt-4 border-t border-stone-200 flex flex-col sm:flex-row gap-3 justify-end">
                     <button
                       onClick={closeSettings}
-                      className="px-6 py-2.5 border-2 border-stone-500 text-stone-700 hover:bg-stone-50 rounded-sm transition-colors text-sm font-light"
+                      className="px-6 py-2.5 border-2 border-stone-600 text-stone-700 hover:bg-stone-50 rounded-sm transition-colors text-sm font-light"
                     >
                       Cancel
                     </button>
