@@ -9,6 +9,7 @@ import { useState, useRef, useEffect } from "react";
 export default function Hero() {
   const [logoError, setLogoError] = useState(false);
   const [videoError, setVideoError] = useState(false);
+  const [videoState, setVideoState] = useState<string>("initializing");
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Ensure video plays and loops
@@ -28,25 +29,34 @@ export default function Hero() {
 
       const handleLoadStart = () => {
         console.log("Video loading started");
+        setVideoState("loading");
       };
 
       const handleLoadedMetadata = () => {
         console.log("Video metadata loaded, duration:", video.duration);
+        setVideoState("metadata loaded");
       };
 
       const handleLoadedData = () => {
         console.log("Video data loaded");
+        setVideoState("data loaded");
       };
 
       const handleCanPlay = () => {
         console.log("Video can play, attempting to play...");
-        video.play().catch((err) => {
+        setVideoState("can play");
+        video.play().then(() => {
+          console.log("Video playing successfully");
+          setVideoState("playing");
+        }).catch((err) => {
           console.error("Video play failed:", err);
+          setVideoState(`play failed: ${err.message}`);
         });
       };
 
       const handleCanPlayThrough = () => {
         console.log("Video can play through");
+        setVideoState("can play through");
       };
 
       // Add all event listeners
@@ -57,8 +67,7 @@ export default function Hero() {
       video.addEventListener('canplay', handleCanPlay);
       video.addEventListener('canplaythrough', handleCanPlayThrough);
 
-      // Set video source and load
-      video.src = "/images/davacc_humtravl_buss_vdo_1920x1080px.mp4";
+      // Load the video - source is set in the video element
       video.load();
 
       // Try to play after a short delay
@@ -91,6 +100,12 @@ export default function Hero() {
     <section className="relative h-[90vh] min-h-[700px] max-h-[1000px] w-full overflow-hidden bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal">
       {/* Video Background */}
       <div className="absolute inset-0">
+        {/* Temporary debug indicator - remove after fixing */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="absolute top-4 left-4 z-50 bg-red-500 text-white px-2 py-1 text-xs rounded">
+            Video State: {videoState} | Error: {videoError ? 'Yes' : 'No'}
+          </div>
+        )}
         {!videoError ? (
           <video
             ref={videoRef}
@@ -111,10 +126,21 @@ export default function Hero() {
               if (video && video.error) {
                 console.error("Video error code:", video.error.code);
                 console.error("Video error message:", video.error.message);
+                console.error("Video networkState:", video.networkState);
+                console.error("Video readyState:", video.readyState);
+                console.error("Video src:", video.src);
+                console.error("Video currentSrc:", video.currentSrc);
               }
               setVideoError(true);
+              setVideoState("error");
             }}
-          />
+            onLoadStart={() => {
+              console.log("Video loadStart event");
+              setVideoState("loadStart");
+            }}
+          >
+            <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
+          </video>
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal" />
         )}
