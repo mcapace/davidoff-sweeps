@@ -33,41 +33,20 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
+          src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4"
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover"
           style={{
             objectFit: 'cover',
-            opacity: 0.6,
-            zIndex: 0,
-            backgroundColor: '#000000',
+            opacity: 0.4,
           }}
-          onError={(e) => {
-            console.error("Video error:", e);
-            const video = e.target as HTMLVideoElement;
-            console.error("Error code:", video.error?.code);
-            console.error("Error message:", video.error?.message);
-            console.error("Video src attempted:", video.src);
-            console.error("Video currentSrc:", video.currentSrc);
-          }}
-          onLoadStart={() => console.log("Video load started")}
-          onLoadedData={() => console.log("Video data loaded")}
-          onCanPlay={() => {
-            console.log("Video can play");
-            const video = videoRef.current;
-            if (video) {
-              video.play().catch(err => console.error("Play error:", err));
-            }
-          }}
-        >
-          <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
-          <source src="/images/AdobeStock_320845376.mp4" type="video/mp4" />
-        </video>
+        />
         
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
         
         {/* Elegant Background Overlay */}
         <div className="absolute inset-0">
