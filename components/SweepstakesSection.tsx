@@ -199,7 +199,7 @@ export default function SweepstakesSection() {
                     <span className="font-light text-stone-800">Davidoff Air de Famille Ambassador Humidor Ziricote</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">2ND</span>
+                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider">2ND</span>
                     <span className="font-light text-stone-800">Davidoff Travel Humidor Business</span>
                   </li>
                   <li className="flex items-start gap-3">
