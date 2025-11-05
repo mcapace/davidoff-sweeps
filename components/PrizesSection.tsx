@@ -165,10 +165,10 @@ function PrizeImage({ imagePaths, alt, rank, objectFit = 'cover' }: { imagePaths
             <div className="text-4xl font-serif font-light text-davidoff-gold mb-2">
               {rank.split(' ')[0]}
             </div>
-            <div className="text-sm text-stone-600 font-light tracking-wider uppercase">
+            <div className="text-sm text-stone-800 font-light tracking-wider uppercase">
               {rank.split(' ')[1]}
             </div>
-            <p className="text-xs text-stone-500 mt-4">Add image to /public/images/giveaway/</p>
+            <p className="text-xs text-stone-700 mt-4">Add image to /public/images/giveaway/</p>
           </div>
         </div>
       )}

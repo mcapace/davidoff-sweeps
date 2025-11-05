@@ -193,26 +193,26 @@ export default function SweepstakesSection() {
                 <p className="text-stone-700 mb-6 font-light leading-relaxed">
                   Take this opportunity to enter to win one of five exceptional prizes showcasing the artistry and expertise for which Davidoff is renowned.
                 </p>
-                <ul className="space-y-3 text-stone-700 text-sm mb-6 font-light">
+                <ul className="space-y-3 text-stone-800 text-sm mb-6 font-light">
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">1ST</span>
-                    <span className="font-light">Davidoff Air de Famille Ambassador Humidor Ziricote</span>
+                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider">1ST</span>
+                    <span className="font-light text-stone-800">Davidoff Air de Famille Ambassador Humidor Ziricote</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">2ND</span>
-                    <span className="font-light">Davidoff Travel Humidor Business</span>
+                    <span className="font-light text-stone-800">Davidoff Travel Humidor Business</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">3RD</span>
-                    <span className="font-light">Davidoff Porcelain Ashtray</span>
+                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider">3RD</span>
+                    <span className="font-light text-stone-800">Davidoff Porcelain Ashtray</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">4TH</span>
-                    <span className="font-light">Davidoff Winston Churchill Spirit Glass Set</span>
+                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider">4TH</span>
+                    <span className="font-light text-stone-800">Davidoff Winston Churchill Spirit Glass Set</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold font-light mt-0.5 text-xs tracking-wider">5TH</span>
-                    <span className="font-light">Davidoff Cigar Case Iconic XL-2</span>
+                    <span className="text-davidoff-gold font-medium mt-0.5 text-xs tracking-wider">5TH</span>
+                    <span className="font-light text-stone-800">Davidoff Cigar Case Iconic XL-2</span>
                   </li>
                 </ul>
                 <div className="pt-6 border-t border-stone-200">
@@ -351,7 +351,7 @@ export default function SweepstakesSection() {
                         className="w-full px-4 py-3 border border-stone-300 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                         max={new Date(new Date().setFullYear(new Date().getFullYear() - 21)).toISOString().split('T')[0]}
                       />
-                      <p className="text-xs text-stone-600 mt-1 font-light">Must be 21+ to enter</p>
+                      <p className="text-xs text-stone-700 mt-1 font-light">Must be 21+ to enter</p>
                     </div>
                   </div>
 
@@ -455,7 +455,7 @@ export default function SweepstakesSection() {
                         className="w-5 h-5 text-davidoff-gold border border-stone-300 rounded-sm focus:ring-2 focus:ring-davidoff-gold/50 mt-0.5 cursor-pointer"
                       />
                       <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors font-light">
-                        I agree to receive newsletters and marketing emails from Davidoff <span className="text-stone-600 text-xs">(optional)</span>
+                        I agree to receive newsletters and marketing emails from Davidoff <span className="text-stone-700 text-xs">(optional)</span>
                       </span>
                     </label>
                   </div>
@@ -485,7 +485,7 @@ export default function SweepstakesSection() {
                   </div>
 
                   {/* Legal Text */}
-                  <p className="text-xs text-stone-600 text-center leading-relaxed pt-4 border-t border-stone-200 font-light">
+                  <p className="text-xs text-stone-700 text-center leading-relaxed pt-4 border-t border-stone-200 font-light">
                     NO PURCHASE NECESSARY. Open to legal US residents, 21+. Void where prohibited.
                     See{' '}
                     <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold transition-colors underline underline-offset-2" target="_blank">

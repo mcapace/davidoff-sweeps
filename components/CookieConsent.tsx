@@ -257,7 +257,7 @@ export default function CookieConsent() {
                   </h2>
                   <button
                     onClick={closeSettings}
-                    className="text-stone-600 hover:text-stone-800 transition-colors"
+                    className="text-stone-700 hover:text-stone-900 transition-colors"
                     aria-label="Close"
                   >
                     <X className="w-6 h-6" />
@@ -295,7 +295,7 @@ export default function CookieConsent() {
                                 <h3 className="font-serif font-semibold text-davidoff-black">
                                   {categoryInfo.name}
                                   {categoryInfo.required && (
-                                    <span className="ml-2 text-xs text-stone-600 font-normal">
+                                    <span className="ml-2 text-xs text-stone-700 font-normal">
                                       (Required)
                                     </span>
                                   )}
