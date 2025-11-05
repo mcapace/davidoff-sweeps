@@ -40,8 +40,9 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover z-0"
           style={{
             objectFit: 'cover',
-            opacity: 0.4,
+            opacity: 0.6,
             zIndex: 0,
+            backgroundColor: '#000000',
           }}
           onError={(e) => {
             console.error("Video error:", e);
