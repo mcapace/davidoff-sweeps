@@ -27,7 +27,7 @@ export default function Footer() {
                 alt="Davidoff"
                 width={360}
                 height={108}
-                className="h-14 sm:h-16 w-auto opacity-95"
+                className="h-16 sm:h-20 w-auto opacity-95"
                 onError={() => setLogoError(true)}
                 unoptimized
               />
