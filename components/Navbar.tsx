@@ -98,14 +98,16 @@ export default function Navbar() {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="transition-colors duration-200 font-sans font-medium text-sm tracking-wider uppercase text-davidoff-black hover:text-davidoff-gold"
+                  className="transition-colors duration-200 font-sans font-medium text-sm tracking-wider uppercase text-davidoff-black hover:text-davidoff-gold focus:outline-none focus:ring-2 focus:ring-davidoff-gold/50 focus:ring-offset-2 rounded-sm px-2 py-1"
+                  aria-label={`Navigate to ${link.label} section`}
                 >
                   {link.label}
                 </button>
               ))}
               <button
                 onClick={() => scrollToSection("sweepstakes")}
-                className="px-6 py-2.5 rounded-sm transition-all duration-300 font-sans font-light text-sm tracking-wider uppercase bg-davidoff-gold text-davidoff-black border-2 border-davidoff-gold-dark hover:bg-davidoff-gold-dark hover:border-davidoff-gold-dark shadow-md hover:shadow-lg"
+                className="px-6 py-2.5 rounded-sm transition-all duration-300 font-sans font-light text-sm tracking-wider uppercase bg-davidoff-gold text-davidoff-black border-2 border-davidoff-gold-dark hover:bg-davidoff-gold-dark hover:border-davidoff-gold-dark shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-davidoff-gold focus:ring-offset-2"
+                aria-label="Enter sweepstakes now"
               >
                 Enter Now
               </button>
@@ -114,7 +116,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 transition-colors text-davidoff-black hover:text-davidoff-gold"
+              className="md:hidden p-2 transition-colors text-davidoff-black hover:text-davidoff-gold focus:outline-none focus:ring-2 focus:ring-davidoff-gold/50 focus:ring-offset-2 rounded-sm"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (

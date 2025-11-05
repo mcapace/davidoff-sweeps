@@ -151,7 +151,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
           onClick={scrollToSweepstakes}
-          className="md:hidden bg-davidoff-gold hover:bg-davidoff-gold-dark text-davidoff-black px-8 py-3 rounded-sm border-2 border-davidoff-gold-dark hover:border-davidoff-gold-dark font-light text-sm tracking-wider uppercase shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center gap-2 mb-4"
+          className="md:hidden bg-davidoff-gold hover:bg-davidoff-gold-dark text-davidoff-black px-8 py-3 rounded-sm border-2 border-davidoff-gold-dark hover:border-davidoff-gold-dark font-light text-sm tracking-wider uppercase shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center gap-2 mb-4 focus:outline-none focus:ring-2 focus:ring-davidoff-gold focus:ring-offset-2"
+          aria-label="Enter sweepstakes"
         >
           <CigarIcon className="w-4 h-4" />
           Enter Now
