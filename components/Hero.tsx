@@ -43,6 +43,7 @@ export default function Hero() {
     <section className="relative h-[90vh] min-h-[700px] max-h-[1000px] w-full overflow-hidden bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
+        {/* Test if video file exists */}
         <video
           ref={videoRef}
           autoPlay
@@ -50,6 +51,7 @@ export default function Hero() {
           muted
           playsInline
           preload="auto"
+          src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4"
           className="absolute inset-0 w-full h-full object-cover"
           style={{
             objectFit: 'cover',
@@ -60,46 +62,36 @@ export default function Hero() {
           }}
           onError={(e) => {
             const video = e.target as HTMLVideoElement;
-            console.error("VIDEO ERROR:", {
+            console.error("VIDEO ERROR - Primary failed:", {
               code: video.error?.code,
               message: video.error?.message,
               src: video.src,
               currentSrc: video.currentSrc,
-              networkState: video.networkState,
-              readyState: video.readyState,
             });
-            // Try fallback video
-            if (video.src && !video.src.includes('AdobeStock')) {
-              console.log("Trying fallback video...");
-              video.src = "/images/AdobeStock_320845376.mp4";
-              video.load();
-            }
+            // Try fallback video immediately
+            console.log("Switching to fallback video...");
+            video.src = "/images/AdobeStock_320845376.mp4";
+            video.load();
+            video.play().catch(err => console.error("Fallback video play failed:", err));
           }}
           onLoadStart={() => {
-            console.log("VIDEO: Load started");
-            const video = videoRef.current;
-            if (video) {
-              console.log("VIDEO: Source:", video.src || video.currentSrc);
-            }
+            console.log("VIDEO: Load started for:", videoRef.current?.src);
           }}
           onLoadedMetadata={() => {
-            console.log("VIDEO: Metadata loaded");
+            console.log("VIDEO: Metadata loaded successfully");
             const video = videoRef.current;
             if (video) {
-              console.log("VIDEO: Duration:", video.duration, "ReadyState:", video.readyState);
+              console.log("VIDEO: Duration:", video.duration, "s, Size:", video.videoWidth, "x", video.videoHeight);
               video.play().catch(err => console.log("VIDEO: Play failed:", err));
             }
           }}
           onCanPlay={() => {
-            console.log("VIDEO: Can play");
+            console.log("VIDEO: Can play - ready to play");
           }}
           onPlaying={() => {
-            console.log("VIDEO: Playing!");
+            console.log("VIDEO: ✅ PLAYING SUCCESSFULLY!");
           }}
-        >
-          <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
-          <source src="/images/AdobeStock_320845376.mp4" type="video/mp4" />
-        </video>
+        />
         
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
