@@ -146,14 +146,16 @@ export default function Navbar() {
                     <button
                       key={link.id}
                       onClick={() => scrollToSection(link.id)}
-                      className="block w-full text-left px-4 py-3 text-davidoff-black hover:bg-stone-50 hover:text-davidoff-gold transition-colors rounded-sm font-sans font-medium text-sm tracking-wider uppercase"
+                      className="block w-full text-left px-4 py-3 text-davidoff-black hover:bg-stone-50 hover:text-davidoff-gold transition-colors rounded-sm font-sans font-medium text-sm tracking-wider uppercase focus:outline-none focus:ring-2 focus:ring-davidoff-gold/50 focus:ring-offset-2 border-2 border-transparent hover:border-stone-200 focus:border-davidoff-gold"
+                      aria-label={`Navigate to ${link.label} section`}
                     >
                       {link.label}
                     </button>
                   ))}
               <button
                 onClick={() => scrollToSection("sweepstakes")}
-                className="w-full bg-davidoff-black text-white px-6 py-3 rounded-sm border-2 border-davidoff-black hover:bg-charcoal hover:border-charcoal transition-all duration-300 font-sans font-light text-sm tracking-wider uppercase"
+                className="w-full bg-davidoff-black text-white px-6 py-3 rounded-sm border-2 border-davidoff-black hover:bg-charcoal hover:border-charcoal transition-all duration-300 font-sans font-light text-sm tracking-wider uppercase focus:outline-none focus:ring-2 focus:ring-davidoff-gold focus:ring-offset-2"
+                aria-label="Enter sweepstakes now"
               >
                 Enter Now
               </button>
