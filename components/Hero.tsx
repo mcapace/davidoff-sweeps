@@ -53,7 +53,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover z-0"
           style={{
             objectFit: 'cover',
-            opacity: 0.4,
+            opacity: 0.6,
             width: '100%',
             height: '100%',
           }}
@@ -63,7 +63,7 @@ export default function Hero() {
         </video>
         
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
         
         {/* Elegant Background Overlay */}
         <div className="absolute inset-0">
