@@ -53,13 +53,14 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{
             objectFit: 'cover',
-            opacity: 0.4,
+            opacity: 0.5,
             minWidth: '100%',
             minHeight: '100%',
+            backgroundColor: '#000000',
           }}
           onError={(e) => {
             const video = e.target as HTMLVideoElement;
-            console.error("Video error:", {
+            console.error("VIDEO ERROR:", {
               code: video.error?.code,
               message: video.error?.message,
               src: video.src,
@@ -67,13 +68,33 @@ export default function Hero() {
               networkState: video.networkState,
               readyState: video.readyState,
             });
+            // Try fallback video
+            if (video.src && !video.src.includes('AdobeStock')) {
+              console.log("Trying fallback video...");
+              video.src = "/images/AdobeStock_320845376.mp4";
+              video.load();
+            }
           }}
-          onLoadedMetadata={() => {
-            console.log("Video metadata loaded");
+          onLoadStart={() => {
+            console.log("VIDEO: Load started");
             const video = videoRef.current;
             if (video) {
-              video.play().catch(err => console.log("Play after metadata failed:", err));
+              console.log("VIDEO: Source:", video.src || video.currentSrc);
             }
+          }}
+          onLoadedMetadata={() => {
+            console.log("VIDEO: Metadata loaded");
+            const video = videoRef.current;
+            if (video) {
+              console.log("VIDEO: Duration:", video.duration, "ReadyState:", video.readyState);
+              video.play().catch(err => console.log("VIDEO: Play failed:", err));
+            }
+          }}
+          onCanPlay={() => {
+            console.log("VIDEO: Can play");
+          }}
+          onPlaying={() => {
+            console.log("VIDEO: Playing!");
           }}
         >
           <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
