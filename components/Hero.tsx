@@ -8,15 +8,41 @@ import { useState, useRef, useEffect } from "react";
 
 export default function Hero() {
   const [logoError, setLogoError] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Ensure video plays and loops
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
+      // Set up error handling
+      const handleError = (e: Event) => {
+        console.error("Video error:", e);
+        setVideoError(true);
+      };
+
+      const handleLoadStart = () => {
+        console.log("Video loading started");
+      };
+
+      const handleCanPlay = () => {
+        console.log("Video can play");
+      };
+
+      video.addEventListener('error', handleError);
+      video.addEventListener('loadstart', handleLoadStart);
+      video.addEventListener('canplay', handleCanPlay);
+
       video.play().catch((error) => {
         console.log("Video autoplay failed:", error);
+        setVideoError(true);
       });
+
+      return () => {
+        video.removeEventListener('error', handleError);
+        video.removeEventListener('loadstart', handleLoadStart);
+        video.removeEventListener('canplay', handleCanPlay);
+      };
     }
   }, []);
 
@@ -31,21 +57,30 @@ export default function Hero() {
     <section className="relative h-[90vh] min-h-[700px] max-h-[1000px] w-full overflow-hidden bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal">
       {/* Video Background */}
       <div className="absolute inset-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{
-            objectFit: 'cover',
-            opacity: 0.4, // Adjust opacity to blend with overlay
-          }}
-        >
-          <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
-          {/* Fallback message if video doesn't load */}
-        </video>
+        {!videoError ? (
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              objectFit: 'cover',
+              opacity: 0.4, // Adjust opacity to blend with overlay
+            }}
+            onError={(e) => {
+              console.error("Video element error:", e);
+              setVideoError(true);
+            }}
+          >
+            <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal" />
+        )}
         
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
