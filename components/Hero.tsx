@@ -40,10 +40,11 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{
             objectFit: 'cover',
-            opacity: 0.4, // Adjust opacity to blend with overlay
+            opacity: 0.4,
           }}
         >
           <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
         
         {/* Dark overlay for text readability */}
