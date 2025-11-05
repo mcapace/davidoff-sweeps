@@ -257,22 +257,14 @@ export default function PrizesSection() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-center mt-16 pt-12 border-t border-stone-300"
           >
-            <p className="text-2xl sm:text-3xl font-serif font-light text-davidoff-black tracking-tight mb-6">
+            <p className="text-2xl sm:text-3xl font-serif font-light text-davidoff-black tracking-tight">
               Time Beautifully Filled. Enter Today.
             </p>
-            <a
-              href="http://gtly.ink/mCeASmc3-I"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-8 px-8 py-4 bg-davidoff-gold text-davidoff-black font-semibold text-lg tracking-wide uppercase hover:bg-davidoff-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 rounded-sm"
-            >
-              Shop Davidoff Accessories
-            </a>
           </motion.div>
         </motion.div>
       </div>

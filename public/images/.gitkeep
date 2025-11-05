@@ -1,0 +1,7 @@
+# This file ensures the images directory is tracked by git
+# Add your images here:
+# - hero/ - Hero section images
+# - logos/ - Logo files
+# - giveaway/ - Prize/giveaway images
+# - Any other campaign-specific images
+
