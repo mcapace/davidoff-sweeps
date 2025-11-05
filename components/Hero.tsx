@@ -12,11 +12,23 @@ export default function Hero() {
 
   // Ensure video plays and loops
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const video = videoRef.current;
     if (video) {
-      video.play().catch((error) => {
-        console.log("Video autoplay failed:", error);
-      });
+      // Load and play
+      video.load();
+      const playPromise = video.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.log("Video autoplay failed:", error);
+          // Try to play again after a short delay
+          setTimeout(() => {
+            video.play().catch(err => console.log("Retry play failed:", err));
+          }, 500);
+        });
+      }
     }
   }, []);
 
@@ -33,17 +45,40 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
-          src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4"
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
           style={{
             objectFit: 'cover',
             opacity: 0.4,
+            minWidth: '100%',
+            minHeight: '100%',
           }}
-        />
+          onError={(e) => {
+            const video = e.target as HTMLVideoElement;
+            console.error("Video error:", {
+              code: video.error?.code,
+              message: video.error?.message,
+              src: video.src,
+              currentSrc: video.currentSrc,
+              networkState: video.networkState,
+              readyState: video.readyState,
+            });
+          }}
+          onLoadedMetadata={() => {
+            console.log("Video metadata loaded");
+            const video = videoRef.current;
+            if (video) {
+              video.play().catch(err => console.log("Play after metadata failed:", err));
+            }
+          }}
+        >
+          <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
+          <source src="/images/AdobeStock_320845376.mp4" type="video/mp4" />
+        </video>
         
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />

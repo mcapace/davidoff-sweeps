@@ -232,7 +232,7 @@ export default function PrizesSection() {
                   {/* Content Column */}
                   <div className="md:col-span-3 p-8 sm:p-10">
                     <div className="mb-4">
-                      <span className="inline-block text-xs font-light tracking-widest uppercase text-davidoff-gold bg-davidoff-gold-light px-3 py-1 mb-4">
+                      <span className="inline-block text-xs font-light tracking-widest uppercase text-davidoff-black bg-davidoff-gold-light px-3 py-1 mb-4">
                         {prize.rank}
                       </span>
                     </div>
