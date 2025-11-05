@@ -76,7 +76,7 @@ export default function Hero() {
         >
           {!logoError ? (
             <Image
-              src="/images/logos/davidoff-logo.png"
+              src="/images/logos/davidoff-logo-white.png"
               alt="Davidoff"
               width={360}
               height={108}
