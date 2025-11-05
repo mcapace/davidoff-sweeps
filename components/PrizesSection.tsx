@@ -216,7 +216,7 @@ export default function PrizesSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
-                className="bg-white rounded-sm shadow-sm border-2 border-stone-300 overflow-hidden hover:shadow-md transition-shadow duration-300"
+                className="bg-white rounded-sm shadow-sm border-2 border-stone-500 overflow-hidden hover:shadow-md transition-shadow duration-300"
               >
                 <div className="grid md:grid-cols-5 gap-0">
                   {/* Image Column */}

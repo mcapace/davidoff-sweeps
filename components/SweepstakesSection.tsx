@@ -223,9 +223,9 @@ export default function SweepstakesSection() {
                       document.getElementById('prizes')?.scrollIntoView({ behavior: 'smooth' });
                     }}
                     className="text-davidoff-black hover:text-davidoff-gold transition-colors font-light text-sm tracking-wide uppercase underline underline-offset-4"
-                    aria-label="View full prize details for all five sweepstakes prizes - scroll to prizes section"
+                    aria-label="View all five sweepstakes prize details and descriptions"
                   >
-                    View full prize details
+                    View all prize details
                     <span aria-hidden="true"> →</span>
                   </Link>
                 </div>
