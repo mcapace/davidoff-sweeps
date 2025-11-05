@@ -17,7 +17,7 @@ export default function Hero() {
     if (video) {
       // Set up error handling
       const handleError = (e: Event) => {
-        console.error("Video error:", e);
+        console.error("Video error:", e, video.error);
         setVideoError(true);
       };
 
@@ -25,23 +25,23 @@ export default function Hero() {
         console.log("Video loading started");
       };
 
-      const handleCanPlay = () => {
-        console.log("Video can play");
-      };
-
       video.addEventListener('error', handleError);
       video.addEventListener('loadstart', handleLoadStart);
-      video.addEventListener('canplay', handleCanPlay);
 
-      video.play().catch((error) => {
-        console.log("Video autoplay failed:", error);
-        setVideoError(true);
-      });
+      // Try to load and play the video
+      video.load(); // Explicitly load the video
+      
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.log("Video autoplay failed:", error);
+          // Don't set error state for autoplay failures - video might still load
+        });
+      }
 
       return () => {
         video.removeEventListener('error', handleError);
         video.removeEventListener('loadstart', handleLoadStart);
-        video.removeEventListener('canplay', handleCanPlay);
       };
     }
   }, []);
@@ -64,7 +64,7 @@ export default function Hero() {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
             className="absolute inset-0 w-full h-full object-cover"
             style={{
               objectFit: 'cover',
@@ -73,6 +73,18 @@ export default function Hero() {
             onError={(e) => {
               console.error("Video element error:", e);
               setVideoError(true);
+            }}
+            onLoadedData={() => {
+              console.log("Video data loaded");
+            }}
+            onCanPlay={() => {
+              console.log("Video can play");
+              const video = videoRef.current;
+              if (video) {
+                video.play().catch((err) => {
+                  console.log("Play failed:", err);
+                });
+              }
             }}
           >
             <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
