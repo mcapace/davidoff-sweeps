@@ -162,9 +162,9 @@ export default function SweepstakesSection() {
               <CigarIcon className="w-12 h-12 text-davidoff-gold mx-auto mb-4" strokeWidth={1.5} />
               <div className="w-20 h-px bg-gradient-to-r from-transparent via-davidoff-gold to-transparent mx-auto" />
             </motion.div>
-            <h3 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-davidoff-black mb-4 tracking-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-davidoff-black mb-4 tracking-tight">
               Enter to Win
-            </h3>
+            </h2>
             <p className="text-lg sm:text-xl text-stone-700 max-w-2xl mx-auto mb-6 font-light">
               Your chance to win one of five refined Davidoff accessories
             </p>
@@ -185,11 +185,11 @@ export default function SweepstakesSection() {
               className="space-y-6"
             >
               {/* Prize Summary Card */}
-              <div className="bg-white rounded-sm shadow-sm p-8 border-2 border-stone-300">
-                <h4 className="font-serif text-2xl font-light text-davidoff-black mb-6 flex items-center gap-3">
+              <div className="bg-white rounded-sm shadow-sm p-8 border-2 border-stone-500">
+                <h3 className="font-serif text-2xl font-light text-davidoff-black mb-6 flex items-center gap-3">
                   <CigarIcon className="w-5 h-5 text-davidoff-gold" />
                   Five Exceptional Prizes
-                </h4>
+                </h3>
                 <p className="text-stone-700 mb-6 font-light leading-relaxed">
                   Take this opportunity to enter to win one of five exceptional prizes showcasing the artistry and expertise for which Davidoff is renowned.
                 </p>
@@ -244,7 +244,7 @@ export default function SweepstakesSection() {
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-8 h-8 text-green-600 flex-shrink-0 mt-1" />
                     <div>
-                      <h5 className="text-lg font-semibold text-green-900 mb-2">Check Your Email!</h5>
+                      <h4 className="text-lg font-semibold text-green-900 mb-2">Check Your Email!</h4>
                       <p className="text-green-800 text-sm leading-relaxed">{message}</p>
                     </div>
                   </div>
@@ -257,7 +257,7 @@ export default function SweepstakesSection() {
                   <div className="flex items-start gap-4">
                     <AlertCircle className="w-8 h-8 text-red-600 flex-shrink-0 mt-1" />
                     <div>
-                      <h5 className="text-lg font-semibold text-red-900 mb-2">Entry Failed</h5>
+                      <h4 className="text-lg font-semibold text-red-900 mb-2">Entry Failed</h4>
                       <p className="text-red-800 text-sm">{message}</p>
                     </div>
                   </div>
@@ -266,9 +266,9 @@ export default function SweepstakesSection() {
 
               {/* Entry Form */}
               <div className="bg-white rounded-sm shadow-sm p-8 sm:p-10 border-2 border-stone-300">
-                <h4 className="font-serif text-3xl font-light text-davidoff-black mb-8 text-center tracking-tight">
+                <h3 className="font-serif text-3xl font-light text-davidoff-black mb-8 text-center tracking-tight">
                   Complete Your Entry
-                </h4>
+                </h3>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                   {/* Name Row */}
