@@ -92,7 +92,7 @@ export default function Hero() {
           {!logoError ? (
             <Image
               src="/images/logos/davidoff-logo-white.png"
-              alt="Davidoff"
+              alt="Davidoff - Time Beautifully Filled"
               width={360}
               height={108}
               className="h-24 sm:h-28 md:h-32 w-auto opacity-95"
@@ -154,7 +154,7 @@ export default function Hero() {
           className="md:hidden bg-davidoff-gold hover:bg-davidoff-gold-dark text-davidoff-black px-8 py-3 rounded-sm border-2 border-davidoff-gold-dark hover:border-davidoff-gold-dark font-light text-sm tracking-wider uppercase shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center gap-2 mb-4 focus:outline-none focus:ring-2 focus:ring-davidoff-gold focus:ring-offset-2"
           aria-label="Enter sweepstakes"
         >
-          <CigarIcon className="w-4 h-4" />
+          <CigarIcon className="w-4 h-4" aria-hidden="true" />
           Enter Now
         </motion.button>
 

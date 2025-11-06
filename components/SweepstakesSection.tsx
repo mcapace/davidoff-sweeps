@@ -159,7 +159,7 @@ export default function SweepstakesSection() {
               className="inline-block mb-6"
             >
               <div className="w-20 h-px bg-gradient-to-r from-transparent via-davidoff-gold to-transparent mx-auto mb-4" />
-              <CigarIcon className="w-12 h-12 text-davidoff-gold mx-auto mb-4" strokeWidth={1.5} />
+              <CigarIcon className="w-12 h-12 text-davidoff-gold mx-auto mb-4" strokeWidth={1.5} aria-hidden="true" />
               <div className="w-20 h-px bg-gradient-to-r from-transparent via-davidoff-gold to-transparent mx-auto" />
             </motion.div>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-davidoff-black mb-4 tracking-tight">
@@ -169,7 +169,7 @@ export default function SweepstakesSection() {
               Your chance to win one of five refined Davidoff accessories
             </p>
             <div className="mt-6 inline-flex items-center gap-2 px-5 py-2 bg-davidoff-gold-light border-2 border-davidoff-gold-dark rounded-sm">
-              <Sparkles className="w-4 h-4 text-davidoff-gold" />
+              <Sparkles className="w-4 h-4 text-davidoff-gold" aria-hidden="true" />
               <span className="text-xs font-light tracking-wider uppercase text-davidoff-black">NO PURCHASE NECESSARY</span>
             </div>
           </div>
@@ -187,7 +187,7 @@ export default function SweepstakesSection() {
               {/* Prize Summary Card */}
               <div className="bg-white rounded-sm shadow-sm p-8 border-2 border-stone-600">
                 <h3 className="font-serif text-2xl font-light text-davidoff-black mb-6 flex items-center gap-3">
-                  <CigarIcon className="w-5 h-5 text-davidoff-gold" />
+                  <CigarIcon className="w-5 h-5 text-davidoff-gold" aria-hidden="true" />
                   Five Exceptional Prizes
                 </h3>
                 <p className="text-stone-700 mb-6 font-light leading-relaxed">
@@ -242,7 +242,7 @@ export default function SweepstakesSection() {
               {status === 'success' && (
                 <div id="success-message" className="mb-6 bg-green-50 border-2 border-green-200 rounded-xl p-6 animate-fadeInUp">
                   <div className="flex items-start gap-4">
-                    <CheckCircle className="w-8 h-8 text-green-600 flex-shrink-0 mt-1" />
+                    <CheckCircle className="w-8 h-8 text-green-600 flex-shrink-0 mt-1" aria-hidden="true" />
                     <div>
                       <h4 className="text-lg font-semibold text-green-900 mb-2">Check Your Email!</h4>
                       <p className="text-green-800 text-sm leading-relaxed">{message}</p>
@@ -255,7 +255,7 @@ export default function SweepstakesSection() {
               {status === 'error' && (
                 <div className="mb-6 bg-red-50 border-2 border-red-200 rounded-xl p-6 animate-fadeInUp">
                   <div className="flex items-start gap-4">
-                    <AlertCircle className="w-8 h-8 text-red-600 flex-shrink-0 mt-1" />
+                    <AlertCircle className="w-8 h-8 text-red-600 flex-shrink-0 mt-1" aria-hidden="true" />
                     <div>
                       <h4 className="text-lg font-semibold text-red-900 mb-2">Entry Failed</h4>
                       <p className="text-red-800 text-sm">{message}</p>
@@ -491,7 +491,7 @@ export default function SweepstakesSection() {
                         </>
                       ) : (
                         <>
-                              <CigarIcon className="w-5 h-5" />
+                              <CigarIcon className="w-5 h-5" aria-hidden="true" />
                               Enter to Win
                         </>
                       )}

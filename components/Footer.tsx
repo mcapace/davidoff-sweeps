@@ -24,7 +24,7 @@ export default function Footer() {
             {!logoError ? (
               <Image
                 src="/images/logos/davidoff-logo-white.png"
-                alt="Davidoff"
+                alt="Davidoff - Time Beautifully Filled"
                 width={360}
                 height={108}
                 className="h-16 sm:h-20 w-auto opacity-95"
