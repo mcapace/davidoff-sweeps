@@ -66,9 +66,8 @@ export default function IntroSection() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-davidoff-black hover:text-davidoff-gold transition-colors font-semibold underline underline-offset-4 decoration-2"
-                aria-label="Visit davidoffgeneva.com (opens in new window)"
               >
-                davidoffgeneva.com
+                davidoffgeneva.com<span className="sr-only"> (opens in new window)</span>
               </a>
             </p>
           </div>

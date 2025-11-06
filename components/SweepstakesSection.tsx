@@ -451,8 +451,8 @@ export default function SweepstakesSection() {
                       />
                       <span className="text-sm text-stone-700 group-hover:text-stone-900 transition-colors font-light">
                         I agree to the{' '}
-                        <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold font-light underline underline-offset-2" target="_blank" rel="noopener noreferrer" aria-label="View Official Sweepstakes Rules (opens in new window)">
-                          Official Rules
+                        <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold font-light underline underline-offset-2" target="_blank" rel="noopener noreferrer">
+                          Official Rules<span className="sr-only"> (opens in new window)</span>
                         </Link>{' '}
                         and confirm I am 21+ years of age. <span className="text-stone-700">*</span>
                       </span>
@@ -501,11 +501,7 @@ export default function SweepstakesSection() {
                   {/* Legal Text */}
                   <p className="text-xs text-stone-700 text-center leading-relaxed pt-4 border-t border-stone-200 font-light">
                     NO PURCHASE NECESSARY. Open to legal US residents, 21+. Void where prohibited.
-                    See{' '}
-                    <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold transition-colors underline underline-offset-2" target="_blank" rel="noopener noreferrer" aria-label="View complete Official Sweepstakes Rules (opens in new window)">
-                      complete rules
-                    </Link>
-                    .
+                    See the Official Rules above for complete details.
                   </p>
                 </form>
               </div>
