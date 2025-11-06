@@ -195,23 +195,23 @@ export default function SweepstakesSection() {
                 </p>
                 <ul className="space-y-3 text-stone-800 text-sm mb-6 font-light">
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold-dark font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">1ST</span>
+                    <span className="text-stone-700 font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">1ST</span>
                     <span className="font-light text-stone-800">Davidoff Air de Famille Ambassador Humidor Ziricote</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold-dark font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">2ND</span>
+                    <span className="text-stone-700 font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">2ND</span>
                     <span className="font-light text-stone-800">Davidoff Travel Humidor Business</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold-dark font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">3RD</span>
+                    <span className="text-stone-700 font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">3RD</span>
                     <span className="font-light text-stone-800">Davidoff Porcelain Ashtray</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold-dark font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">4TH</span>
+                    <span className="text-stone-700 font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">4TH</span>
                     <span className="font-light text-stone-800">Davidoff Winston Churchill Spirit Glass Set</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-davidoff-gold-dark font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">5TH</span>
+                    <span className="text-stone-700 font-medium mt-0.5 text-xs tracking-wider w-10 text-right flex-shrink-0">5TH</span>
                     <span className="font-light text-stone-800">Davidoff Cigar Case Iconic XL-2</span>
                   </li>
                 </ul>
@@ -275,7 +275,7 @@ export default function SweepstakesSection() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="firstName" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
-                        First Name <span className="text-davidoff-gold-dark">*</span>
+                        First Name <span className="text-stone-700">*</span>
                       </label>
                       <input
                         type="text"
@@ -291,7 +291,7 @@ export default function SweepstakesSection() {
                     </div>
                     <div>
                       <label htmlFor="lastName" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
-                        Last Name <span className="text-davidoff-gold-dark">*</span>
+                        Last Name <span className="text-stone-700">*</span>
                       </label>
                       <input
                         type="text"
@@ -310,7 +310,7 @@ export default function SweepstakesSection() {
                   {/* Email */}
                   <div>
                     <label htmlFor="email" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
-                      Email Address <span className="text-davidoff-gold-dark">*</span>
+                      Email Address <span className="text-stone-700">*</span>
                     </label>
                     <input
                       type="email"
@@ -329,7 +329,7 @@ export default function SweepstakesSection() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="phone" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
-                        Phone Number <span className="text-davidoff-gold-dark">*</span>
+                        Phone Number <span className="text-stone-700">*</span>
                       </label>
                       <input
                         type="tel"
@@ -345,7 +345,7 @@ export default function SweepstakesSection() {
                     </div>
                     <div>
                       <label htmlFor="dateOfBirth" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
-                        Date of Birth <span className="text-davidoff-gold-dark">*</span>
+                        Date of Birth <span className="text-stone-700">*</span>
                       </label>
                       <input
                         type="date"
@@ -365,7 +365,7 @@ export default function SweepstakesSection() {
                   {/* Address */}
                   <div>
                     <label htmlFor="address" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
-                      Street Address <span className="text-davidoff-gold-dark">*</span>
+                      Street Address <span className="text-stone-700">*</span>
                     </label>
                     <input
                       type="text"
@@ -384,7 +384,7 @@ export default function SweepstakesSection() {
                   <div className="grid sm:grid-cols-3 gap-4">
                     <div className="sm:col-span-1">
                       <label htmlFor="city" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
-                        City <span className="text-davidoff-gold-dark">*</span>
+                        City <span className="text-stone-700">*</span>
                       </label>
                       <input
                         type="text"
@@ -400,7 +400,7 @@ export default function SweepstakesSection() {
                     </div>
                     <div>
                       <label htmlFor="state" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
-                        State <span className="text-davidoff-gold-dark">*</span>
+                        State <span className="text-stone-700">*</span>
                       </label>
                       <select
                         id="state"
@@ -420,7 +420,7 @@ export default function SweepstakesSection() {
                     </div>
                     <div>
                       <label htmlFor="zipCode" className="block text-xs font-sans font-medium tracking-wider uppercase text-stone-700 mb-2">
-                        Zip Code <span className="text-davidoff-gold-dark">*</span>
+                        Zip Code <span className="text-stone-700">*</span>
                       </label>
                       <input
                         type="text"
@@ -454,7 +454,7 @@ export default function SweepstakesSection() {
                         <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold font-light underline underline-offset-2" target="_blank" rel="noopener noreferrer" aria-label="View Official Sweepstakes Rules (opens in new window)">
                           Official Rules
                         </Link>{' '}
-                        and confirm I am 21+ years of age. <span className="text-davidoff-gold-dark">*</span>
+                        and confirm I am 21+ years of age. <span className="text-stone-700">*</span>
                       </span>
                     </label>
 
