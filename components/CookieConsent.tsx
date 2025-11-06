@@ -299,7 +299,7 @@ export default function CookieConsent() {
                                       (Required)
                                     </span>
                                   )}
-                                </h3>
+                                </h4>
                               </div>
                               <p className="text-sm text-stone-700 leading-relaxed font-light">
                                 {categoryInfo.description}
