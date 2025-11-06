@@ -59,9 +59,11 @@ export default function Hero() {
             height: '100%',
           }}
           aria-hidden="true"
+          role="presentation"
         >
           <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
           <source src="/images/AdobeStock_320845376.mp4" type="video/mp4" />
+          <track kind="descriptions" srcLang="en" label="Video description" />
         </video>
         
         {/* Dark overlay for text readability */}
