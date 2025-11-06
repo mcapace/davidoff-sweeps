@@ -43,6 +43,7 @@ export default function Hero() {
     <section className="relative h-[90vh] min-h-[700px] max-h-[1000px] w-full overflow-hidden bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
+        {/* Decorative background video - no audio content, purely atmospheric */}
         <video
           ref={videoRef}
           autoPlay
@@ -57,7 +58,7 @@ export default function Hero() {
             width: '100%',
             height: '100%',
           }}
-          aria-label="Background video showcasing Davidoff accessories and craftsmanship"
+          aria-hidden="true"
         >
           <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
           <source src="/images/AdobeStock_320845376.mp4" type="video/mp4" />
