@@ -260,7 +260,7 @@ export default function CookieConsent() {
                     className="text-stone-700 hover:text-stone-900 transition-colors"
                     aria-label="Close"
                   >
-                    <X className="w-6 h-6" />
+                    <X className="w-6 h-6" aria-hidden="true" />
                   </button>
                 </div>
 

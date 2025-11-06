@@ -173,7 +173,7 @@ export default function Hero() {
               ease: "easeInOut"
             }}
           >
-            <ChevronDown className="w-8 h-8 text-davidoff-gold/60" strokeWidth={1.5} />
+            <ChevronDown className="w-8 h-8 text-davidoff-gold/60" strokeWidth={1.5} aria-hidden="true" />
           </motion.div>
         </motion.div>
       </div>

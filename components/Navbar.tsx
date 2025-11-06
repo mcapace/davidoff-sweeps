@@ -56,37 +56,39 @@ export default function Navbar() {
               {!logoError ? (
                 <Image
                   src="/images/logos/davidoff-logo.png"
-                  alt="Davidoff"
+                  alt=""
                   width={200}
                   height={60}
                   className="h-12 sm:h-14 w-auto"
                   priority
                   onError={() => setLogoError(true)}
                   unoptimized
+                  aria-hidden="true"
                 />
               ) : (
-                <span className={`font-serif text-xl font-light tracking-wider ${isScrolled ? 'text-davidoff-black' : 'text-davidoff-gold'}`}>
+                <span className={`font-serif text-xl font-light tracking-wider ${isScrolled ? 'text-davidoff-black' : 'text-davidoff-gold'}`} aria-hidden="true">
                   DAVIDOFF
                 </span>
               )}
               
               {/* Partnership "x" */}
-              <span className={`text-lg sm:text-xl font-light ${isScrolled ? 'text-davidoff-black' : 'text-davidoff-gold'}`}>×</span>
+              <span className={`text-lg sm:text-xl font-light ${isScrolled ? 'text-davidoff-black' : 'text-davidoff-gold'}`} aria-hidden="true">×</span>
               
               {/* Cigar Aficionado Logo */}
               {!partnerLogoError ? (
                 <Image
                   src="/images/logos/cigar-aficionado-logo.png"
-                  alt="Cigar Aficionado"
+                  alt=""
                   width={90}
                   height={27}
                   className="h-5 sm:h-7 w-auto"
                   priority
                   onError={() => setPartnerLogoError(true)}
                   unoptimized
+                  aria-hidden="true"
                 />
               ) : (
-                <span className="font-sans text-sm font-light">
+                <span className="font-sans text-sm font-light" aria-hidden="true">
                   Cigar Aficionado
                 </span>
               )}
@@ -120,9 +122,9 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6" aria-hidden="true" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6" aria-hidden="true" />
               )}
             </button>
           </div>
