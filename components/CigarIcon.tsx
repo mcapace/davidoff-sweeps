@@ -3,9 +3,10 @@ import React from 'react';
 interface CigarIconProps {
   className?: string;
   strokeWidth?: number;
+  'aria-hidden'?: boolean | 'true' | 'false';
 }
 
-export function CigarIcon({ className = "w-5 h-5", strokeWidth = 1.5 }: CigarIconProps) {
+export function CigarIcon({ className = "w-5 h-5", strokeWidth = 1.5, 'aria-hidden': ariaHidden }: CigarIconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -15,10 +16,11 @@ export function CigarIcon({ className = "w-5 h-5", strokeWidth = 1.5 }: CigarIco
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
-      role="img"
-      aria-label="Cigar icon"
+      role={ariaHidden ? undefined : "img"}
+      aria-label={ariaHidden ? undefined : "Cigar icon"}
+      aria-hidden={ariaHidden}
     >
-      <title>Cigar icon</title>
+      {!ariaHidden && <title>Cigar icon</title>}
       {/* Cigar body - elongated rounded rectangle */}
       <rect x="3" y="9" width="16" height="6" rx="3" />
       {/* Cigar band - decorative wrapper */}

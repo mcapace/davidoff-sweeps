@@ -159,7 +159,7 @@ export default function SweepstakesSection() {
               className="inline-block mb-6"
             >
               <div className="w-20 h-px bg-gradient-to-r from-transparent via-davidoff-gold to-transparent mx-auto mb-4" />
-              <CigarIcon className="w-12 h-12 text-davidoff-gold mx-auto mb-4" strokeWidth={1.5} aria-hidden="true" />
+              <CigarIcon className="w-12 h-12 text-davidoff-gold mx-auto mb-4" strokeWidth={1.5} aria-hidden={true} />
               <div className="w-20 h-px bg-gradient-to-r from-transparent via-davidoff-gold to-transparent mx-auto" />
             </motion.div>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light text-davidoff-black mb-4 tracking-tight">
@@ -187,7 +187,7 @@ export default function SweepstakesSection() {
               {/* Prize Summary Card */}
               <div className="bg-white rounded-sm shadow-sm p-8 border-2 border-stone-600">
                 <h3 className="font-serif text-2xl font-light text-davidoff-black mb-6 flex items-center gap-3">
-                  <CigarIcon className="w-5 h-5 text-davidoff-gold" aria-hidden="true" />
+                  <CigarIcon className="w-5 h-5 text-davidoff-gold" aria-hidden={true} />
                   Five Exceptional Prizes
                 </h3>
                 <p className="text-stone-700 mb-6 font-light leading-relaxed">
@@ -491,7 +491,7 @@ export default function SweepstakesSection() {
                         </>
                       ) : (
                         <>
-                              <CigarIcon className="w-5 h-5" aria-hidden="true" />
+                              <CigarIcon className="w-5 h-5" aria-hidden={true} />
                               Enter to Win
                         </>
                       )}
