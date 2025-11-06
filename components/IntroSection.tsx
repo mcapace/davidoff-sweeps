@@ -60,15 +60,7 @@ export default function IntroSection() {
 
           <div className="pt-8 text-center border-t border-stone-200 mt-8">
             <p className="text-base sm:text-lg text-stone-700 font-light tracking-wide">
-              For more information on Davidoff accessories and cigars, please visit{' '}
-              <a 
-                href="http://gtly.ink/mCeASmc3-I" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-davidoff-black hover:text-davidoff-gold transition-colors font-semibold underline underline-offset-4 decoration-2"
-              >
-                davidoffgeneva.com<span className="sr-only"> (opens in new window)</span>
-              </a>
+              For more information on Davidoff accessories and cigars, please visit davidoffgeneva.com
             </p>
           </div>
         </motion.div>
