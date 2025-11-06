@@ -262,9 +262,9 @@ export default function PrizesSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-center mt-16 pt-12 border-t border-stone-300"
           >
-            <p className="text-2xl sm:text-3xl font-serif font-light text-davidoff-black tracking-tight mb-6">
+            <h3 className="text-2xl sm:text-3xl font-serif font-light text-davidoff-black tracking-tight mb-6">
               Time Beautifully Filled. Enter Today.
-            </p>
+            </h3>
             <a
               href="http://gtly.ink/mCeASmc3-I"
               target="_blank"

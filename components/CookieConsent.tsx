@@ -197,7 +197,7 @@ export default function CookieConsent() {
                         By clicking &quot;Accept All&quot;, you consent to our use of cookies. You can also choose to accept only 
                         essential cookies or customize your preferences.{" "}
                         <Link href="/privacy-policy" className="text-davidoff-gold hover:text-davidoff-gold-dark underline underline-offset-2" aria-label="Read our Privacy Policy for cookie and data usage information">
-                          Learn more
+                          Learn more about our privacy practices
                         </Link>
                       </p>
                     </div>

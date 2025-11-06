@@ -502,10 +502,10 @@ export default function SweepstakesSection() {
                   <p className="text-xs text-stone-700 text-center leading-relaxed pt-4 border-t border-stone-200 font-light">
                     NO PURCHASE NECESSARY. Open to legal US residents, 21+. Void where prohibited.
                     See{' '}
-                    <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold transition-colors underline underline-offset-2" target="_blank" rel="noopener noreferrer" aria-label="View Official Sweepstakes Rules (opens in new window)">
-                      Official Rules
-                    </Link>{' '}
-                    for complete details.
+                    <Link href="/official-rules" className="text-davidoff-black hover:text-davidoff-gold transition-colors underline underline-offset-2" target="_blank" rel="noopener noreferrer" aria-label="View complete Official Sweepstakes Rules (opens in new window)">
+                      complete rules
+                    </Link>
+                    .
                   </p>
                 </form>
               </div>
