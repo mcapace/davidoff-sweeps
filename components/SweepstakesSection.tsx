@@ -320,7 +320,7 @@ export default function SweepstakesSection() {
                       onChange={handleInputChange}
                       required
                       autoComplete="email"
-                      className="w-full px-4 py-3 border-2 border-stone-500 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                      className="w-full px-4 py-3 border-2 border-stone-600 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -375,7 +375,7 @@ export default function SweepstakesSection() {
                       onChange={handleInputChange}
                       required
                       autoComplete="street-address"
-                      className="w-full px-4 py-3 border-2 border-stone-500 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
+                      className="w-full px-4 py-3 border-2 border-stone-600 rounded-sm focus:border-davidoff-gold focus:ring-2 focus:ring-davidoff-gold/20 transition-all outline-none bg-white font-light"
                       placeholder="123 Main Street"
                     />
                   </div>
@@ -439,9 +439,10 @@ export default function SweepstakesSection() {
 
                   {/* Checkboxes */}
                   <div className="space-y-4 pt-4">
-                    <label className="flex items-start gap-3 cursor-pointer group">
+                    <label htmlFor="agreeToRules" className="flex items-start gap-3 cursor-pointer group">
                       <input
                         type="checkbox"
+                        id="agreeToRules"
                         name="agreeToRules"
                         checked={formData.agreeToRules}
                         onChange={handleInputChange}
@@ -457,9 +458,10 @@ export default function SweepstakesSection() {
                       </span>
                     </label>
 
-                    <label className="flex items-start gap-3 cursor-pointer group">
+                    <label htmlFor="agreeToEmails" className="flex items-start gap-3 cursor-pointer group">
                       <input
                         type="checkbox"
+                        id="agreeToEmails"
                         name="agreeToEmails"
                         checked={formData.agreeToEmails}
                         onChange={handleInputChange}
