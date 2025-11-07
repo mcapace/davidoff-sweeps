@@ -60,6 +60,7 @@ const prizes = [
     details: "The set of two glasses is the perfect gift for every cigar aficionado and Winston Churchill fan. His silhouette is elegantly sandblasted at the bottom of the glass that was handmade in Europe by an expert company with 120 years of history of glass blowing.",
     dimensions: "3.14 x 3.14 x 3.54\" | 8 x 8 x 9 cm",
     imagePaths: [
+      "/images/glasses.png",
       "/images/wscacc_sgls_mood_001.jpg",
       "/images/giveaway/3743_source_1758102372.png",
       "/images/giveaway/glass-set.jpg",
@@ -77,6 +78,7 @@ const prizes = [
     details: "Whatever the size or format, they are safely and stylishly carried in a superbly crafted leather companion that reflects your personal elegance. Crafted by the most skilled leather artisans in Spain, blending time-honoured tradition with contemporary sophistication.",
     dimensions: "Adjustable in length to accommodate two cigars of any format",
     imagePaths: [
+      "/images/case.png",
       "/images/giveaway/DAV_AC_XL2CC_ICN-blue-closed__56411.webp",
       "/images/giveaway/51003711_davacc_cigcaslther_x2_ico_blue_001-1.jpg",
       "/images/giveaway/51003711_davacc_cigcaslther_x2_ico_blue_002-1.jpg",
