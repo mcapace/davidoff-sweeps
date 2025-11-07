@@ -123,10 +123,10 @@ function PrizeImage({ imagePaths, alt, rank, objectFit = 'cover' }: { imagePaths
   
   return (
     <div
-      className={`relative w-full h-full ${
+      className={`w-full h-full ${
         needsWhiteBackground
           ? 'bg-white flex items-center justify-center'
-          : 'bg-gradient-to-br from-stone-100 to-stone-200'
+          : 'bg-white relative'
       }`}
     >
       {!imageError && currentImage ? (
@@ -139,7 +139,7 @@ function PrizeImage({ imagePaths, alt, rank, objectFit = 'cover' }: { imagePaths
               alt={alt}
               className={`${
                 needsWhiteBackground
-                  ? 'transition-opacity duration-500 max-w-[80%] h-auto object-contain'
+                  ? 'transition-opacity duration-500 max-w-[70%] h-auto object-contain md:max-w-[65%]'
                   : 'absolute inset-0 w-full h-full object-cover transition-opacity duration-500'
               } ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               onLoad={handleImageLoad}
@@ -151,7 +151,7 @@ function PrizeImage({ imagePaths, alt, rank, objectFit = 'cover' }: { imagePaths
               alt={alt}
               width={800}
               height={800}
-              className={`transition-opacity duration-500 max-w-[80%] h-auto object-contain ${
+              className={`transition-opacity duration-500 max-w-[70%] h-auto object-contain md:max-w-[65%] ${
                 imageLoaded ? 'opacity-100' : 'opacity-0'
               }`}
               onLoad={handleImageLoad}
