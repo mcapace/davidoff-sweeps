@@ -122,7 +122,13 @@ function PrizeImage({ imagePaths, alt, rank, objectFit = 'cover' }: { imagePaths
   const needsWhiteBackground = objectFit === 'contain';
   
   return (
-    <div className={`relative w-full h-full ${needsWhiteBackground ? 'bg-white' : 'bg-gradient-to-br from-stone-100 to-stone-200'}`}>
+    <div
+      className={`relative w-full h-full ${
+        needsWhiteBackground
+          ? 'bg-white flex items-center justify-center'
+          : 'bg-gradient-to-br from-stone-100 to-stone-200'
+      }`}
+    >
       {!imageError && currentImage ? (
         <>
           {isTifFile ? (
@@ -131,9 +137,27 @@ function PrizeImage({ imagePaths, alt, rank, objectFit = 'cover' }: { imagePaths
             <img
               src={currentImage}
               alt={alt}
-              className={`absolute inset-0 w-full h-full object-${objectFit} transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+              className={`${
+                needsWhiteBackground
+                  ? 'transition-opacity duration-500 max-w-[80%] h-auto object-contain'
+                  : 'absolute inset-0 w-full h-full object-cover transition-opacity duration-500'
+              } ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               onLoad={handleImageLoad}
               onError={handleImageError}
+            />
+          ) : needsWhiteBackground ? (
+            <Image
+              src={currentImage}
+              alt={alt}
+              width={800}
+              height={800}
+              className={`transition-opacity duration-500 max-w-[80%] h-auto object-contain ${
+                imageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoad={handleImageLoad}
+              onError={handleImageError}
+              loading={currentImageIndex === 0 ? "eager" : "lazy"}
+              quality={90}
             />
           ) : (
             // Use Next.js Image for JPG/PNG
