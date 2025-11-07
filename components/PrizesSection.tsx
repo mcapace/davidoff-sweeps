@@ -44,6 +44,7 @@ const prizes = [
     details: "Handmade in France, the rectangular ashtray features two angled cigar notches, delicate, hand-applied golden lines, and a golden Davidoff logo – for a sophisticated enjoyment.",
     dimensions: "7.84 x 6.29 x 1.29\" | 20 x 16 x 3.3 cm",
     imagePaths: [
+      "/images/ashtray.png",
       "/images/davacc_ashprcl_clas_mood_002.jpg",
       "/images/giveaway/51003562_davacc_ashprcl_clas_001-4.jpg",
       "/images/giveaway/51003562_davacc_ashprcl_clas_002-4.jpg",
