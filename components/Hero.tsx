@@ -66,24 +66,13 @@ export default function Hero() {
         >
           <source src="/images/davacc_humtravl_buss_vdo_1920x1080px.mp4" type="video/mp4" />
           <source src="/images/AdobeStock_320845376.mp4" type="video/mp4" />
-          <track kind="captions" srcLang="en" label="English" src="/video-description.vtt" default />
-          Your browser does not support the video tag. View the hero video transcript at
-          <a href="/video-description.vtt">/video-description.vtt</a>.
+          <track kind="descriptions" srcLang="en" label="Decorative background description" src="/video-description.vtt" default />
         </video>
 
         <p id="hero-video-description" className="sr-only">
           Background hero video displaying slow-motion scenes of Davidoff accessories in a lounge setting. The footage is purely decorative and
           contains no audio. A text description is available in the linked transcript.
         </p>
-
-        <div className="absolute top-4 left-4 z-10">
-          <a
-            href="/video-description.vtt"
-            className="inline-flex items-center gap-1 rounded-sm bg-black/60 px-3 py-1 text-xs font-medium text-white hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-davidoff-gold"
-          >
-            View hero video transcript
-          </a>
-        </div>
 
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
