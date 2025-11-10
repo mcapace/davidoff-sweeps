@@ -197,7 +197,7 @@ export default function CookieConsent() {
                         By clicking &quot;Accept All&quot;, you consent to our use of cookies. You can also choose to accept only 
                         essential cookies or customize your preferences. This promotion is intended for U.S. residents only, and we do not
                         intentionally collect personal data from individuals located in the EEA, UK, or Switzerland.{" "}
-                        <Link href="/privacy-policy" className="text-davidoff-gold hover:text-davidoff-gold-dark underline underline-offset-2" aria-label="Read our Privacy Policy for cookie and data usage information">
+                        <Link href="/privacy-policy" className="text-stone-900 hover:text-davidoff-gold underline underline-offset-2" aria-label="Read our Privacy Policy for cookie and data usage information">
                           Learn more about our privacy practices
                         </Link>
                       </p>
@@ -270,7 +270,7 @@ export default function CookieConsent() {
                     We use cookies to improve your experience on our website. You can choose which types of cookies you&apos;re comfortable with. 
                     Essential cookies are required for the website to function properly and cannot be disabled. This promotion is intended for U.S.
                     residents only, and we do not intentionally collect personal data from individuals located in the EEA, UK, or Switzerland.{" "}
-                    <Link href="/privacy-policy" className="text-davidoff-gold hover:text-davidoff-gold-dark underline underline-offset-2" aria-label="Read our Privacy Policy for cookie and data usage information">
+                    <Link href="/privacy-policy" className="text-stone-900 hover:text-davidoff-gold underline underline-offset-2" aria-label="Read our Privacy Policy for cookie and data usage information">
                       Read our Privacy Policy
                     </Link>
                   </p>
