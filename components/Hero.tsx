@@ -40,7 +40,10 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-[90vh] min-h-[700px] max-h-[1000px] w-full overflow-hidden bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal">
+    <section
+      className="relative h-[90vh] min-h-[700px] max-h-[1000px] w-full overflow-hidden bg-gradient-to-br from-davidoff-black via-davidoff-black-soft to-charcoal"
+      aria-describedby="hero-video-description"
+    >
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         {/* Decorative background video - no audio content, purely atmospheric */}
@@ -65,6 +68,15 @@ export default function Hero() {
           <source src="/images/AdobeStock_320845376.mp4" type="video/mp4" />
           <track kind="captions" srcLang="en" label="English" src="/video-description.vtt" default />
         </video>
+
+        <p id="hero-video-description" className="sr-only">
+          Background hero video displaying slow-motion scenes of Davidoff accessories in a lounge setting. The footage is purely decorative and
+          contains no audio. A text description is available in the linked transcript.
+        </p>
+
+        <a href="/video-description.vtt" className="sr-only" aria-label="View transcript for hero background video">
+          View hero video transcript (opens text description)
+        </a>
         
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
