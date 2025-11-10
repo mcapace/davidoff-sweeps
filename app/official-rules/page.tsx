@@ -14,6 +14,7 @@ export default function OfficialRules() {
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">1. Eligibility</h2>
               <p className="text-stone-700 leading-relaxed">
                 The Davidoff Accessories Sweepstakes (the &quot;Sweepstakes&quot;) is open to legal residents of the 50 United States and the District of Columbia who are 21 years of age or older at the time of entry. Employees, officers, and directors of Davidoff, Cigar Aficionado, their respective parent companies, subsidiaries, affiliates, advertising and promotion agencies, and the immediate family members (spouse, parents, siblings, and children) and/or those living in the same household of each are not eligible to enter or win.
+                The Sweepstakes is not directed to residents of the European Economic Area (EEA), the United Kingdom, or Switzerland, and entries from those jurisdictions are void.
               </p>
             </section>
 

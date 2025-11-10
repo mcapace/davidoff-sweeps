@@ -28,6 +28,12 @@ export default function PrivacyPolicy() {
                 participate in the Davidoff Accessories Sweepstakes (the &quot;Sweepstakes&quot;), in partnership with Cigar Aficionado.
               </p>
               <p className="text-stone-700 leading-relaxed font-light mt-4">
+                This promotion is limited to legal residents of the United States and the District of Columbia. It is not directed to residents of
+                the European Economic Area (EEA), the United Kingdom, or Switzerland, and we do not intentionally collect personal data from
+                individuals located in those regions in connection with this promotion. If you reside in the EEA, UK, or Switzerland, please do
+                not submit personal information through this website.
+              </p>
+              <p className="text-stone-700 leading-relaxed font-light mt-4">
                 By using our website and entering the Sweepstakes, you consent to the data practices described in this Privacy Policy. 
                 If you do not agree with the practices described in this policy, please do not use our website or enter the Sweepstakes.
               </p>
@@ -127,6 +133,10 @@ export default function PrivacyPolicy() {
                 You can control cookie preferences through the cookie settings panel on our website. Note that disabling certain 
                 cookies may limit your ability to use some features of our website.
               </p>
+              <p className="text-stone-700 leading-relaxed font-light mt-4">
+                This cookie notice applies to visitors participating in the U.S. Sweepstakes. We do not intentionally deploy cookies or similar
+                tracking technologies to monitor individuals located in the EEA, UK, or Switzerland in connection with this promotion.
+              </p>
             </section>
 
             <section>
@@ -173,30 +183,14 @@ export default function PrivacyPolicy() {
 
             <section>
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">
-                7. Your Privacy Rights
+                7. Your Privacy Rights (United States)
               </h2>
               <p className="text-stone-700 leading-relaxed font-light mb-4">
-                Depending on your location, you may have certain rights regarding your personal information:
+                Depending on your U.S. state of residence, you may have certain rights regarding your personal information:
               </p>
 
               <h3 className="font-serif text-xl font-semibold text-stone-900 mb-3 mt-6">
-                7.1 European Economic Area (EEA) and UK Residents (GDPR)
-              </h3>
-              <p className="text-stone-700 leading-relaxed font-light mb-4">
-                If you are located in the EEA or UK, you have the right to:
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-stone-700 font-light ml-4">
-                <li>Access your personal data</li>
-                <li>Rectify inaccurate data</li>
-                <li>Request erasure of your data</li>
-                <li>Restrict processing of your data</li>
-                <li>Data portability</li>
-                <li>Object to processing</li>
-                <li>Withdraw consent at any time</li>
-              </ul>
-
-              <h3 className="font-serif text-xl font-semibold text-stone-900 mb-3 mt-6">
-                7.2 California Residents (CCPA/CPRA)
+                7.1 California Residents (CCPA/CPRA)
               </h3>
               <p className="text-stone-700 leading-relaxed font-light mb-4">
                 If you are a California resident, you have the right to:
@@ -211,7 +205,7 @@ export default function PrivacyPolicy() {
               </ul>
 
               <h3 className="font-serif text-xl font-semibold text-stone-900 mb-3 mt-6">
-                7.3 Virginia, Colorado, Connecticut, Utah Residents
+                7.2 Virginia, Colorado, Connecticut, Utah Residents
               </h3>
               <p className="text-stone-700 leading-relaxed font-light mb-4">
                 Residents of these states have similar rights, including:
@@ -255,13 +249,13 @@ export default function PrivacyPolicy() {
 
             <section>
               <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">
-                10. International Data Transfers
+                10. Data Location
               </h2>
               <p className="text-stone-700 leading-relaxed font-light">
-                Your information may be transferred to and processed in countries other than your country of residence. These countries 
-                may have data protection laws that differ from those in your country. We take appropriate safeguards to ensure that your 
-                personal information receives adequate protection, including using standard contractual clauses approved by relevant 
-                authorities.
+                We host and process personal information collected for this promotion within the United States. Because the Sweepstakes is not
+                directed to residents outside the United States, we do not intentionally transfer personal information related to this promotion to
+                other countries. If we become aware that we have received personal information from an individual in a region where the Sweepstakes
+                is not available, we will delete it as soon as reasonably practicable.
               </p>
             </section>
 
