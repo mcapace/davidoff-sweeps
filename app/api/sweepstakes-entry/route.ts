@@ -27,8 +27,8 @@ export async function POST(request: NextRequest) {
   try {
     // Check if sweepstakes is currently active
     const now = new Date();
-    const startDate = new Date('2024-11-13T00:00:00-05:00'); // Nov 13, 2024 12:00 AM ET
-    const endDate = new Date('2024-12-31T23:59:59-05:00'); // Dec 31, 2024 11:59:59 PM ET
+    const startDate = new Date('2025-11-13T00:00:00-05:00'); // Nov 13, 2025 12:00 AM ET
+    const endDate = new Date('2025-12-14T23:59:59-05:00'); // Dec 14, 2025 11:59:59 PM ET
     
     if (now < startDate) {
       return NextResponse.json(
