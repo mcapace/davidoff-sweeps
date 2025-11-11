@@ -67,7 +67,7 @@ ORDER BY entry_date;
 ## 🎯 Sweepstakes Period
 
 The sweepstakes is configured to run from:
-- **Start**: November 13, 2024 at 12:00 AM ET
+- **Start**: November 13, 2025 at 12:00 AM ET
 - **End**: December 31, 2024 at 11:59:59 PM ET
 
 Entries submitted outside this period will be rejected automatically.

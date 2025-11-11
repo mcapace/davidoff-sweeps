@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           error: 'Sweepstakes not started',
-          message: 'The sweepstakes begins on November 13, 2024 at 12:00 AM ET. Please check back then to enter.'
+          message: 'The sweepstakes begins on November 13, 2025 at 12:00 AM ET. Please check back then to enter.'
         },
         { status: 400 }
       );
