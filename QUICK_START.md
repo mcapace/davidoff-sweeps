@@ -68,7 +68,7 @@ You should see:
 ## 📊 Sweepstakes Period
 
 - **Start**: November 13, 2025 at 12:00 AM ET
-- **End**: December 31, 2024 at 11:59:59 PM ET
+- **End**: December 14, 2025 at 11:59:59 PM ET
 
 Entries outside this period are automatically rejected.
 

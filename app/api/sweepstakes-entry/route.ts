@@ -41,13 +41,9 @@ export async function POST(request: NextRequest) {
     }
     
     if (now > endDate) {
-      return NextResponse.json(
-        { 
-          error: 'Sweepstakes ended',
-          message: 'The sweepstakes ended on December 31, 2024 at 11:59:59 PM ET. Thank you for your interest.'
-        },
-        { status: 400 }
-      );
+      return NextResponse.json({
+          message: 'The sweepstakes ended on December 14, 2025 at 11:59:59 PM ET. Thank you for your interest.'
+        }, { status: 403 });
     }
 
     // Parse and validate request body
