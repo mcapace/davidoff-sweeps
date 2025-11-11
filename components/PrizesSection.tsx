@@ -78,8 +78,8 @@ const prizes = [
     details: "Whatever the size or format, they are safely and stylishly carried in a superbly crafted leather companion that reflects your personal elegance. Crafted by the most skilled leather artisans in Spain, blending time-honoured tradition with contemporary sophistication.",
     dimensions: "Adjustable in length to accommodate two cigars of any format",
     imagePaths: [
-      "/images/case.png",
       "/images/giveaway/DAV_AC_XL2CC_ICN-blue-closed__56411.webp",
+      "/images/case.png",
       "/images/giveaway/51003711_davacc_cigcaslther_x2_ico_blue_001-1.jpg",
       "/images/giveaway/51003711_davacc_cigcaslther_x2_ico_blue_002-1.jpg",
       "/images/giveaway/cigar-case.jpg",

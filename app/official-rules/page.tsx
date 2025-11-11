@@ -21,7 +21,7 @@ export default function OfficialRules() {
               <section>
                 <h2 className="font-serif text-2xl font-semibold text-stone-900 mb-4">2. Sweepstakes Period</h2>
                 <p className="text-stone-700 leading-relaxed">
-                  The Sweepstakes begins on November 13, 2024 at 12:00:00 AM Eastern Time (&quot;ET&quot;) and ends on December 31, 2024 at 11:59:59 PM ET (the &quot;Sweepstakes Period&quot;). Entries must be received during the Sweepstakes Period to be eligible.
+                  The Sweepstakes begins on November 13, 2024 at 12:00:00 AM Eastern Time (&quot;ET&quot;) and ends on December 31, 2025 at 11:59:59 PM ET (the &quot;Sweepstakes Period&quot;). Entries must be received during the Sweepstakes Period to be eligible.
                 </p>
               </section>
 
