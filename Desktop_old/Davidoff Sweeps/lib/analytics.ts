@@ -46,9 +46,18 @@ async function loadAnalyticsEvents(): Promise<AnalyticsEvent[]> {
       return [];
     }
     
-    return data.map((event: any) => ({
+    return data.map((event: {
+      id: string;
+      type: string;
+      timestamp: string;
+      user_agent?: string;
+      ip_address?: string;
+      metadata: Record<string, unknown>;
+    }) => ({
       ...event,
       timestamp: new Date(event.timestamp),
+      userAgent: event.user_agent,
+      ipAddress: event.ip_address,
     }));
   } catch (error) {
     console.error('Error loading analytics events from Supabase:', error);
