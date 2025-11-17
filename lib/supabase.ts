@@ -1,11 +1,32 @@
-// Supabase client configuration
-import { createClient } from '@supabase/supabase-js';
+import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+export function createClient() {
+  let supabaseUrl = process.env.SUPABASE_URL;
+  let supabaseKey = process.env.SUPABASE_ANON_KEY || process.env.SUPABASE_KEY;
+  
+  if (!supabaseUrl) {
+    supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  }
+  if (!supabaseKey) {
+    supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  }
+  
+  if (!supabaseUrl) {
+    supabaseUrl = 'https://mkwheoemyraxihpcvptn.supabase.co';
+  }
 
-// Only create client if environment variables are available
-export const supabase = supabaseUrl && supabaseKey 
-  ? createClient(supabaseUrl, supabaseKey)
-  : null;
+  if (!supabaseUrl) {
+    console.error('[ERROR] Missing SUPABASE_URL or NEXT_PUBLIC_SUPABASE_URL');
+    throw new Error('Supabase not configured: Missing SUPABASE_URL or NEXT_PUBLIC_SUPABASE_URL environment variable');
+  }
 
+  if (!supabaseKey) {
+    console.error('[ERROR] Missing SUPABASE_ANON_KEY or NEXT_PUBLIC_SUPABASE_ANON_KEY');
+    throw new Error('Supabase not configured: Missing SUPABASE_ANON_KEY or NEXT_PUBLIC_SUPABASE_ANON_KEY environment variable');
+  }
+
+  console.log('[INFO] Supabase client initialized with URL:', supabaseUrl);
+  console.log('[INFO] Supabase key exists:', !!supabaseKey);
+
+  return createSupabaseClient(supabaseUrl, supabaseKey);
+}
