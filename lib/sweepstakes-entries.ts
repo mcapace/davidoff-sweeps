@@ -1,7 +1,7 @@
 // Sweepstakes entry management
 // Using Supabase for persistence
 
-import { supabase } from './supabase';
+import { createClient } from './supabase';
 
 export interface SweepstakesEntry {
   id: string;
@@ -22,15 +22,47 @@ export interface SweepstakesEntry {
 }
 
 /**
+ * Insert a new sweepstakes entry (used by API route)
+ */
+export async function insertSweepstakesEntry(entryData: {
+  email: string;
+  first_name: string;
+  last_name: string;
+  date_of_birth: string;
+  state: string;
+  verification_token: string;
+}): Promise<{ id: string } | null> {
+  try {
+    const supabase = createClient();
+    const { data, error } = await supabase
+      .from('sweepstakes_entries')
+      .insert([entryData])
+      .select('id')
+      .single();
+    
+    if (error) {
+      console.error('[500] Error inserting sweepstakes entry:', error);
+      return null;
+    }
+    
+    if (!data) {
+      console.error('[500] No data returned from insert');
+      return null;
+    }
+    
+    return { id: data.id };
+  } catch (error) {
+    console.error('[500] Exception inserting sweepstakes entry:', error);
+    return null;
+  }
+}
+
+/**
  * Load all entries from Supabase
  */
 async function loadEntries(): Promise<SweepstakesEntry[]> {
-  if (!supabase) {
-    console.warn('Supabase not configured - returning empty entries');
-    return [];
-  }
-  
   try {
+    const supabase = createClient();
     const { data, error } = await supabase
       .from('davidoff_sweepstakes_entries')
       .select('*')
@@ -74,9 +106,7 @@ async function loadEntries(): Promise<SweepstakesEntry[]> {
  * Add a new sweepstakes entry
  */
 export async function addEntry(entry: Omit<SweepstakesEntry, 'id' | 'entryDate' | 'emailVerified'>): Promise<SweepstakesEntry> {
-  if (!supabase) {
-    throw new Error('Supabase not configured');
-  }
+  const supabase = createClient();
   
   const newEntry: SweepstakesEntry = {
     ...entry,
@@ -162,12 +192,8 @@ export async function getAllEntries(): Promise<SweepstakesEntry[]> {
  * Mark email as verified in the database
  */
 export async function markEmailAsVerified(email: string): Promise<void> {
-  if (!supabase) {
-    console.warn('Supabase not configured - cannot mark email as verified');
-    return;
-  }
-  
   try {
+    const supabase = createClient();
     const { error } = await supabase
       .from('davidoff_sweepstakes_entries')
       .update({ email_verified: true })
@@ -237,4 +263,3 @@ export async function exportEntriesToCSV(): Promise<string> {
   
   return csvContent;
 }
-
