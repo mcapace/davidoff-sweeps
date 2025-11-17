@@ -64,7 +64,7 @@ async function loadEntries(): Promise<SweepstakesEntry[]> {
   try {
     const supabase = createClient();
     const { data, error } = await supabase
-      .from('davidoff_sweepstakes_entries')
+      .from('sweepstakes_entries')
       .select('*')
       .order('entry_date', { ascending: false });
     
@@ -117,7 +117,7 @@ export async function addEntry(entry: Omit<SweepstakesEntry, 'id' | 'entryDate' 
   
   try {
     const { error } = await supabase
-      .from('davidoff_sweepstakes_entries')
+      .from('sweepstakes_entries')
       .insert([{
         id: newEntry.id,
         first_name: newEntry.firstName,
@@ -195,7 +195,7 @@ export async function markEmailAsVerified(email: string): Promise<void> {
   try {
     const supabase = createClient();
     const { error } = await supabase
-      .from('davidoff_sweepstakes_entries')
+      .from('sweepstakes_entries')
       .update({ email_verified: true })
       .eq('email', email.toLowerCase());
     
