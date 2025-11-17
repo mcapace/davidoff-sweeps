@@ -110,7 +110,7 @@ export default function SweepstakesSection() {
 
       if (response.ok) {
         setStatus('success');
-        setMessage("Almost there! Check your email to verify your address. Once verified, you'll get your sweepstakes confirmation!");
+        setMessage(data.message || "Thank you for entering! Good luck in the sweepstakes.");
         // Reset form
         setFormData({
           firstName: '',
@@ -244,7 +244,7 @@ export default function SweepstakesSection() {
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-8 h-8 text-green-600 flex-shrink-0 mt-1" aria-hidden="true" />
                     <div>
-                      <h4 className="text-lg font-semibold text-green-900 mb-2">Check Your Email!</h4>
+                      <h4 className="text-lg font-semibold text-green-900 mb-2">Thank You!</h4>
                       <p className="text-green-800 text-sm leading-relaxed">{message}</p>
                     </div>
                   </div>
