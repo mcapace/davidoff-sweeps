@@ -66,7 +66,7 @@ async function loadEntries(): Promise<SweepstakesEntry[]> {
     const { data, error } = await supabase
       .from('sweepstakes_entries')
       .select('*')
-      .order('entry_date', { ascending: false });
+      .order('created_at', { ascending: false });
     
     if (error) {
       console.error('Error loading entries from Supabase:', error);
@@ -92,7 +92,7 @@ async function loadEntries(): Promise<SweepstakesEntry[]> {
       agreeToRules: entry.agree_to_rules,
       agreeToEmails: entry.agree_to_emails,
       emailVerified: entry.email_verified || false,
-      entryDate: new Date(entry.entry_date),
+      entryDate: new Date(entry.created_at),
       ipAddress: entry.ip_address
     }));
   } catch (error) {
@@ -132,7 +132,7 @@ export async function addEntry(entry: Omit<SweepstakesEntry, 'id' | 'entryDate' 
         agree_to_rules: newEntry.agreeToRules,
         agree_to_emails: newEntry.agreeToEmails,
         email_verified: false,
-        entry_date: newEntry.entryDate.toISOString(),
+        created_at: newEntry.entryDate.toISOString(),
         ip_address: newEntry.ipAddress
       }]);
     
