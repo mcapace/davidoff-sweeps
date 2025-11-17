@@ -2,9 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { addEntry, hasEmailEntered } from '@/lib/sweepstakes-entries';
 import { trackEvent } from '@/lib/analytics';
-import { resend, EMAIL_CONFIG } from '@/lib/resend';
-import { generateVerificationToken } from '@/lib/email-verification';
-import { VerificationEmail } from '@/lib/email-templates';
 
 // Validation schema
 const sweepstakesEntrySchema = z.object({
@@ -106,32 +103,10 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Generate email verification token
-    const verificationToken = await generateVerificationToken(validatedData.email);
-    const origin = request.headers.get('origin') || request.nextUrl.origin;
-    const verificationUrl = `${origin}/api/verify-email?token=${encodeURIComponent(verificationToken)}`;
-
-    // Send verification email
-    try {
-      await resend.emails.send({
-        from: EMAIL_CONFIG.from,
-        to: validatedData.email,
-        replyTo: EMAIL_CONFIG.replyTo,
-        subject: 'Confirm Your Email - Davidoff Sweepstakes',
-        react: VerificationEmail({
-          verificationUrl,
-          recipientEmail: validatedData.email,
-        }),
-      });
-    } catch (emailError) {
-      console.error('Failed to send confirmation email:', emailError);
-      // Don't fail the entry if email fails
-    }
-
     return NextResponse.json(
       { 
         success: true,
-        message: 'Entry submitted! Please check your email to verify your address and get your sweepstakes confirmation.',
+        message: 'Thank you for entering! Good luck in the sweepstakes.',
         entryId: entry.id,
       },
       { status: 200 }
