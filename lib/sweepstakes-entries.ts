@@ -111,17 +111,17 @@ export async function addEntry(entry: Omit<SweepstakesEntry, 'id' | 'entryDate' 
   
   const newEntry: SweepstakesEntry = {
     ...entry,
-    id: generateEntryId(),
+    id: '', // Will be set by Supabase
     entryDate: new Date(),
     emailVerified: false,
   };
   
   try {
     // Only insert columns that actually exist in the table schema
-    const { error } = await supabase
+    // Let Supabase auto-generate the UUID for id
+    const { data, error } = await supabase
       .from('sweepstakes_entries')
       .insert([{
-        id: newEntry.id,
         first_name: newEntry.firstName,
         last_name: newEntry.lastName,
         email: newEntry.email,
@@ -130,11 +130,18 @@ export async function addEntry(entry: Omit<SweepstakesEntry, 'id' | 'entryDate' 
         verification_token: '', // Required field - should be set by caller
         created_at: newEntry.entryDate.toISOString(),
         updated_at: newEntry.entryDate.toISOString()
-      }]);
+      }])
+      .select('id')
+      .single();
     
     if (error) {
       console.error('Error saving entry to Supabase:', error);
       throw error;
+    }
+    
+    // Update newEntry with the generated ID
+    if (data) {
+      newEntry.id = data.id;
     }
     
     // Log entry
@@ -191,22 +198,12 @@ export async function markEmailAsVerified(email: string): Promise<void> {
   try {
     // Note: email_verified column doesn't exist in current table schema
     // This function is kept for compatibility but won't update anything
-    // Table doesn't have email_verified column, so we skip the update
     console.log('Note: email_verified column not in table schema, skipping update for:', email);
     console.log('Email marked as verified:', email);
   } catch (error) {
     console.error('Error marking email as verified:', error);
     throw error;
   }
-}
-
-/**
- * Generate unique entry ID
- */
-function generateEntryId(): string {
-  const timestamp = Date.now().toString(36);
-  const random = Math.random().toString(36).substring(2, 9);
-  return `entry_${timestamp}_${random}`;
 }
 
 /**
@@ -252,4 +249,3 @@ export async function exportEntriesToCSV(): Promise<string> {
   
   return csvContent;
 }
-// Force rebuild 1763418191
