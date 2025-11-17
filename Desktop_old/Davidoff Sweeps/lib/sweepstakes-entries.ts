@@ -191,15 +191,8 @@ export async function markEmailAsVerified(email: string): Promise<void> {
   try {
     // Note: email_verified column doesn't exist in current table schema
     // This function is kept for compatibility but won't update anything
-    const supabase = createClient();
     // Table doesn't have email_verified column, so we skip the update
     console.log('Note: email_verified column not in table schema, skipping update for:', email);
-    
-    if (error) {
-      console.error('Error marking email as verified in Supabase:', error);
-      throw error;
-    }
-    
     console.log('Email marked as verified:', email);
   } catch (error) {
     console.error('Error marking email as verified:', error);
