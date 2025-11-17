@@ -73,7 +73,7 @@ export default function Hero() {
           Background hero video displaying slow-motion scenes of Davidoff accessories in a lounge setting. The footage is purely decorative and
           contains no audio. A text description is available in the linked transcript.
         </p>
-
+        
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
         
