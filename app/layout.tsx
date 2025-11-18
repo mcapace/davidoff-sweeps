@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   title: "Davidoff Accessories Sweepstakes | Cigar Aficionado",
   description: "Enter for your chance to win one of five refined Davidoff accessories. To celebrate craftsmanship and time beautifully filled, Davidoff has partnered with Cigar Aficionado to present an exclusive sweepstakes.",
   keywords: "davidoff, sweepstakes, cigar accessories, humidor, cigar aficionado, giveaway",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
   openGraph: {
     title: "Davidoff Accessories Sweepstakes",
     description: "Enter for your chance to win one of five exceptional Davidoff accessories, each designed to elevate your every cigar moment.",
