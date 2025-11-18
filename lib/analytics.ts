@@ -1,5 +1,6 @@
 // Analytics tracking for PDF downloads and sweepstakes entries
 // Using Supabase for persistence
+// NOTE: Analytics currently disabled - davidoff_analytics_events table not configured
 
 import { createClient } from './supabase';
 
@@ -30,65 +31,17 @@ export interface AnalyticsEvent {
  * Load all analytics events from Supabase
  */
 async function loadAnalyticsEvents(): Promise<AnalyticsEvent[]> {
-  try {
-    const supabase = createClient();
-    const { data, error } = await supabase
-      .from('davidoff_analytics_events')
-      .select('*')
-      .order('timestamp', { ascending: false });
-    
-    if (error) {
-      console.error('Error loading analytics events from Supabase:', error);
-      return [];
-    }
-    
-    if (!data) {
-      return [];
-    }
-    
-    return data.map((event: {
-      id: string;
-      type: 'pdf_download' | 'sweepstakes_entry' | 'email_verification';
-      timestamp: string;
-      user_agent?: string;
-      ip_address?: string;
-      metadata: Record<string, unknown>;
-    }): AnalyticsEvent => ({
-      id: event.id,
-      type: event.type,
-      timestamp: new Date(event.timestamp),
-      userAgent: event.user_agent,
-      ipAddress: event.ip_address,
-      metadata: event.metadata as AnalyticsEvent['metadata'],
-    }));
-  } catch (error) {
-    console.error('Error loading analytics events from Supabase:', error);
-    return [];
-  }
+  console.log('[Analytics] Analytics disabled - davidoff_analytics_events table not configured');
+  return [];
 }
 
 /**
- * Track an analytics event
+ * Track an analytics event (currently disabled)
  */
 export async function trackEvent(event: Omit<AnalyticsEvent, 'id' | 'timestamp'>): Promise<void> {
-  try {
-    const supabase = createClient();
-    const { error } = await supabase
-      .from('davidoff_analytics_events')
-      .insert([{
-        type: event.type,
-        timestamp: new Date().toISOString(),
-        user_agent: event.userAgent,
-        ip_address: event.ipAddress,
-        metadata: event.metadata,
-      }]);
-    
-    if (error) {
-      console.error('Error tracking analytics event:', error);
-    }
-  } catch (error) {
-    console.error('Error tracking analytics event:', error);
-  }
+  // Analytics tracking disabled - table not configured
+  console.log('[Analytics] Event would be tracked:', event.type);
+  return;
 }
 
 /**
