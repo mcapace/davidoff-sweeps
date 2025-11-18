@@ -110,7 +110,7 @@ export default function SweepstakesSection() {
 
       if (response.ok) {
         setStatus('success');
-        setMessage(data.message || "Thank you for entering! Good luck in the sweepstakes.");
+        setMessage("Thank you for entering! Good luck in the sweepstakes.");
         // Reset form
         setFormData({
           firstName: '',
